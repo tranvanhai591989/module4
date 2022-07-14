@@ -8,7 +8,7 @@ import java.util.Map;
 @Repository
 public class DictionaryRepositoryImpl implements DictionaryRepository {
 
-    private static Map<String, String> dictionaryArrayList = new HashMap<>();
+    private static final Map<String, String> dictionaryArrayList = new HashMap<>();
 
     static {
         dictionaryArrayList.put("one", "mot");

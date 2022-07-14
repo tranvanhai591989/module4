@@ -12,15 +12,13 @@ public class DictionaryServiceImpl implements DictionaryService {
     @Autowired
     private DictionaryRepository dictionaryRepository;
 
-
-    public String getData(String keyword){
-        Map<String,String>dictionaryArrayList = dictionaryRepository.getData();
+    public String getData(String keyword) {
+        Map<String, String> dictionaryArrayList = dictionaryRepository.getData();
         String result = dictionaryArrayList.get(keyword);
         if (result == null) {
-            return result = "not exits";
+            return "not exits";
         }
         return result;
-
     }
 
 }

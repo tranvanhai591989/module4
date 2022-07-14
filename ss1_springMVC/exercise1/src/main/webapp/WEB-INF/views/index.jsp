@@ -14,7 +14,7 @@
 <h1>Currency Convert</h1>
 <form method="post">
     <label>Rate: </label>
-    <input type="text" name="rate" placeholder="Rate" value="23000" id="usd"><br>
+    <input type="text" name="rate" placeholder="Rate" value="23000" ><br>
     <label>USD: </label>
     <input type="number" name="usd" placeholder="USD"><br>
     <label>VND : </label>
