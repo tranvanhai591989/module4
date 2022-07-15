@@ -12,14 +12,14 @@
 </head>
 <body>
 <form action="cal" method="get">
-    <input type="text" name="num1" pattern="^\d*(\.\d{0,2})?$" value="${num1}">
+    <input required type="text" name="num1" pattern="^\d*(\.\d{0,2})?$" value="${num1}">
 
         <button value="Add" name="calculation">Addition</button>
         <button value="Sub" name="calculation">Subtraction</button>
         <button value="Mul"name="calculation">Multiplication</button>
         <button value="Div" name="calculation">Division</button>
 
-    <input type="text" pattern="^\d*(\.\d{0,2})?$" name="num2" value="${num2}">
+    <input required type="text" pattern="^\d*(\.\d{0,2})?$" name="num2" value="${num2}">
 
 </form>
 <span>${total}</span>
