@@ -5,7 +5,7 @@
 <head>
     <title>Title</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="/boostrap/bootstrap413/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/bootstrap413/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/boostrap/datatables/css/dataTables.bootstrap4.min.css"/>
 </head>
 <body>
@@ -16,79 +16,79 @@
 <span class="text-danger"> Khuyến cáo : Khai báo thông tin sai là vi phạm pháp luật Việt Nam và có thể bị xử lý hình sự</span>
 
 <div>
-    <form:form action="/create-info" modelAttribute="info" method="post">
+    <form:form action="/create-info" modelAttribute="info">
         <table class="table-primary col-lg-12">
-            <tr class="col-lg-12">
-                <label>Id <span class="text-danger"> (*)</span></label>
+            <tr class="text-danger">
+                <td><label>Id <span class="text-danger"> (*)</span></label></td>
             </tr>
 
-            <tr class="col-lg-12">
-                <td class="col-lg-12"><form:input path="id"/></td>
+            <tr>
+                <td><form:input path="id"/></td>
             </tr>
 
-            <tr class="col-lg-12">
-                <td class="col-lg-12"><label>Họ tên(ghi chữ in hoa) <span class="text-danger">(*)</span></label></td>
+            <tr>
+                <td><label>Họ tên(ghi chữ in hoa) <span class="text-danger">(*)</span></label></td>
             </tr>
 
-            <tr class="col-lg-12">
-                <td class="col-lg-12"><form:input path="name"/></td>
+            <tr>
+                <td><form:input path="name"/></td>
             </tr>
 
-            <tr class="col-lg-12">
-                <td class="col-lg-3">Năm sinh <span class="text-danger">(*)</span></td>
-                <td class="col-lg-3">Giới tính <span class="text-danger">(*)</span></td>
-                <td class="col-lg-3">Quốc tịch <span class="text-danger">(*)</span></td>
+            <tr>
+                <td>Năm sinh <span class="text-danger">(*)</span></td>
+                <td>Giới tính <span class="text-danger">(*)</span></td>
+                <td>Quốc tịch <span class="text-danger">(*)</span></td>
             </tr>
 
-            <tr class="col-lg-12">
-                <td class="col-lg-3">
+            <tr>
+                <td>
                     <form:select path="birthYear" items="${birthdayList}"> </form:select>
                 </td>
-                <td class="col-lg-3">
+                <td>
                     <form:select path="gender" items="${genderList}"> </form:select>
                 </td>
-                <td class="col-lg-3">
+                <td>
                     <form:select path="national" items="${nalionalityList}"> </form:select>
                 </td>
             </tr>
 
-            <tr class="col-lg-12">
-                <label for="idCard">Số hộ chiếu hoặc số CMND hoặc giấy thông hành hợp pháp khác
-                    <span class="text-danger">(*)</span>
-                </label>
+            <tr>
+                <td>
+                    <label for="idCard">Số hộ chiếu hoặc số CMND hoặc giấy thông hành hợp pháp khác
+                        <span>(*)</span>
+                    </label>
+                </td>
             </tr>
 
-            <tr class="col-lg-12">
-                <form:input path="idCard" id="idCrad" cssClass="col-lg-12"/>
+            <tr>
+                <td><form:input path="idCard" id="idCrad" cssClass="col-lg-12"/></td>
             </tr>
 
-            <tr class="col-lg-12">
-                Thông tin đi lại <span class="text-danger">(*)</span>
+            <tr>
+                <td> Thông tin đi lại <span class="text-danger">(*)</span></td>
             </tr>
 
-            <tr class="col-lg-12">
-                <form:radiobuttons path="transportType" items="${transportType}"/>
+            <tr>
+                <td><form:radiobuttons path="transportType" items="${transportType}"/></td>
             </tr>
 
-
-            <tr class="col-lg-12">
-                <td class="col-lg-6"> Số hiệu phương tiện</td>
-                <td class="col-lg-6">Số ghế</td>
+            <tr>
+                <td> Số hiệu phương tiện</td>
+                <td>Số ghế</td>
             </tr>
 
-            <tr class="col-lg-12">
-                <td class="col-lg-6> <form:input path="transportId"/></td>
-                           <td class=" col-lg-6><form:input path="seat"/></td>
+            <tr>
+                <td><form:input path="transportId"/></td>
+                <td><form:input path="seat"/></td>
+            </tr>
+            <tr>
+                <td>Ngày khởi hành <span class="text-danger">(*)</span></td>
+                <td>Ngày kết thúc <span class="text-danger">(*)</span></td>
             </tr>
 
-            <tr class="col-lg-12">
-                <td class="col-lg-6 ">Ngày khởi hành <span class="text-danger">(*)</span></td>
-                <td class="col-lg-6">Ngày kết thúc <span class="text-danger">(*)</span></td>
-            </tr>
+            <tr>
 
-            <tr class="col-lg-12">
-
-                <td class="col-lg-6">
+                <td>
                     <form:select path="inputDay">
                         <form:options items="${inputDay}"></form:options>
                     </form:select>
@@ -102,7 +102,7 @@
                     </form:select>
                 </td>
 
-                <td class="col-lg-6">
+                <td>
                     <form:select path="outDay">
                         <form:options items="${outDay}"></form:options>
                     </form:select>
@@ -118,21 +118,23 @@
 
             </tr>
 
-            <tr class="col-lg-12">
-                trong vòng 14 ngày qua , Anh/chị có đi đến tỉnh thành phố nào? <span class="text-danger">(*)</span>
-            </tr>
-
-            <tr class="col-lg-12">
-                <form:input path="other"/>
+            <tr>
+                <td> trong vòng 14 ngày qua , Anh/chị có đi đến tỉnh thành phố nào? <span
+                        class="text-danger">(*)</span>
+                </td>
             </tr>
 
             <tr>
-                <button type="submit" class="bg-primary">Đăng kí</button>
+                <td><form:input path="other"/></td>
             </tr>
+
+            <tr>
+                <td>  <button type="submit" class="bg-primary" value="/create-info">Đăng kí</button></td>
+            </tr>
+
 
         </table>
     </form:form>
-
 </div>
 </body>
 <script src="/boostrap/jquery/jquery-3.5.1.min.js"></script>
@@ -142,5 +144,5 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>
-<script src="/boostrap/bootstrap413/js/bootstrap.bundle.min.js"></script>
+<script src="/bootstrap413/js/bootstrap.bundle.min.js"></script>
 </html>

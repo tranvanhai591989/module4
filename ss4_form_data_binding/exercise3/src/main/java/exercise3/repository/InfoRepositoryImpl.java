@@ -48,7 +48,7 @@ public class InfoRepositoryImpl implements InfoRepository {
 
 
     @Override
-    public void update(String id, Info info) {
+    public void update(Info info) {
         for (int i = 0; i < infoList.size(); i++) {
             infoList.get(i).setId(info.getId());
             infoList.get(i).setName(info.getName());
@@ -66,7 +66,6 @@ public class InfoRepositoryImpl implements InfoRepository {
             infoList.get(i).setOutMonth(info.getOutMonth());
             infoList.get(i).setOutYear(info.getOutYear());
             infoList.get(i).setOther(info.getOther());
-
         }
 
     }

@@ -5,10 +5,7 @@ import exercise3.service.InfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
@@ -19,7 +16,7 @@ public class InfoController {
     @Autowired
     private InfoService infoService;
 
-    @GetMapping
+    @GetMapping("list")
     public String getAll(Model model) {
         List<Info> infoList = infoService.getAll();
         model.addAttribute("infoList", infoList);
@@ -39,11 +36,10 @@ public class InfoController {
         model.addAttribute("outDay", infoService.getOutDay());
         model.addAttribute("outMonth", infoService.getOutMonth());
         model.addAttribute("outYear", infoService.getOutYear());
-
         return "sample";
     }
 
-    @GetMapping("/create-info")
+    @PostMapping    ("/create-info")
     public String create(@ModelAttribute("infoForm") Info info, RedirectAttributes redirectAttributes) {
         infoService.create(info);
         redirectAttributes.addFlashAttribute("message", "Success");
@@ -51,7 +47,9 @@ public class InfoController {
     }
 
     @GetMapping("/update")
-    public String formUpdate(@PathVariable String id, Model model) {
+    public String formUpdate(@RequestParam String id, Model model) {
+        Info info=infoService.findId(id);
+        model.addAttribute("infoForm",info);
         model.addAttribute("birthdayList", infoService.getBirthYear());
         model.addAttribute("genderList", infoService.getGender());
         model.addAttribute("nalionalityList", infoService.getNational());
@@ -61,15 +59,15 @@ public class InfoController {
         model.addAttribute("inputYear", infoService.getInputYear());
         model.addAttribute("outDay", infoService.getOutDay());
         model.addAttribute("outMonth", infoService.getOutMonth());
-        model.addAttribute("outYear", infoService.findId(id));
+        model.addAttribute("outYear", infoService.getOutYear());
         return "update";
     }
 
-//    @GetMapping("/update")
-//    public String update(@ModelAttribute("infoForm") String id, Info info, RedirectAttributes redirectAttributes) {
-//        infoService.update(id, info);
-//        redirectAttributes.addFlashAttribute("message", "update success");
-//        return "redirect:/list";
-//    }
+    @PostMapping("/update")
+    public String update(@ModelAttribute Info info,Model model) {
+        infoService.update(info);
+        model.addAttribute("infoForm",infoService.getAll());
+        return "update";
+    }
 
 }

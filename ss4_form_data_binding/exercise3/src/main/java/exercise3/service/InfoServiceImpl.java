@@ -28,8 +28,8 @@ public class InfoServiceImpl implements InfoService {
     }
 
     @Override
-    public void update(String id, Info info) {
-        infoRepository.update(id, info);
+    public void update(Info info) {
+        infoRepository.update(info);
     }
 
     @Override

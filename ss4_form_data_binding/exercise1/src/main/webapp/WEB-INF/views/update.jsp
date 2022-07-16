@@ -11,7 +11,7 @@
 <head>
     <title>Title</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="/boostrap/bootstrap413/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/bootstrap413/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/boostrap/datatables/css/dataTables.bootstrap4.min.css"/>
 
 </head>

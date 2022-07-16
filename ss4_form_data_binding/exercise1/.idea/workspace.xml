@@ -20,14 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="63baf64a-bad4-4574-b19f-fb4f00890359" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../exercise3/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../ss1_springMVC/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss1_springMVC/customer-management" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../ss2_spring_controller/practice3/spring-time-zone-gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss2_spring_controller/practice3/spring-time-zone-gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../ss2_spring_controller/practice4(customer_management)/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss2_spring_controller/practice4(customer_management)/customer-management" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../exercise3/.gradle/6.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../exercise3/.gradle/6.1.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../exercise3/.gradle/6.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../exercise3/.gradle/6.1.1/executionHistory/executionHistory.lock" afterDir="false" />
@@ -47,7 +43,6 @@
       <change beforePath="$PROJECT_DIR$/../exercise3/src/main/java/exercise3/repository/InfoRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../exercise3/src/main/java/exercise3/repository/InfoRepositoryImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../exercise3/src/main/java/exercise3/service/InfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../exercise3/src/main/java/exercise3/service/InfoService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../exercise3/src/main/java/exercise3/service/InfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../exercise3/src/main/java/exercise3/service/InfoServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exercise3/src/main/webapp/WEB-INF/dispatcher-servlet.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../exercise3/src/main/webapp/WEB-INF/dispatcher-servlet.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../exercise3/src/main/webapp/WEB-INF/views/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../exercise3/src/main/webapp/WEB-INF/views/list.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../exercise3/src/main/webapp/WEB-INF/views/sample.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../exercise3/src/main/webapp/WEB-INF/views/sample.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../exercise3/src/main/webapp/WEB-INF/views/update.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../exercise3/src/main/webapp/WEB-INF/views/update.jsp" afterDir="false" />
@@ -221,6 +216,7 @@
       <workItem from="1657885580048" duration="939000" />
       <workItem from="1657895804128" duration="624000" />
       <workItem from="1657936428054" duration="5618000" />
+      <workItem from="1657980428697" duration="3150000" />
     </task>
     <servers />
   </component>

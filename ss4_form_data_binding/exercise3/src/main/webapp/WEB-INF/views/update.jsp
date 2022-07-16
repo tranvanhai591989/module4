@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<h3>TỜ KHAI Y TẾ</h3><br>
+<h3 class="col-lg-12 text-center align-content-center">TỜ KHAI Y TẾ</h3>
 <h5>ĐÂY LÀ TÀI LIỆU QUAN TRỌNG ANH/CHỊ SẼ GIÚP CƠ QUAN Y TẾ LIÊN LẠC KHI CẦN THIẾT ĐỂ PHÒNG CHỐNG DỊCH BỆNH TRUYỀN
     NHIỄM</h5>
 <span class="text-danger"> Khuyến cáo : Khai báo thông tin sai là vi phạm pháp luật Việt Nam và có thể bị xử lý hình sự</span>
@@ -18,79 +18,127 @@
 <div>
     <form:form action="/update" modelAttribute="infoForm" method="post">
         <table class="table-primary col-lg-12">
-            <tr class="col-lg-12">
-                <label >Id <p class="text-danger">(*)</p></label>
+            <tr class="text-danger">
+                <td><label>Id <span class="text-danger"> (*)</span></label></td>
             </tr>
-            <tr class="col-lg-12">
-                <td class="col-lg-12"> <form:input  path="id"/>
 
+            <tr>
+                <td>
+                    <form:hidden path="id"/>
                 </td>
             </tr>
-            <tr class="col-lg-12">
-                <td class="col-lg-12">  <label >Họ tên(ghi chữ in hoa) <p class="text-danger">(*)</p></label></td>
+
+            <tr>
+                <td><label>Họ tên(ghi chữ in hoa) <span class="text-danger">(*)</span></label></td>
             </tr>
-            <tr class="col-lg-12">
-                <td class="col-lg-12"> <form:input  path="name" /></td>
+
+            <tr>
+                <td><form:input path="name"/></td>
             </tr>
-            <tr class="col-lg-12">
-                <td class="col-lg-3">Năm sinh <p class="text-danger">(*)</p></td>
-                <td class="col-lg-3">Giới tính <p class="text-danger">(*)</p></td>
-                <td class="col-lg-3">Quốc tịch <p class="text-danger">(*)</p></td>
+
+            <tr>
+                <td>Năm sinh <span class="text-danger">(*)</span></td>
+                <td>Giới tính <span class="text-danger">(*)</span></td>
+                <td>Quốc tịch <span class="text-danger">(*)</span></td>
             </tr>
-            <tr class="col-lg-12">
-                <td class="col-lg-3"><form:options items="" path="birthYear" itemValue="${birthdayList}"/></td>
-                <td class="col-lg-3"><form:options items="" path="gender" itemValue="${genderList}"/></td>
-                <td class="col-lg-3"><form:options items="" path="national" itemValue="${nalionalityList}"/></td>
+
+            <tr>
+                <td>
+                    <form:select path="birthYear" items="${birthdayList}"> </form:select>
+                </td>
+                <td>
+                    <form:select path="gender" items="${genderList}"> </form:select>
+                </td>
+                <td>
+                    <form:select path="national" items="${nalionalityList}"> </form:select>
+                </td>
             </tr>
-            <tr class="col-lg-12">
-                <label for="idCard">Số hộ chiếu hoặc số CMND hoặc giấy thông hành hợp pháp khác <p class="text-danger">
-                    (*)</p></label>
+
+            <tr>
+                <td>
+                    <label for="idCard">Số hộ chiếu hoặc số CMND hoặc giấy thông hành hợp pháp khác
+                        <span>(*)</span>
+                    </label>
+                </td>
             </tr>
-            <tr class="col-lg-12">
-                <form:input path="idCard" id="idCrad" cssClass="col-lg-12"/>
+
+            <tr>
+                <td><form:input path="idCard" id="idCrad" cssClass="col-lg-12"/></td>
             </tr>
-            <tr class="col-lg-12">
-                Thông tin đi lại <p class="text-danger">(*)</p>
+
+            <tr>
+                <td> Thông tin đi lại <span class="text-danger">(*)</span></td>
             </tr>
-            <tr class="col-lg-12">
-                <form:checkboxes path="transportType" items="${transportType}"/>
+
+            <tr>
+                <td><form:radiobuttons path="transportType" items="${transportType}"/></td>
             </tr>
-            <tr class="col-lg-12">
-                <td class="col-lg-6"> Số hiệu phương tiện</td>
-                <td class="col-lg-6">Số ghế</td>
+
+            <tr>
+                <td> Số hiệu phương tiện</td>
+                <td>Số ghế</td>
             </tr>
-            <tr class="col-lg-12">
-                <td class="col-lg-6> <form:input path="transportId"/></td>
-           <td class=" col-lg-6><form:input path="seat"/></td>
-            </tr>
-            <tr class="col-lg-12">
-                <td class="col-lg-6">Ngày khởi hành <p class="text-danger">(*)</p></td>
-                <td class="col-lg-6">Ngày kết thúc <p class="text-danger">(*)</p></td>
-            </tr>
-            <tr class="col-lg-12">
-                <td class="col-lg-2"><form:options path="inputDay" itemValue="${inputDay}"/></td>
-                <td class="col-lg-2"><form:options path="inputMonth" itemValue="${inputMonth}"/></td>
-                <td class="col-lg-2"><form:options path="inputYear" itemValue="${inputYear}"/></td>
-                <td class="col-lg-2"><form:options path="outDay" itemValue="${outDay}"/></td>
-                <td class="col-lg-2"><form:options path="outMonth" itemValue="${outMonth}"/></td>
-                <td class="col-lg-2"><form:options path="outYear" itemValue="${outYear}"/></td>
-            </tr>
-            <tr class="col-lg-12">
-                trong vòng 14 ngày qua , Anh/chị có đi đến tỉnh thành phố nào? <p class="text-danger">(*)</p>
-            </tr>
-            <tr class="col-lg-12">
-                <form:input path="other"/>
+
+            <tr>
+                <td><form:input path="transportId"/></td>
+                <td><form:input path="seat"/></td>
             </tr>
             <tr>
-                <button type="submit" class="bg-primary">Đăng kí</button>
+                <td>Ngày khởi hành <span class="text-danger">(*)</span></td>
+                <td>Ngày kết thúc <span class="text-danger">(*)</span></td>
+            </tr>
+
+            <tr>
+
+                <td>
+                    <form:select path="inputDay">
+                        <form:options items="${inputDay}"></form:options>
+                    </form:select>
+
+                    <form:select path="inputMonth">
+                        <form:options items="${inputMonth}"></form:options>
+                    </form:select>
+
+                    <form:select path="inputYear">
+                        <form:options items="${inputYear}"></form:options>
+                    </form:select>
+                </td>
+
+                <td>
+                    <form:select path="outDay">
+                        <form:options items="${outDay}"></form:options>
+                    </form:select>
+
+                    <form:select path="outMonth">
+                        <form:options items="${outMonth}"></form:options>
+                    </form:select>
+
+                    <form:select path="outYear">
+                        <form:options items="${outYear}"></form:options>
+                    </form:select>
+                </td>
+
+            </tr>
+
+            <tr>
+                <td> trong vòng 14 ngày qua , Anh/chị có đi đến tỉnh thành phố nào? <span
+                        class="text-danger">(*)</span>
+                </td>
+            </tr>
+
+            <tr>
+                <td><form:input path="other"/></td>
+            </tr>
+
+            <tr>
+                <td>
+                    <button type="submit" class="bg-primary" value="/update">Update</button>
+                </td>
             </tr>
 
 
         </table>
-
-
     </form:form>
-
 </div>
 </body>
 <script src="/boostrap/jquery/jquery-3.5.1.min.js"></script>

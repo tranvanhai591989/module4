@@ -11,7 +11,7 @@ public interface InfoRepository {
 
     Info findId(String id);
 
-    void update(String id, Info info);
+    void update(Info info);
 
     String[] getBirthYear();
 

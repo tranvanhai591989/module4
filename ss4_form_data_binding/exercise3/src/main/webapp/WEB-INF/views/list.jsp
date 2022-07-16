@@ -54,7 +54,7 @@
                 <td>${item.other}</td>
                 <td>
                     <button>
-                        <a href="/update?${item.id}">update </a>
+                        <a href="/update?id=${item.id}"><button value="update" class="bg-primary">update</button></a>
                     </button>
                 </td>
 
