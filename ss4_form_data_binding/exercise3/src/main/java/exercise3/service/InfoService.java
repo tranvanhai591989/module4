@@ -9,6 +9,8 @@ public interface InfoService {
 
     void create(Info info);
 
+    Info findId(String id);
+
     void update(String id, Info info);
 
     String[] getBirthYear();

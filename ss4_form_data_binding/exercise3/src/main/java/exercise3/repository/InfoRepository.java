@@ -9,6 +9,10 @@ public interface InfoRepository {
 
     void create(Info info);
 
+    Info findId(String id);
+
+    void update(String id, Info info);
+
     String[] getBirthYear();
 
     String[] getGender();
@@ -16,8 +20,6 @@ public interface InfoRepository {
     String[] getNational();
 
     String[] getTransportType();
-
-    void update(String id, Info info);
 
     String[] getInputDay();
 

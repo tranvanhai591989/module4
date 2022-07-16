@@ -36,6 +36,18 @@ public class InfoRepositoryImpl implements InfoRepository {
     }
 
     @Override
+    public Info findId(String id) {
+        Info info = new Info();
+        for (int i = 0; i <infoList.size() ; i++) {
+            if (id.equals(infoList.get(i).getId())){
+                info = infoList.get(i);
+            }
+        }
+        return info;
+    }
+
+
+    @Override
     public void update(String id, Info info) {
         for (int i = 0; i < infoList.size(); i++) {
             infoList.get(i).setId(info.getId());

@@ -23,6 +23,11 @@ public class InfoServiceImpl implements InfoService {
     }
 
     @Override
+    public Info findId(String id) {
+        return infoRepository.findId(id);
+    }
+
+    @Override
     public void update(String id, Info info) {
         infoRepository.update(id, info);
     }
