@@ -17,7 +17,7 @@
 
 <div>
     <form:form action="/update" modelAttribute="infoForm" method="post">
-        <table class="table-primary col-lg-12">
+        <table class=" col-lg-12 table-responsive">
             <tr class="text-danger">
                 <td><label>Id <span class="text-danger"> (*)</span></label></td>
             </tr>
@@ -132,7 +132,8 @@
 
             <tr>
                 <td>
-                    <button type="submit" class="bg-primary" value="/update">Update</button>
+                    <button type="submit" class="bg-primary" value="/create-account">Update</button>
+                    <button type="reset" class="bg-primary" value="/create-account">Reset</button>
                 </td>
             </tr>
 

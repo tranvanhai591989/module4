@@ -37,35 +37,37 @@ public class InfoRepositoryImpl implements InfoRepository {
 
     @Override
     public Info findId(String id) {
-        Info info = new Info();
-        for (int i = 0; i <infoList.size() ; i++) {
-            if (id.equals(infoList.get(i).getId())){
-                info = infoList.get(i);
+        for (Info info:infoList) {
+            if (id.equals(info.getId())){
+               return info;
             }
         }
-        return info;
+        return null;
     }
 
 
     @Override
     public void update(Info info) {
-        for (int i = 0; i < infoList.size(); i++) {
-            infoList.get(i).setId(info.getId());
-            infoList.get(i).setName(info.getName());
-            infoList.get(i).setBirthYear(info.getName());
-            infoList.get(i).setGender(info.getGender());
-            infoList.get(i).setNational(info.getNational());
-            infoList.get(i).setIdCard(info.getIdCard());
-            infoList.get(i).setTransportType(info.getTransportType());
-            infoList.get(i).setTransportId(info.getTransportId());
-            infoList.get(i).setSeat(info.getSeat());
-            infoList.get(i).setInputDay(info.getInputDay());
-            infoList.get(i).setInputMonth(info.getInputMonth());
-            infoList.get(i).setInputYear(info.getInputYear());
-            infoList.get(i).setOutDay(info.getOutDay());
-            infoList.get(i).setOutMonth(info.getOutMonth());
-            infoList.get(i).setOutYear(info.getOutYear());
-            infoList.get(i).setOther(info.getOther());
+        for (Info item :infoList) {
+            if (info.getId().equals(item.getId())){
+
+                item.setName(info.getName());
+                item.setBirthYear(info.getName());
+                item.setGender(info.getGender());
+                item.setNational(info.getNational());
+                item.setIdCard(info.getIdCard());
+                item.setTransportType(info.getTransportType());
+                item.setTransportId(info.getTransportId());
+                item.setSeat(info.getSeat());
+                item.setInputDay(info.getInputDay());
+                item.setInputMonth(info.getInputMonth());
+                item.setInputYear(info.getInputYear());
+                item.setOutDay(info.getOutDay());
+                item.setOutMonth(info.getOutMonth());
+                item.setOutYear(info.getOutYear());
+                item.setOther(info.getOther());
+
+            }
         }
 
     }

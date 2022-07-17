@@ -30,7 +30,7 @@ public class MailController {
 
     @GetMapping("/update")
     public String displayEdit(@RequestParam int id, Model model) {
-        model.addAttribute("mail", mailService.findById(id));
+            model.addAttribute("mail", mailService.findById(id));
         model.addAttribute("languageList", mailService.languageList());
         model.addAttribute("pageSizeList", mailService.pageSize());
         return "update";

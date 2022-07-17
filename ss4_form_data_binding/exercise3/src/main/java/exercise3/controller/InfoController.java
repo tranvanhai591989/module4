@@ -66,8 +66,8 @@ public class InfoController {
     @PostMapping("/update")
     public String update(@ModelAttribute Info info,Model model) {
         infoService.update(info);
-        model.addAttribute("infoForm",infoService.getAll());
-        return "update";
+        model.addAttribute("infoList",infoService.getAll());
+        return "list";
     }
 
 }
