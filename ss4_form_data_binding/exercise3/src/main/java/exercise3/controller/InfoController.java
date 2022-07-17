@@ -42,7 +42,7 @@ public class InfoController {
     @PostMapping    ("/create-info")
     public String create(@ModelAttribute("infoForm") Info info, RedirectAttributes redirectAttributes) {
         infoService.create(info);
-        redirectAttributes.addFlashAttribute("message", "Success");
+        redirectAttributes.addFlashAttribute("message", "Create Success");
         return "redirect:/list";
     }
 
@@ -64,10 +64,11 @@ public class InfoController {
     }
 
     @PostMapping("/update")
-    public String update(@ModelAttribute Info info,Model model) {
+    public String update(@ModelAttribute Info info,Model model, RedirectAttributes redirectAttributes) {
         infoService.update(info);
         model.addAttribute("infoList",infoService.getAll());
-        return "list";
+        redirectAttributes.addFlashAttribute("message", "Update Success");
+        return "redirect:/list";
     }
 
 }

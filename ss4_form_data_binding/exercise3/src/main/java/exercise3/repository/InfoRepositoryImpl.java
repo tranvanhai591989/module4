@@ -52,7 +52,7 @@ public class InfoRepositoryImpl implements InfoRepository {
             if (info.getId().equals(item.getId())){
 
                 item.setName(info.getName());
-                item.setBirthYear(info.getName());
+                item.setBirthYear(info.getBirthYear());
                 item.setGender(info.getGender());
                 item.setNational(info.getNational());
                 item.setIdCard(info.getIdCard());

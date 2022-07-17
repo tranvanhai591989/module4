@@ -20,47 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="63baf64a-bad4-4574-b19f-fb4f00890359" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../exercise3/src/main/webapp/boostrap/datatables/css/dataTables.bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../exercise3/src/main/webapp/boostrap/datatables/css/dataTables.bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../exercise3/src/main/webapp/boostrap/datatables/css/dataTables.bootstrap4.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../exercise3/src/main/webapp/boostrap/datatables/css/dataTables.bootstrap4.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../exercise3/src/main/webapp/boostrap/datatables/css/dataTables.foundation.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../exercise3/src/main/webapp/boostrap/datatables/css/dataTables.foundation.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../exercise3/src/main/webapp/boostrap/datatables/css/dataTables.jqueryui.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../exercise3/src/main/webapp/boostrap/datatables/css/dataTables.jqueryui.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../exercise3/src/main/webapp/boostrap/datatables/css/dataTables.semanticui.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../exercise3/src/main/webapp/boostrap/datatables/css/dataTables.semanticui.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../exercise3/src/main/webapp/boostrap/datatables/css/jquery.dataTables.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../exercise3/src/main/webapp/boostrap/datatables/css/jquery.dataTables.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../exercise3/src/main/webapp/boostrap/datatables/images/sort_asc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../exercise3/src/main/webapp/boostrap/datatables/images/sort_asc_disabled.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../exercise3/src/main/webapp/boostrap/datatables/images/sort_both.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../exercise3/src/main/webapp/boostrap/datatables/images/sort_desc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../exercise3/src/main/webapp/boostrap/datatables/images/sort_desc_disabled.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../exercise3/src/main/webapp/boostrap/datatables/js/dataTables.bootstrap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../exercise3/src/main/webapp/boostrap/datatables/js/dataTables.bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../exercise3/src/main/webapp/boostrap/datatables/js/dataTables.bootstrap4.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../exercise3/src/main/webapp/boostrap/datatables/js/dataTables.bootstrap4.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../exercise3/src/main/webapp/boostrap/datatables/js/dataTables.foundation.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../exercise3/src/main/webapp/boostrap/datatables/js/dataTables.foundation.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../exercise3/src/main/webapp/boostrap/datatables/js/dataTables.jqueryui.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../exercise3/src/main/webapp/boostrap/datatables/js/dataTables.jqueryui.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../exercise3/src/main/webapp/boostrap/datatables/js/dataTables.semanticui.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../exercise3/src/main/webapp/boostrap/datatables/js/dataTables.semanticui.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../exercise3/src/main/webapp/boostrap/datatables/js/jquery.dataTables.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../exercise3/src/main/webapp/boostrap/datatables/js/jquery.dataTables.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../exercise3/src/main/webapp/boostrap/jquery/jquery-3.5.1.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../ss1_springMVC/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss1_springMVC/customer-management" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../ss2_spring_controller/practice3/spring-time-zone-gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss2_spring_controller/practice3/spring-time-zone-gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../ss2_spring_controller/practice4(customer_management)/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss2_spring_controller/practice4(customer_management)/customer-management" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/libs/exercise1-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/exercise1-1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mail/controller/MailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mail/controller/MailController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../exercise3/.gradle/6.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../exercise3/.gradle/6.1.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../exercise3/.gradle/6.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../exercise3/.gradle/6.1.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../exercise3/.gradle/6.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../exercise3/.gradle/6.1.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -69,33 +32,11 @@
       <change beforePath="$PROJECT_DIR$/../exercise3/.gradle/6.1.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../exercise3/.gradle/6.1.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../exercise3/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../exercise3/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../exercise3/build/classes/java/main/exercise3/controller/InfoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../exercise3/build/classes/java/main/exercise3/controller/InfoController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exercise3/build/classes/java/main/exercise3/repository/InfoRepositoryImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../exercise3/build/classes/java/main/exercise3/repository/InfoRepositoryImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../exercise3/build/libs/exercise3-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/../exercise3/build/libs/exercise3-1.0-SNAPSHOT.war" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../exercise3/src/main/java/exercise3/controller/InfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../exercise3/src/main/java/exercise3/controller/InfoController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../exercise3/src/main/java/exercise3/repository/InfoRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../exercise3/src/main/java/exercise3/repository/InfoRepositoryImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../exercise3/src/main/webapp/WEB-INF/views/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../exercise3/src/main/webapp/WEB-INF/views/list.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../exercise3/src/main/webapp/WEB-INF/views/sample.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../exercise3/src/main/webapp/WEB-INF/views/sample.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exercise3/src/main/webapp/WEB-INF/views/update.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../exercise3/src/main/webapp/WEB-INF/views/update.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exercise3/src/main/webapp/bootstrap413/css/bootstrap-grid.css" beforeDir="false" afterPath="$PROJECT_DIR$/../exercise3/src/main/webapp/boostrap/bootstrap413/css/bootstrap-grid.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exercise3/src/main/webapp/bootstrap413/css/bootstrap-grid.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/../exercise3/src/main/webapp/boostrap/bootstrap413/css/bootstrap-grid.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exercise3/src/main/webapp/bootstrap413/css/bootstrap-grid.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/../exercise3/src/main/webapp/boostrap/bootstrap413/css/bootstrap-grid.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exercise3/src/main/webapp/bootstrap413/css/bootstrap-grid.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/../exercise3/src/main/webapp/boostrap/bootstrap413/css/bootstrap-grid.min.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exercise3/src/main/webapp/bootstrap413/css/bootstrap-reboot.css" beforeDir="false" afterPath="$PROJECT_DIR$/../exercise3/src/main/webapp/boostrap/bootstrap413/css/bootstrap-reboot.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exercise3/src/main/webapp/bootstrap413/css/bootstrap-reboot.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/../exercise3/src/main/webapp/boostrap/bootstrap413/css/bootstrap-reboot.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exercise3/src/main/webapp/bootstrap413/css/bootstrap-reboot.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/../exercise3/src/main/webapp/boostrap/bootstrap413/css/bootstrap-reboot.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exercise3/src/main/webapp/bootstrap413/css/bootstrap-reboot.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/../exercise3/src/main/webapp/boostrap/bootstrap413/css/bootstrap-reboot.min.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exercise3/src/main/webapp/bootstrap413/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/../exercise3/src/main/webapp/boostrap/bootstrap413/css/bootstrap.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exercise3/src/main/webapp/bootstrap413/css/bootstrap.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/../exercise3/src/main/webapp/boostrap/bootstrap413/css/bootstrap.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exercise3/src/main/webapp/bootstrap413/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/../exercise3/src/main/webapp/boostrap/bootstrap413/css/bootstrap.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exercise3/src/main/webapp/bootstrap413/css/bootstrap.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/../exercise3/src/main/webapp/boostrap/bootstrap413/css/bootstrap.min.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exercise3/src/main/webapp/bootstrap413/js/bootstrap.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/../exercise3/src/main/webapp/boostrap/bootstrap413/js/bootstrap.bundle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exercise3/src/main/webapp/bootstrap413/js/bootstrap.bundle.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../exercise3/src/main/webapp/boostrap/bootstrap413/js/bootstrap.bundle.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exercise3/src/main/webapp/bootstrap413/js/bootstrap.bundle.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/../exercise3/src/main/webapp/boostrap/bootstrap413/js/bootstrap.bundle.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exercise3/src/main/webapp/bootstrap413/js/bootstrap.bundle.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../exercise3/src/main/webapp/boostrap/bootstrap413/js/bootstrap.bundle.min.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exercise3/src/main/webapp/bootstrap413/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/../exercise3/src/main/webapp/boostrap/bootstrap413/js/bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exercise3/src/main/webapp/bootstrap413/js/bootstrap.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../exercise3/src/main/webapp/boostrap/bootstrap413/js/bootstrap.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exercise3/src/main/webapp/bootstrap413/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/../exercise3/src/main/webapp/boostrap/bootstrap413/js/bootstrap.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exercise3/src/main/webapp/bootstrap413/js/bootstrap.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../exercise3/src/main/webapp/boostrap/bootstrap413/js/bootstrap.min.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../practicce3/spring-upload-file" beforeDir="false" afterPath="$PROJECT_DIR$/../practicce3/spring-upload-file" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../practice2/spring-user-model" beforeDir="false" afterPath="$PROJECT_DIR$/../practice2/spring-user-model" afterDir="false" />
     </list>
@@ -266,7 +207,7 @@
       <workItem from="1657885580048" duration="939000" />
       <workItem from="1657895804128" duration="624000" />
       <workItem from="1657936428054" duration="5618000" />
-      <workItem from="1657980428697" duration="6773000" />
+      <workItem from="1657980428697" duration="7556000" />
     </task>
     <servers />
   </component>

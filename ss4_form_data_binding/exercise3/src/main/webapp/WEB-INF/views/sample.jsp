@@ -4,9 +4,8 @@
 <html>
 <head>
     <title>Title</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="/boostrap/bootstrap413/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="/boostrap/datatables/css/dataTables.bootstrap4.min.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
 <body>
 
@@ -18,50 +17,50 @@
 <div>
     <form:form action="/create-info" modelAttribute="info">
         <table class="table-primary col-lg-12 row-bli">
-            <tr class="row">
-                <td><label>Id <span class="text-danger"> (*)</span></label></td>
+            <tr class="row col-lg-12">
+                <td class="row col-lg-12"><label>Id <span class="text-danger"> (*)</span></label></td>
             </tr>
 
-            <tr class="row">
-                <td><form:input path="id"/></td>
+            <tr class="row col-lg-12">
+                <td class="row col-lg-12"><form:input path="id"/></td>
             </tr>
 
-            <tr>
+            <tr class="row col-lg-12">
                 <td><label>Họ tên(ghi chữ in hoa) <span class="text-danger">(*)</span></label></td>
             </tr>
 
-            <tr>
-                <td><form:input path="name"/></td>
+            <tr class="row col-lg-12">
+                <td class="row col-lg-12"><form:input  path="name"/></td>
             </tr>
 
             <tr>
-                <td>Năm sinh <span class="text-danger">(*)</span></td>
-                <td>Giới tính <span class="text-danger">(*)</span></td>
-                <td>Quốc tịch <span class="text-danger">(*)</span></td>
+                <td class="row col-lg-2">Năm sinh <span class="text-danger">(*)</span></td>
+                <td class="row col-lg-2">Giới tính <span class="text-danger">(*)</span></td>
+                <td class="row col-lg-2">Quốc tịch <span class="text-danger">(*)</span></td>
             </tr>
 
-            <tr>
-                <td>
+            <tr class="row col-lg-12">
+                <td class="row col-lg-2">
                     <form:select path="birthYear" items="${birthdayList}"> </form:select>
                 </td>
-                <td>
+                <td class="row col-lg-2">
                     <form:select path="gender" items="${genderList}"> </form:select>
                 </td>
-                <td>
+                <td class="row col-lg-2">
                     <form:select path="national" items="${nalionalityList}"> </form:select>
                 </td>
             </tr>
 
-            <tr>
-                <td>
+            <tr class="row col-lg-12">
+                <td class="row col-lg-12">
                     <label for="idCard">Số hộ chiếu hoặc số CMND hoặc giấy thông hành hợp pháp khác
                         <span>(*)</span>
                     </label>
                 </td>
             </tr>
 
-            <tr>
-                <td><form:input path="idCard" id="idCrad" cssClass="col-lg-12"/></td>
+            <tr class="row col-lg-12">
+                <td class="row col-lg-12"><form:input path="idCard" id="idCrad" cssClass="col-lg-12"/></td>
             </tr>
 
             <tr>
@@ -72,17 +71,17 @@
                 <td><form:radiobuttons path="transportType" items="${transportType}"/></td>
             </tr>
 
-            <tr>
-                <td> Số hiệu phương tiện</td>
-                <td>Số ghế</td>
+            <tr class="row col-lg-6">
+                <td  class="row col-lg-6"> Số hiệu phương tiện</td>
+                <td  class="row col-lg-6">Số ghế</td>
             </tr>
 
-            <tr>
-                <td><form:input path="transportId"/></td>
-                <td><form:input path="seat"/></td>
+            <tr  class="row col-lg-6">
+                <td  class="row col-lg-6"><form:input path="transportId"/></td>
+                <td  class="row col-lg-6"><form:input path="seat"/></td>
             </tr>
             <tr>
-                <td>Ngày khởi hành <span class="text-danger">(*)</span></td>
+                <td class="">Ngày khởi hành <span class="text-danger">(*)</span></td>
                 <td>Ngày kết thúc <span class="text-danger">(*)</span></td>
             </tr>
 
@@ -129,20 +128,15 @@
             </tr>
 
             <tr>
-                <td>  <button type="submit" class="bg-primary" value="/create-info">Đăng kí</button></td>
+                <td>
+                    <button type="submit" class="bg-primary" value="/create-info">Đăng kí</button>
+                </td>
             </tr>
-
-
         </table>
     </form:form>
 </div>
 </body>
-<script src="/boostrap/jquery/jquery-3.5.1.min.js"></script>
-<script src="/boostrap/datatables/js/jquery.dataTables.min.js"></script>
-<script src="/boostrap/datatables/js/dataTables.bootstrap4.min.js"></script>
-
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
         crossorigin="anonymous"></script>
-<script src="/bootstrap413/js/bootstrap.bundle.min.js"></script>
 </html>
