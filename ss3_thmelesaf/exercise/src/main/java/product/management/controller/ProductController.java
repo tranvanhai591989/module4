@@ -17,7 +17,7 @@ import java.util.List;
 @RequestMapping("/product")
 public class ProductController {
     @Autowired
-   private ProductService productService;
+    private ProductService productService;
 
     @GetMapping("")
     public String index(Model model) {
@@ -31,6 +31,7 @@ public class ProductController {
         model.addAttribute("product", new Product());
         return "/create";
     }
+
     @PostMapping("/save")
     public String save(Product product, RedirectAttributes redirect) {
 
@@ -48,8 +49,8 @@ public class ProductController {
     @PostMapping("/update")
     public String update(Product product, RedirectAttributes redirect) {
         productService.update(product.getId(), product);
-        redirect.addFlashAttribute("success", "Update product "+
-                product.getName()    +" successfully!");
+        redirect.addFlashAttribute("success", "Update product " +
+                product.getName() + " successfully!");
         return "redirect:/product";
     }
 
@@ -63,14 +64,20 @@ public class ProductController {
     @PostMapping("/delete")
     public String delete(Product product, RedirectAttributes redirect) {
         productService.remove(product.getId());
-        redirect.addFlashAttribute("success", "Delete product "+
-                product.getName()    +" successfully!");
+        redirect.addFlashAttribute("success", "Delete product " +
+                product.getName() + " successfully!");
         return "redirect:/product";
     }
 
     @PostMapping("/search")
-    public String search( String name, Model model) {
+    public String search(String name, Model model) {
         model.addAttribute("productList", productService.findByName(name));
         return "/index";
+    }
+
+    @GetMapping("/{id}/view")
+    public String view(@PathVariable int id, Model model) {
+        model.addAttribute("product", productService.findById(id));
+        return "/view";
     }
 }
