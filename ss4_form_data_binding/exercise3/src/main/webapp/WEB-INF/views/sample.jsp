@@ -8,14 +8,16 @@
           integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
 <body>
+<div  class="container">
+    <h3 class="col-lg-12 text-center align-content-center">TỜ KHAI Y TẾ</h3>
+    <h5>ĐÂY LÀ TÀI LIỆU QUAN TRỌNG ANH/CHỊ SẼ GIÚP CƠ QUAN Y TẾ LIÊN LẠC KHI CẦN THIẾT ĐỂ PHÒNG CHỐNG DỊCH BỆNH TRUYỀN
+        NHIỄM</h5>
+    <span class="text-danger"> Khuyến cáo : Khai báo thông tin sai là vi phạm pháp luật Việt Nam và có thể bị xử lý hình sự</span>
+</div>
 
-<h3 class="col-lg-12 text-center align-content-center">TỜ KHAI Y TẾ</h3>
-<h5>ĐÂY LÀ TÀI LIỆU QUAN TRỌNG ANH/CHỊ SẼ GIÚP CƠ QUAN Y TẾ LIÊN LẠC KHI CẦN THIẾT ĐỂ PHÒNG CHỐNG DỊCH BỆNH TRUYỀN
-    NHIỄM</h5>
-<span class="text-danger"> Khuyến cáo : Khai báo thông tin sai là vi phạm pháp luật Việt Nam và có thể bị xử lý hình sự</span>
 
-<div>
-    <form:form action="/create-info" modelAttribute="info">
+<div class="container">
+    <form:form action="/create" modelAttribute="info">
         <table class="table-primary col-lg-12 row-bli">
             <tr class="row col-lg-12">
                 <td class="row col-lg-12"><label>Id <span class="text-danger"> (*)</span></label></td>
@@ -26,11 +28,11 @@
             </tr>
 
             <tr class="row col-lg-12">
-                <td><label>Họ tên(ghi chữ in hoa) <span class="text-danger">(*)</span></label></td>
+                <td><label>Họ tên(ghi chữ in hoa) </label> <span class="text-danger">(*)</span></td>
             </tr>
 
             <tr class="row col-lg-12">
-                <td class="row col-lg-12"><form:input  path="name"/></td>
+                <td class="row col-lg-12"><form:input path="name"/></td>
             </tr>
 
             <tr>
@@ -72,13 +74,13 @@
             </tr>
 
             <tr class="row col-lg-6">
-                <td  class="row col-lg-6"> Số hiệu phương tiện</td>
-                <td  class="row col-lg-6">Số ghế</td>
+                <td class="row col-lg-6"> Số hiệu phương tiện</td>
+                <td class="row col-lg-6">Số ghế</td>
             </tr>
 
-            <tr  class="row col-lg-6">
-                <td  class="row col-lg-6"><form:input path="transportId"/></td>
-                <td  class="row col-lg-6"><form:input path="seat"/></td>
+            <tr class="row col-lg-6">
+                <td class="row col-lg-6"><form:input path="transportId"/></td>
+                <td class="row col-lg-6"><form:input path="seat"/></td>
             </tr>
             <tr>
                 <td class="">Ngày khởi hành <span class="text-danger">(*)</span></td>
@@ -129,7 +131,7 @@
 
             <tr>
                 <td>
-                    <button type="submit" class="bg-primary" value="/create-info">Đăng kí</button>
+                    <button type="submit" class="bg-primary" value="/create">Đăng kí</button>
                 </td>
             </tr>
         </table>

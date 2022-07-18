@@ -57,6 +57,5 @@ public class MailRepositoryImpl implements MailRepository {
                 item.setSpamsFilter(mail.getSpamsFilter());
             }
         }
-
     }
 }

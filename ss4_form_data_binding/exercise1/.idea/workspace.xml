@@ -24,6 +24,7 @@
       <change beforePath="$PROJECT_DIR$/../../ss2_spring_controller/practice3/spring-time-zone-gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss2_spring_controller/practice3/spring-time-zone-gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../ss2_spring_controller/practice4(customer_management)/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss2_spring_controller/practice4(customer_management)/customer-management" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mail/repository/MailRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mail/repository/MailRepositoryImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../exercise3/.gradle/6.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../exercise3/.gradle/6.1.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../exercise3/.gradle/6.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../exercise3/.gradle/6.1.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../exercise3/.gradle/6.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../exercise3/.gradle/6.1.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -32,6 +33,7 @@
       <change beforePath="$PROJECT_DIR$/../exercise3/.gradle/6.1.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../exercise3/.gradle/6.1.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../exercise3/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../exercise3/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../exercise3/build/classes/java/main/exercise3/controller/InfoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../exercise3/build/classes/java/main/exercise3/controller/InfoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../exercise3/build/classes/java/main/exercise3/repository/InfoRepositoryImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../exercise3/build/classes/java/main/exercise3/repository/InfoRepositoryImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../exercise3/build/libs/exercise3-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/../exercise3/build/libs/exercise3-1.0-SNAPSHOT.war" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../exercise3/src/main/java/exercise3/controller/InfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../exercise3/src/main/java/exercise3/controller/InfoController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../exercise3/src/main/java/exercise3/repository/InfoRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../exercise3/src/main/java/exercise3/repository/InfoRepositoryImpl.java" afterDir="false" />
@@ -207,7 +209,9 @@
       <workItem from="1657885580048" duration="939000" />
       <workItem from="1657895804128" duration="624000" />
       <workItem from="1657936428054" duration="5618000" />
-      <workItem from="1657980428697" duration="7556000" />
+      <workItem from="1657980428697" duration="8286000" />
+      <workItem from="1658037174249" duration="14000" />
+      <workItem from="1658050646396" duration="941000" />
     </task>
     <servers />
   </component>
@@ -263,10 +267,10 @@
       <screen x="0" y="0" width="1536" height="816" />
     </state>
     <state x="516" y="243" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1536.816@0.0.1536.816" timestamp="1657848229074" />
-    <state x="549" y="163" key="FileChooserDialogImpl" timestamp="1657876323956">
+    <state x="549" y="163" key="FileChooserDialogImpl" timestamp="1658050970110">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state x="549" y="163" key="FileChooserDialogImpl/0.0.1536.816@0.0.1536.816" timestamp="1657876323956" />
+    <state x="549" y="163" key="FileChooserDialogImpl/0.0.1536.816@0.0.1536.816" timestamp="1658050970110" />
     <state width="421" height="282" key="GridCell.Tab.0.bottom" timestamp="1657989151098">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
@@ -327,10 +331,10 @@
       <screen x="0" y="0" width="1536" height="816" />
     </state>
     <state x="93" y="93" width="1350" height="630" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1536.816@0.0.1536.816" timestamp="1657879512901" />
-    <state x="209" y="19" key="new project wizard" timestamp="1657856497251">
+    <state x="18" y="22" width="726" height="677" key="new project wizard" timestamp="1658050992375">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state x="209" y="19" key="new project wizard/0.0.1536.816@0.0.1536.816" timestamp="1657856497251" />
+    <state x="18" y="22" width="726" height="677" key="new project wizard/0.0.1536.816@0.0.1536.816" timestamp="1658050992375" />
     <state x="425" y="185" width="672" height="677" key="run.anything.popup" timestamp="1657880002360">
       <screen x="0" y="0" width="1536" height="816" />
     </state>

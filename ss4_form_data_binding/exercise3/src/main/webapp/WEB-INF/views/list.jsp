@@ -9,7 +9,7 @@
           integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
 <body>
-<div>
+<div class="container">
     <h1>${message}</h1>
     <table class="table-primary table-responsive col-lg-12">
         <thead class="thead-inverse col-lg-12">
@@ -52,11 +52,7 @@
                 <td class="table-primary">${item.outYear}</td>
                 <td class="table-primary">${item.other}</td>
                 <td>
-
-                    <a class="btn btn-primary" href="/update?id=${item.id}">
-                        <button value="update" class="bg-primary">update</button>
-                    </a>
-
+                    <a class="btn btn-primary" href="/update?id=${item.id}"> Update </a>
                 </td>
 
             </tr>

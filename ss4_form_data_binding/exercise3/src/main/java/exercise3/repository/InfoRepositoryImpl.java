@@ -12,7 +12,7 @@ public class InfoRepositoryImpl implements InfoRepository {
     String[] year = new String[]{"1989", "1990", "...", "2022"};
     String[] gender = new String[]{"Male", "Female", "Other"};
     String[] nationality = new String[]{"Viet Nam", "Lao", "Campuchia"};
-    String[] transportType = new String[]{"Phane", "Car", "Boat", "Other"};
+    String[] transportType = new String[]{"Plane", "Car", "Boat", "Other"};
     String[] inputDay = new String[]{"1", "2", "3", "4", "...", "30"};
     String[] outDay = new String[]{"1", "2", "3", "4", "...", "30"};
     String[] inputMonth = new String[]{"1", "2", "3", "4", "...", "12"};
@@ -37,9 +37,9 @@ public class InfoRepositoryImpl implements InfoRepository {
 
     @Override
     public Info findId(String id) {
-        for (Info info:infoList) {
-            if (id.equals(info.getId())){
-               return info;
+        for (Info info : infoList) {
+            if (id.equals(info.getId())) {
+                return info;
             }
         }
         return null;
@@ -48,9 +48,8 @@ public class InfoRepositoryImpl implements InfoRepository {
 
     @Override
     public void update(Info info) {
-        for (Info item :infoList) {
-            if (info.getId().equals(item.getId())){
-
+        for (Info item : infoList) {
+            if (info.getId().equals(item.getId())) {
                 item.setName(info.getName());
                 item.setBirthYear(info.getBirthYear());
                 item.setGender(info.getGender());
@@ -66,7 +65,6 @@ public class InfoRepositoryImpl implements InfoRepository {
                 item.setOutMonth(info.getOutMonth());
                 item.setOutYear(info.getOutYear());
                 item.setOther(info.getOther());
-
             }
         }
 
