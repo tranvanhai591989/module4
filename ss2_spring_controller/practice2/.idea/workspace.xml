@@ -20,53 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7eb7477d-bacb-4a58-9e1e-977ebbb6bbdd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../practice1/.idea/$CACHE_FILE$" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../practice1/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../practice1/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../practice1/.idea/dictionaries" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../practice1/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../practice1/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../practice1/.idea/practice1.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../practice1/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../practice1/data/.idea/$CACHE_FILE$" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../practice1/data/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../practice1/data/.idea/artifacts/email_validate_maven_war.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../practice1/data/.idea/artifacts/email_validate_maven_war_exploded.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../practice1/data/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../practice1/data/.idea/data.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../practice1/data/.idea/dictionaries" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../practice1/data/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../practice1/data/.idea/libraries/Maven__javax_servlet_servlet_api_2_5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../practice1/data/.idea/libraries/Maven__org_springframework_spring_aop_5_3_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../practice1/data/.idea/libraries/Maven__org_springframework_spring_beans_5_3_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../practice1/data/.idea/libraries/Maven__org_springframework_spring_context_5_3_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../practice1/data/.idea/libraries/Maven__org_springframework_spring_core_5_3_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../practice1/data/.idea/libraries/Maven__org_springframework_spring_expression_5_3_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../practice1/data/.idea/libraries/Maven__org_springframework_spring_jcl_5_3_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../practice1/data/.idea/libraries/Maven__org_springframework_spring_web_5_3_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../practice1/data/.idea/libraries/Maven__org_springframework_spring_webmvc_5_3_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../practice1/data/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../practice1/data/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../practice1/data/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../practice1/data/spring-email-validate-maven" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../practice1/practice1.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/$CACHE_FILE$" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules/practice2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/practice2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/applicationContext.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/dispatcher-servlet.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../ss1_springMVC/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss1_springMVC/customer-management" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ss1_springMVC/exercise2/src/main/java/dictionary/model/Dictionary.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ss1_springMVC/exercise2/src/main/java/dictionary/repository/DictionaryRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss1_springMVC/exercise2/src/main/java/dictionary/repository/DictionaryRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ss1_springMVC/exercise2/src/main/java/dictionary/service/DictionaryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss1_springMVC/exercise2/src/main/java/dictionary/service/DictionaryServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ss1_springMVC/exercise2/src/main/webapp/WEB-INF/views/result.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practice3/spring-time-zone-gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../practice3/spring-time-zone-gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practice4(customer_management)/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../practice4(customer_management)/customer-management" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss4_form_data_binding/practicce3/spring-upload-file" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss4_form_data_binding/practicce3/spring-upload-file" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss4_form_data_binding/practice2/spring-user-model" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss4_form_data_binding/practice2/spring-user-model" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss5_orm/practice/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss5_orm/practice/customer-management" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +65,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../practice3/spring-time-zone-gradle" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -212,6 +171,7 @@
       <updated>1657723382710</updated>
       <workItem from="1657723387806" duration="624000" />
       <workItem from="1657759535490" duration="2005000" />
+      <workItem from="1658217227108" duration="6000" />
     </task>
     <servers />
   </component>
