@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"\
-          rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-</head >
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" \
+          rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+          crossorigin="anonymous">
+</head>
 <body>
 <h3>Products Management</h3>
 <p>
@@ -25,9 +26,9 @@
     </form>
 </div>
 
-<table id="product" class="table table-hover">
+<table id="product" class="table table-striped table-primary">
     <thead>
-    <tr>
+    <tr class="table-info">
         <th>Id</th>
         <th>Name</th>
         <th>Editor</th>
@@ -41,36 +42,30 @@
     <tbody>
     <tr th:each="row : ${musicList}">
 
-          <td th:text="${row.id}"></td>
+        <td th:text="${row.id}"></td>
         <td th:text="${row.name}"></td>
         <td th:text="${row.editor}"></td>
         <td th:text="${row.type}"></td>
         <td><a th:text="${row.link}" th:href="${row.link}"></a></td>
         <td><a th:href="@{/music/{id}/edit(id=${row.id})}">edit</a></td>
 
-        <td>
-
+        <td>          
+            <!--            <form th:action="@{/music/Delete}" th:object="${row}" method="post">-->
+            <!--                                    <input type="hidden" name="id" th:value="${row.id}">-->
+            <!--                                    <input type="hidden" name="name" th:value="${row.name}">-->
+            <!--                                    <input type="hidden" name="telephone" th:value="${row.editor}">-->
+            <!--                                    <input type="hidden" name="salary" th:value="${row.type}">-->
+                                
+            <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                    th:data-bs-target="'#music' + ${row.id}">
+                Delete
+            </button>
                            
-            <form th:action="@{/music/Delete}" th:object="${row}" method="post">
-                                    <input type="hidden" name="id" th:value="${row.id}">
-                                    <input type="hidden" name="name" th:value="${row.name}">
-                                    <input type="hidden" name="telephone" th:value="${row.editor}">
-                                    <input type="hidden" name="salary" th:value="${row.type}">
-                                    
-                <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" th:data-bs-target="'#music' + ${row.id}">
-                    Delete
-                </button>
-                               
-            </form>
-                        
-
-
-
-            <!-- Button trigger modal -->
-
+            <!--            </form>-->
 
             <!-- Modal -->
-            <div class="modal fade" th:id="music + ${row.id}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal fade" th:id="music + ${row.id}" data-bs-backdrop="static" data-bs-keyboard="false"
+                 tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -78,15 +73,10 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            Do you want delete product <span class="text-info" th:text="${row.name}"></span> with id = <span class="text-info" th:text="${row.id}"></span>
+                            Do you want delete product <span class="text-info" th:text="${row.name}"></span> with id =
+                            <span class="text-info" th:text="${row.id}"></span>
                         </div>
                         <div class="modal-footer">
-
-
-
-
-
-
 
                             <a th:href="@{/music/delete(id=${row.id})}" class="btn btn-outline-success">Delete</a>
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -104,5 +94,6 @@
 <footer></footer>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 </html>

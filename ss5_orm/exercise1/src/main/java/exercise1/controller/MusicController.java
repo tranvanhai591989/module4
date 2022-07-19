@@ -1,7 +1,6 @@
 package exercise1.controller;
 
 import exercise1.model.Music;
-import exercise1.repository.MusicRepository;
 import exercise1.service.MusicService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,12 +15,14 @@ import java.util.List;
 public class MusicController {
     @Autowired
     MusicService musicService;
+
     @GetMapping("")
-    public  String index(Model model){
+    public String index(Model model) {
         List<Music> musicList = musicService.findAll();
         model.addAttribute("musicList", musicList);
         return "/index";
     }
+
     @GetMapping("/create")
     public String create(Model model) {
         model.addAttribute("music", new Music());
@@ -35,27 +36,26 @@ public class MusicController {
         return "redirect:/music";
     }
 
-//    @GetMapping("/{id}/edit")
-//    public String edit(@PathVariable int id, Model model) {
-//        model.addAttribute("music", musicService.findById(id));
-//        return "/edit";
-//    }
-//
-//    @PostMapping("/update")
-//    public String update(Music music, RedirectAttributes redirect) {
-//        musicService.update(music.getId(), music);
-//        redirect.addFlashAttribute("success", "Update product " +
-//                music.getName() + " successfully!");
-//        return "redirect:/music";
-//    }
-
-    @GetMapping("/delete/{id}")
-    public String delete(@PathVariable("id") int id, RedirectAttributes redirect) {
-        musicService.remove(id);
-        redirect.addFlashAttribute("success", "Delete successfully!");
-        return "redirect:/index";
+    @GetMapping("/{id}/edit")
+    public String edit(@PathVariable int id, Model model) {
+        model.addAttribute("music", musicService.findById(id));
+        return "/edit";
     }
 
+    @PostMapping("/update")
+    public String update(Music music, RedirectAttributes redirect) {
+        musicService.update(music.getId(), music);
+        redirect.addFlashAttribute("success", "Update product " +
+                music.getName() + " successfully!");
+        return "redirect:/music";
+    }
+
+    @GetMapping("/delete")
+    public String delete(@RequestParam int id, RedirectAttributes redirect) {
+        musicService.remove(id);
+        redirect.addFlashAttribute("success", "Delete successfully!");
+        return "redirect:/music";
+    }
 
 
 //    @PostMapping("/search")

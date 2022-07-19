@@ -12,6 +12,7 @@ public interface MusicRepository {
     void remove(int id);
 
     void update(int id, Music music);
+
     Music findById(int id);
 
 }

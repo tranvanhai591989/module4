@@ -3,24 +3,26 @@ package product.management.repository;
 import org.springframework.stereotype.Repository;
 import product.management.model.Product;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
+import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 
 @Repository
+@Transactional
 public class ProductRepositoryImpl implements ProductRepository {
 
-    private static List<Product> products = new ArrayList<>();
 
-    static {
-
-        products.add(new Product(1, "Table", 15, 30, "hinh tron", "Ha Tinh"));
-        products.add(new Product(2, "Phone", 23, 9, "hinh tam giac", "Quang Nam"));
-        products.add(new Product(3, "Machine", 43, 99, "hinh vuong", "Da Nang"));
-    }
+    @PersistenceContext
+    private EntityManager entityManager;
 
     @Override
     public List<Product> findAll() {
-        return products;
+        TypedQuery<Product> query = entityManager.createQuery(
+                "select m from product as m", Product.class);
+        return query.getResultList();
     }
 
     @Override
@@ -30,47 +32,26 @@ public class ProductRepositoryImpl implements ProductRepository {
 
     @Override
     public Product findById(int id) {
-        Product product = null;
-        for (Product item : products) {
-            if (item.getId() == id) {
-                product = item;
-            }
-        }
-        return product;
+        return entityManager.createQuery(
+                "select p from Product as p where p.id=:id ", Product.class).
+                setParameter("id", id).getSingleResult();
     }
 
     @Override
     public void update(int id, Product product) {
-        for (int i = 0; i < products.size(); i++) {
-            if (products.get(i).getId() == id) {
-                products.get(i).setId(product.getId());
-                products.get(i).setName(product.getName());
-                products.get(i).setPrice(product.getPrice());
-                products.get(i).setMoment(product.getMoment());
-                products.get(i).setDetail(product.getDetail());
-                products.get(i).setProducer(product.getProducer());
-            }
-        }
+      entityManager.merge(product);
     }
 
     @Override
     public void remove(int id) {
-        for (int i = 0; i < products.size(); i++) {
-            if (products.get(i).getId() == id) {
-                products.remove(products.get(i));
-            }
-        }
-//        productList2.removeIf(item -> item.getId() == id);
+        entityManager.createQuery("delete from Product as p where p.id=:id ", Product.class).setParameter("id", id).getSingleResult();
+
     }
+//        productList2.removeIf(item -> item.getId() == id);
+
 
     @Override
     public List<Product> findByName(String name) {
-        List<Product> productList1 = new ArrayList<>();
-        for (Product item : products) {
-            if (item.getName().contains(name)) {
-                productList1.add(item);
-            }
-        }
-        return productList1;
+        entityManager.find(Music,i)
     }
 }
