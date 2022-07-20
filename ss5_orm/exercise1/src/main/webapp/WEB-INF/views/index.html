@@ -6,7 +6,7 @@
           crossorigin="anonymous">
 </head>
 <body>
-<h3>Products Management</h3>
+<h3>Music Management</h3>
 <p>
     <a th:href="@{/music/create}">
         Add new file
@@ -36,7 +36,7 @@
         <th>Link</th>
         <th>Edit</th>
         <th>Delete</th>
-        <th>View</th>
+<!--        <th>View</th>-->
     </tr>
     </thead>
     <tbody>
@@ -85,7 +85,7 @@
                 </div>
             </div>
         </td>
-        <td><a th:href="@{/music/{id}/view(id=${row.id})}">view</a></td>
+<!--        <td><a th:href="@{/music/{id}/view(id=${row.id})}">view</a></td>-->
     </tr>
     </tbody>
 </table>

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="/layout :: head"></head>
+<head ></head>
 <body>
 <h3>Add Product</h3>
 <p>
@@ -9,24 +9,24 @@
     </a>
 </p>
 <div id="form">
-    <form th:action="@{/product/save}" th:object="${product}"
+    <form th:action="@{/product/save}" th:object="${products}"
           method="POST" novalidate="novalidate">
         <div>
-            <label>Id</label>
-            <input type="text" th:field="*{id}" pattern="[0-9]"/>
+<!--            <label>Id</label>-->
+            <input type="hidden" th:field="*{id}"/>
         </div>
 
         <div>
             <label>Name</label>
-            <input type="text" th:field="*{name}" pattern="[A-Z]+[a-z]?[ ]+$"/>
+            <input type="text" th:field="*{name}"/>
         </div>
         <div>
             <label>Price</label>
-            <input type="text" th:field="*{price}" pattern="[0-9]?"/>
+            <input type="text" th:field="*{price}" />
         </div>
         <div>
             <label>Moment</label>
-            <input type="text" th:field="*{moment}" pattern="[0-9]?"/>
+            <input type="text" th:field="*{moment}" />
         </div>
         <div>
             <label>Detail</label>
@@ -34,11 +34,11 @@
         </div>
         <div>
             <label>Producer</label>
-            <input type="text" th:field="*{producer}" pattern="^([A-Za-z]+[,.]?[ ]?|[A-Za-z]+['-]?)+$"/>
+            <input type="text" th:field="*{producer}" />
         </div>
         <input type="submit" value="Save"/>
     </form>
 </div>
-<footer th:replace="/layout :: footer"></footer>
+<footer></footer>
 </body>
 </html>

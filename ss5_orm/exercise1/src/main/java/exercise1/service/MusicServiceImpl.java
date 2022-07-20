@@ -37,4 +37,9 @@ public class MusicServiceImpl implements MusicService {
     public Music findById(int id) {
         return musicRepository.findById(id);
     }
+
+    @Override
+    public List<Music> findByName(String name) {
+        return musicRepository.findByName("%" + name + "%");
+    }
 }

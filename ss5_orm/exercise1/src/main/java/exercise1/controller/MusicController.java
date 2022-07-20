@@ -58,11 +58,11 @@ public class MusicController {
     }
 
 
-//    @PostMapping("/search")
-//    public String search(String name, Model model) {
-//        model.addAttribute("productList", musicService.f(name));
-//        return "/index";
-//    }
+    @PostMapping("/search")
+    public String search(String name, Model model) {
+        model.addAttribute("musicList", musicService.findByName(name));
+        return "/index";
+    }
 
     @GetMapping("/{id}/view")
     public String view(@PathVariable int id, Model model) {

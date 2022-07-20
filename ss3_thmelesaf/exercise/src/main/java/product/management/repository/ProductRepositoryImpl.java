@@ -1,5 +1,6 @@
 package product.management.repository;
 
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.stereotype.Repository;
 import product.management.model.Product;
 
@@ -7,7 +8,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 import javax.transaction.Transactional;
-import java.util.ArrayList;
 import java.util.List;
 
 @Repository
@@ -21,14 +21,30 @@ public class ProductRepositoryImpl implements ProductRepository {
     @Override
     public List<Product> findAll() {
         TypedQuery<Product> query = entityManager.createQuery(
-                "select m from product as m", Product.class);
+                "select p from Product as p ", Product.class);
         return query.getResultList();
     }
 
     @Override
+    @Modifying
     public void save(Product product) {
-
+        entityManager.merge(product);
     }
+
+
+
+    @Override
+    public void update(int id, Product product) {
+        entityManager.merge(product);
+    }
+
+    @Override
+    @Modifying
+    public void remove(int id) {
+        Product product = findById(id);
+        entityManager.remove(product);
+    }
+//        productList2.removeIf(item -> item.getId() == id);
 
     @Override
     public Product findById(int id) {
@@ -36,22 +52,11 @@ public class ProductRepositoryImpl implements ProductRepository {
                 "select p from Product as p where p.id=:id ", Product.class).
                 setParameter("id", id).getSingleResult();
     }
-
-    @Override
-    public void update(int id, Product product) {
-      entityManager.merge(product);
-    }
-
-    @Override
-    public void remove(int id) {
-        entityManager.createQuery("delete from Product as p where p.id=:id ", Product.class).setParameter("id", id).getSingleResult();
-
-    }
-//        productList2.removeIf(item -> item.getId() == id);
-
-
     @Override
     public List<Product> findByName(String name) {
-        entityManager.find(Music,i)
+        TypedQuery<Product> query = entityManager.createQuery(
+                "select p from Product as p where p.name like ?1", Product.class).setParameter(1, "%" + name + "%");
+
+        return query.getResultList();
     }
 }

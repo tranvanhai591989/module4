@@ -4,26 +4,26 @@
 <body>
 <h3>View Customer</h3>
 <p>
-    <a th:href="@{/product}">
+    <a th:href="@{/products}">
         Back to product list
     </a>
 </p>
 <div id="detail">
     <div class="ProductDetail">
         <label>Id:</label>
-        <label th:text="${product.id}"></label>
+        <label th:text="${products.id}"></label>
     </div>
     <div class="ProductDetail">
         <label>Name:</label>
-        <label th:text="${product.name}"></label>
+        <label th:text="${products.name}"></label>
     </div>
     <div class="ProductDetail">
         <label>Price :</label>
-        <label th:text="${product.price}"></label>
+        <label th:text="${products.price}"></label>
     </div>
     <div class="ProductDetail">
         <label>Moment :</label>
-        <label th:text="${product.moment}"></label>
+        <label th:text="${products.moment}"></label>
     </div>
 </div>
 <footer th:replace="/layout :: footer"></footer>

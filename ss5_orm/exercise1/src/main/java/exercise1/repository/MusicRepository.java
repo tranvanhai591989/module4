@@ -15,4 +15,5 @@ public interface MusicRepository {
 
     Music findById(int id);
 
+    List<Music> findByName(String name);
 }

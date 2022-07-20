@@ -33,7 +33,9 @@ public class MusicRepositoryImpl implements MusicRepository {
     @Override
     @Modifying
     public void remove(int id) {
-        entityManager.createQuery("delete from Music as m where m.id=:id ", Music.class).setParameter("id", id).getSingleResult();
+        Music music = findById(id);
+        entityManager.remove(music);
+
     }
 
     @Override
@@ -48,4 +50,13 @@ public class MusicRepositoryImpl implements MusicRepository {
                 "select m from Music as m where m.id=:id ", Music.class).
                 setParameter("id", id).getSingleResult();
     }
+
+    @Override
+    public List<Music> findByName(String name) {
+        TypedQuery<Music> query = entityManager.createQuery(
+                "select m from Music as m where m.name like ?1", Music.class);
+        return query.setParameter(1, name).getResultList();
+    }
+
+
 }
