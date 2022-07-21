@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -27,21 +30,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e1271e34-d474-4756-8a09-dea83d0ba51e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss3_thmelesaf/exercise/.idea/jpa-buddy.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/customer-management/src/main/webapp/WEB-INF/applicationContext.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/customer-management/src/main/webapp/WEB-INF/dispatcher-servlet.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/customer-management/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss7_data_repository/exercise2/exercise2/src/main/java/com/example/exercise2/controller/CustomerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss7_data_repository/exercise2/exercise2/src/main/java/com/example/exercise2/model/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss7_data_repository/exercise2/exercise2/src/main/java/com/example/exercise2/repository/CustomerRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss7_data_repository/exercise2/exercise2/src/main/java/com/example/exercise2/service/CustomerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss7_data_repository/exercise2/exercise2/src/main/java/com/example/exercise2/service/impl/SimpleCustomerServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss7_data_repository/exercise2/exercise2/src/main/resources/templates/create.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss7_data_repository/exercise2/exercise2/src/main/resources/templates/edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss7_data_repository/exercise2/exercise2/src/main/resources/templates/info.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss7_data_repository/exercise2/exercise2/src/main/resources/templates/list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../ss1_springMVC/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss1_springMVC/customer-management" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ss2_spring_controller/practice2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss2_spring_controller/practice2/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../ss2_spring_controller/practice3/spring-time-zone-gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss2_spring_controller/practice3/spring-time-zone-gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../ss2_spring_controller/practice4(customer_management)/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss2_spring_controller/practice4(customer_management)/customer-management" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss3_thmelesaf/exercise/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss3_thmelesaf/exercise/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../ss4_form_data_binding/practicce3/spring-upload-file" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss4_form_data_binding/practicce3/spring-upload-file" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../ss4_form_data_binding/practice2/spring-user-model" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss4_form_data_binding/practice2/spring-user-model" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../exercise1/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../exercise1/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/customer-management" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/customer-management/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/customer-management/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/customer-management/src/main/webapp/WEB-INF/templates/customers/info.html" beforeDir="false" afterPath="$PROJECT_DIR$/customer-management/src/main/webapp/WEB-INF/templates/customers/info.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss6_spring_boot/exercise_blog/src/main/java/codegym/hai/exercise_blog/controller/BlogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss6_spring_boot/exercise_blog/src/main/java/codegym/hai/exercise_blog/controller/BlogController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,15 +94,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="web.server" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/module4/ss6_spring_boot/exercise_blog",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "spring.configuration.checksum": "03910946b0e51274593560f681c12a1c"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -100,11 +123,12 @@
       <updated>1658191415416</updated>
       <workItem from="1658191420039" duration="17000" />
       <workItem from="1658218012627" duration="117000" />
+      <workItem from="1658407042417" duration="812000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -128,11 +152,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="549" y="163" key="FileChooserDialogImpl" timestamp="1658191435082">
-      <screen x="0" y="0" width="1536" height="816" />
-    </state>
-    <state x="549" y="163" key="FileChooserDialogImpl/0.0.1536.816@0.0.1536.816" timestamp="1658191435082" />
   </component>
 </project>

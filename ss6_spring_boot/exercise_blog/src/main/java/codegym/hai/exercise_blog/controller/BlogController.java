@@ -19,7 +19,7 @@ import java.util.Optional;
 @RequestMapping("/blog")
 public class BlogController {
     @Autowired
-    private  BlogService blogService;
+    private BlogService blogService;
 
     @Autowired
     private TypeService typeService;
@@ -27,15 +27,15 @@ public class BlogController {
     @GetMapping("")
     public String index(@PageableDefault(value = 1) Pageable pageable, Model model) {
 
-        model.addAttribute("blogList",  blogService.findAll(pageable));
-        List<Type> typeList=typeService.findAll();
+        model.addAttribute("blogList", blogService.findAll(pageable));
+        List<Type> typeList = typeService.findAll();
         model.addAttribute("typeList", typeList);
         return "/index";
     }
 
     @GetMapping("/create")
     public String create(Model model) {
-        List<Type> typeList=typeService.findAll();
+        List<Type> typeList = typeService.findAll();
         model.addAttribute("typeList", typeList);
         model.addAttribute("blog", new Blog());
         return "create";
