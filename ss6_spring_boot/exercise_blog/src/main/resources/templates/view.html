@@ -6,7 +6,7 @@
           crossorigin="anonymous">
 </head>
 <body>
-<h3>Creat Blog</h3>
+<h3>Blog Detail</h3>
 <p>
     <a th:href="@{/blog}">
         Back to product list
@@ -16,30 +16,26 @@
     <form th:action="@{/blog/save}" th:object="${blog} "
           method="POST" novalidate="novalidate">
         <div>
-            <!--            <label>Id</label>-->
-            <input type="hidden" th:field="*{id}"/>
+                        <label>Id</label>
+            <td th:text="${blog.id}"></td>
         </div>
-
         <div>
             <label>Content</label>
-            <input type="text" th:field="*{content}" pattern="[A-Z]+[a-z]?[ ]+$"/>
+            <td th:text="${blog.content}"></td>
         </div>
         <div>
             <label>Type</label>
-<!--            <input type="text" th:field="*{type}" pattern="[0-9]?"/>-->
-            <select th:field="*{type}">
-                <option th:each=" item : ${typeList}" th:value="${item.idType}" th:text = "${item.getName()}"> </option>
-            </select>
+            <td th:text="${blog.type}"></td>
         </div>
-        <div>
+        <div>a
             <label>Commit Date</label>
-            <input type="date" th:field="*{commit}" pattern="[0-9]?"/>
+            <td th:text="${blog.commit}"></td>
         </div>
-        <input class="btn btn-primary" type="submit" value="Save"/>
+        <td><a th:href="@{/blog/{id}/edit(id=${blog.id})}">Edit</a></td>
+
     </form>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
 </body>
-</html>

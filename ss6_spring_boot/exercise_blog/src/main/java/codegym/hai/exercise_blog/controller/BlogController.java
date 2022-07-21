@@ -1,8 +1,12 @@
 package codegym.hai.exercise_blog.controller;
 
 import codegym.hai.exercise_blog.model.Blog;
+import codegym.hai.exercise_blog.model.Type;
 import codegym.hai.exercise_blog.service.BlogService;
+import codegym.hai.exercise_blog.service.TypeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -15,17 +19,24 @@ import java.util.Optional;
 @RequestMapping("/blog")
 public class BlogController {
     @Autowired
-    BlogService blogService;
+    private  BlogService blogService;
+
+    @Autowired
+    private TypeService typeService;
 
     @GetMapping("")
-    public String index(Model model) {
-        List<Blog> blogList = blogService.findAll();
-        model.addAttribute("blogList", blogList);
+    public String index(@PageableDefault(value = 1) Pageable pageable, Model model) {
+
+        model.addAttribute("blogList",  blogService.findAll(pageable));
+        List<Type> typeList=typeService.findAll();
+        model.addAttribute("typeList", typeList);
         return "/index";
     }
 
     @GetMapping("/create")
     public String create(Model model) {
+        List<Type> typeList=typeService.findAll();
+        model.addAttribute("typeList", typeList);
         model.addAttribute("blog", new Blog());
         return "create";
     }
@@ -47,6 +58,7 @@ public class BlogController {
     @PostMapping("/update")
     public String update(@ModelAttribute("blog") Blog blog, RedirectAttributes redirect) {
         blogService.update(blog);
+
         redirect.addFlashAttribute("success", "Update product " +
                 blog.getId() + " successfully!");
         return "redirect:/blog";

@@ -8,14 +8,22 @@ public class Blog {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private  String content;
-    private  String type;
+
+
+
+    @ManyToOne
+    @JoinColumn(name = "idType")
+
+    private  Type type;
+
+
     @Column(columnDefinition = "DATE")
     private String commit;
 
     public Blog() {
     }
 
-    public Blog(int id, String content, String type, String commit) {
+    public Blog(int id, String content, Type type, String commit) {
         this.id = id;
         this.content = content;
         this.type = type;
@@ -38,11 +46,12 @@ public class Blog {
         this.content = content;
     }
 
-    public String getType() {
+
+    public Type getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(Type type) {
         this.type = type;
     }
 

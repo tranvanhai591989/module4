@@ -1,6 +1,9 @@
 package codegym.hai.exercise_blog.service;
 
 import codegym.hai.exercise_blog.model.Blog;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
@@ -17,5 +20,5 @@ public interface BlogService {
     Optional<Blog> findById(Integer id);
 
     List<Blog> searchByName(String name);
-
+    Page<Blog> findAll(Pageable pageable);
 }

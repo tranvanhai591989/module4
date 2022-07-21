@@ -1,8 +1,11 @@
 package codegym.hai.exercise_blog.service;
 
 import codegym.hai.exercise_blog.model.Blog;
+import codegym.hai.exercise_blog.model.Type;
 import codegym.hai.exercise_blog.repository.BlogRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -31,7 +34,7 @@ public class BlogServiceImpl implements BlogService {
 
     @Override
     public void update(Blog blog) {
-        blogRepository.update(blog.getContent(),blog.getType(),blog.getCommit(),blog.getId());
+        blogRepository.update(blog.getContent(), blog.getType().getIdType(), blog.getCommit(), blog.getId());
 
     }
 
@@ -42,6 +45,11 @@ public class BlogServiceImpl implements BlogService {
 
     @Override
     public List<Blog> searchByName(String name) {
-        return blogRepository.searchByName("%"+name+"%");
+        return blogRepository.searchByName("%" + name + "%");
+    }
+
+    @Override
+    public Page<Blog> findAll(Pageable pageable) {
+        return blogRepository.findAll(pageable);
     }
 }
