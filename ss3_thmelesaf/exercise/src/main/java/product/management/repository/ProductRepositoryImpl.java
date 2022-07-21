@@ -27,22 +27,22 @@ public class ProductRepositoryImpl implements ProductRepository {
 
     @Override
     @Modifying
-    public void save(Product product) {
-        entityManager.merge(product);
+    public void save(Product products) {
+        entityManager.persist(products);
     }
 
 
 
     @Override
-    public void update(int id, Product product) {
-        entityManager.merge(product);
+    public void update(int id, Product products) {
+        entityManager.merge(products);
     }
 
     @Override
     @Modifying
     public void remove(int id) {
-        Product product = findById(id);
-        entityManager.remove(product);
+        Product products = findById(id);
+        entityManager.remove(products);
     }
 //        productList2.removeIf(item -> item.getId() == id);
 

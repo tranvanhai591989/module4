@@ -1,18 +1,15 @@
 package codegym.hai.exercise_blog.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Blog {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private  String content;
     private  String type;
-    @Column(name = "commit", columnDefinition = "DATE")
+    @Column(columnDefinition = "DATE")
     private String commit;
 
     public Blog() {

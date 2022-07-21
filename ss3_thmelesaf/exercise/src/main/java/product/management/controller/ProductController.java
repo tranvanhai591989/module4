@@ -25,12 +25,12 @@ public class ProductController {
 
     @GetMapping("/create")
     public String create(Model model) {
-        model.addAttribute("products", new Product());
+        model.addAttribute("product", new Product());
         return "/create";
     }
 
     @PostMapping("/save")
-    public String save(Product product, RedirectAttributes redirect) {
+    public String save(@ModelAttribute Product product, RedirectAttributes redirect) {
         productService.save(product);
         redirect.addFlashAttribute("success", "Create product successfully!");
         return "redirect:/product";
@@ -38,7 +38,7 @@ public class ProductController {
 
     @GetMapping("/{id}/edit")
     public String edit(@PathVariable int id, Model model) {
-        model.addAttribute("products", productService.findById(id));
+        model.addAttribute("product", productService.findById(id));
         return "/edit";
     }
 
@@ -65,7 +65,7 @@ public class ProductController {
 
     @GetMapping("/{id}/view")
     public String view(@PathVariable int id, Model model) {
-        model.addAttribute("products", productService.findById(id));
+        model.addAttribute("product", productService.findById(id));
         return "/view";
     }
 }

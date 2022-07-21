@@ -57,14 +57,14 @@
             <!--                                    <input type="hidden" name="salary" th:value="${row.type}">-->
                                 
             <button type="button" class="btn btn-danger" data-bs-toggle="modal"
-                    th:data-bs-target="'#music' + ${row.id}">
+                    th:data-bs-target="'#a' + ${row.id}">
                 Delete
             </button>
                            
             <!--            </form>-->
 
             <!-- Modal -->
-            <div class="modal fade" th:id="music + ${row.id}" data-bs-backdrop="static" data-bs-keyboard="false"
+            <div class="modal fade" th:id="a + ${row.id}" data-bs-backdrop="static" data-bs-keyboard="false"
                  tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">

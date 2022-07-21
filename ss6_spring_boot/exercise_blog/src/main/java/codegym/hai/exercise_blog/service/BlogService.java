@@ -3,6 +3,7 @@ package codegym.hai.exercise_blog.service;
 import codegym.hai.exercise_blog.model.Blog;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface BlogService {
     List<Blog> findAll();
@@ -13,7 +14,7 @@ public interface BlogService {
 
     void update(Blog blog);
 
-    Blog findById(Integer id);
+    Optional<Blog> findById(Integer id);
 
     List<Blog> searchByName(String name);
 

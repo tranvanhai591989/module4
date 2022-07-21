@@ -30,7 +30,7 @@ public class MusicController {
     }
 
     @PostMapping("/save")
-    public String save(Music music, RedirectAttributes redirect) {
+    public String save(@ModelAttribute Music music, RedirectAttributes redirect) {
         musicService.save(music);
         redirect.addFlashAttribute("success", "Create  successfully!");
         return "redirect:/music";

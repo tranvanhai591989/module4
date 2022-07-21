@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class BlogServiceImpl implements BlogService {
@@ -29,18 +30,18 @@ public class BlogServiceImpl implements BlogService {
     }
 
     @Override
-    public void update( Blog blog) {
-        blogRepository.save(blog);
+    public void update(Blog blog) {
+        blogRepository.update(blog.getContent(),blog.getType(),blog.getCommit(),blog.getId());
 
     }
 
     @Override
-    public Blog findById(Integer id) {
-        return blogRepository.findById2(id);
+    public Optional<Blog> findById(Integer id) {
+        return blogRepository.findById(id);
     }
 
     @Override
     public List<Blog> searchByName(String name) {
-        return blogRepository.searchByName(name);
+        return blogRepository.searchByName("%"+name+"%");
     }
 }

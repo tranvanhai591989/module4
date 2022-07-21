@@ -58,5 +58,4 @@ public class MusicRepositoryImpl implements MusicRepository {
         return query.setParameter(1, name).getResultList();
     }
 
-
 }

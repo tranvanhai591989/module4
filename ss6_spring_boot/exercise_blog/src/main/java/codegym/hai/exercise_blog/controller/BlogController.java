@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 @RequestMapping("/blog")
@@ -32,15 +33,15 @@ public class BlogController {
     @PostMapping("/save")
     public String save(@ModelAttribute("blog") Blog blog, RedirectAttributes redirect) {
         blogService.save(blog);
-        redirect.addFlashAttribute("success", "Create  successfully!");
+        redirect.addFlashAttribute("success", "Update  successfully!");
         return "redirect:/blog";
     }
 
     @GetMapping("/{id}/edit")
-    public String edit(@RequestParam("id") int id, Model model) {
-        Blog blog = blogService.findById(id);
+    public String edit(@PathVariable("id") int id, Model model) {
+        Optional<Blog> blog = blogService.findById(id);
         model.addAttribute("blog", blog);
-        return "/edit";
+        return "edit";
     }
 
     @PostMapping("/update")
