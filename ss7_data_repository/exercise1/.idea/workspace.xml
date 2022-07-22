@@ -7,9 +7,7 @@
       <change beforePath="$PROJECT_DIR$/../../ss2_spring_controller/practice4(customer_management)/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss2_spring_controller/practice4(customer_management)/customer-management" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../ss4_form_data_binding/practicce3/spring-upload-file" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss4_form_data_binding/practicce3/spring-upload-file" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../ss4_form_data_binding/practice2/spring-user-model" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss4_form_data_binding/practice2/spring-user-model" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ss5_orm/practice/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss5_orm/practice/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../ss5_orm/practice/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss5_orm/practice/customer-management" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exercise2/exercise2/src/main/java/com/example/exercise2/repository/CustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../exercise2/exercise2/src/main/java/com/example/exercise2/repository/CustomerRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +28,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/module4/ss6_spring_boot/exercise_blog",
+    "last_opened_file_path": "D:/module4/ss3_thmelesaf/exercise",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2"
@@ -45,6 +43,7 @@
       <option name="presentableId" value="Default" />
       <updated>1658451326101</updated>
       <workItem from="1658451327443" duration="72000" />
+      <workItem from="1658484790705" duration="60000" />
     </task>
     <servers />
   </component>
