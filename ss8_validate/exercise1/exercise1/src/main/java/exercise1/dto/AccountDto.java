@@ -1,27 +1,31 @@
 package exercise1.dto;
 
-import jdk.nashorn.internal.runtime.regexp.joni.Regex;
-
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Pattern;
+import javax.validation.Valid;
+import javax.validation.constraints.*;
 
 public class AccountDto {
 
     private int id;
-@Pattern(regexp="^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒ\n" +
-        "        ÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$")
+    @NotEmpty
+    @Pattern(regexp = "^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒ\n" +
+            "        ÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$",message = "Wrong format")
     private String firstName;
-    @Pattern(regexp="^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒ\n" +
-            "        ÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$")
+    @NotEmpty
+    @Pattern(regexp = "^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒ\n" +
+            "        ÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$",message = "Wrong format")
     private String lastName;
-    @Pattern(regexp ="^([1-9]|(0|1|2)[0-9]|30)(/|-)([1-9]|1[0-2]|0[1-9])(/|-)(14[0-9]\n" +
-            "                {2})$" )
+    @NotNull
+    @Min(value = 1) @Max(value = 100)
     private int age;
+    @NotNull
+    @Valid
+    @Pattern(regexp = "^[0-9]{9}$",message = "Input 9 numbers")
     private String phoneNumber;
-
+@Pattern(regexp = "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$",message = "abc@gmail.com")
     private String email;
 
     public AccountDto() {
+        firstName = "";
     }
 
     public AccountDto(int id, String firstName, String lastName, int age, String phoneNumber, String email) {
