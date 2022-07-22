@@ -25,8 +25,7 @@ public class BlogController {
     private TypeService typeService;
 
     @GetMapping("")
-    public String index(@PageableDefault(value = 1) Pageable pageable, Model model) {
-
+    public String index(@PageableDefault(value =3)  Pageable pageable, Model model) {
         model.addAttribute("blogList", blogService.findAll(pageable));
         List<Type> typeList = typeService.findAll();
         model.addAttribute("typeList", typeList);
@@ -51,6 +50,8 @@ public class BlogController {
     @GetMapping("/{id}/edit")
     public String edit(@PathVariable("id") int id, Model model) {
         Optional<Blog> blog = blogService.findById(id);
+        List<Type> typeList = typeService.findAll();
+        model.addAttribute("typeList", typeList);
         model.addAttribute("blog", blog);
         return "edit";
     }
@@ -58,7 +59,6 @@ public class BlogController {
     @PostMapping("/update")
     public String update(@ModelAttribute("blog") Blog blog, RedirectAttributes redirect) {
         blogService.update(blog);
-
         redirect.addFlashAttribute("success", "Update product " +
                 blog.getId() + " successfully!");
         return "redirect:/blog";
@@ -72,9 +72,10 @@ public class BlogController {
     }
 
 
-    @PostMapping("/search")
-    public String search(String name, Model model) {
-        model.addAttribute("blogList", blogService.searchByName(name));
+    @GetMapping("/search")
+    public String search(@RequestParam("name")String name ,@PageableDefault(value =3)  Pageable pageable, Model model) {
+        model.addAttribute("blogList", blogService.searchByName(name,pageable) );
+        model.addAttribute("search",name);
         return "/index";
     }
 

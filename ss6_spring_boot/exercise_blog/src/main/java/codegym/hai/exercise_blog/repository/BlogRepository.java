@@ -9,25 +9,17 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import javax.transaction.Transactional;
-import java.util.List;
 
 @Transactional
 public interface BlogRepository extends JpaRepository<Blog, Integer> {
-    @Modifying
+
     @Query(value = "select * from blog where content like :name", nativeQuery = true)
-    List<Blog> searchByName(@Param("name") String name);
-
-    //    @Modifying
-    //    @Query(value = "select * from Blog where id = :id", nativeQuery = true)
-    //    Blog findById2(@Param("id") int id);
+    Page<Blog> searchByName(@Param("name") String name, Pageable pageable);
 
     @Modifying
-    @Query(value = "update  Blog  set content=:content," + " type=:type," + " commit=:commit where  id=:id", nativeQuery = true)
+    @Query(value = "update  Blog  set content=:content, id_type=:type, commit=:commit where  id=:id", nativeQuery = true)
     void update(@Param("content") String content, @Param("type") int type, @Param("commit") String commit, @Param("id") int id);
 
     Page<Blog> findAll(Pageable pageable);
-
-
-
 
 }

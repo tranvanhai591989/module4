@@ -6,45 +6,49 @@
           crossorigin="anonymous">
 </head>
 <body>
-<h3>Blog Management</h3>
-<p>
-    <a th:href="@{/blog/create}">
-        Add new file
-    </a>
-
-</p>
-<div class="notify">
-    <!--/*@thymesVar id="success" type=""*/-->
-    <div th:if="${success}">
-        <span th:text="${success}"></span>
+<center>
+    <h3>Account Management</h3>
+    <p>
+        <a th:href="@{/account/create}">
+           Create new account
+        </a>
+    </p>
+    <div class="notify">
+        <!--/*@thymesVar id="success" type=""*/-->
+        <div th:if="${success}">
+            <span th:text="${success}"></span>
+        </div>
     </div>
-</div>
+</center>
 <div>
-    <form th:action="@{/blog/search}" >
+    <form th:action="@{/account/search}" >
         <input type="text" name="name" placeholder="Search Content" th:text="${name}">
         <button type="submit" value="search">Search</button>
     </form>
 </div>
 
-<table id="product" class="table table-success table-striped">
+<table id="account" class="table table-success table-striped">
     <thead>
     <tr class="table-info">
         <th>Id</th>
-        <th>Content</th>
-        <th>Type</th>
-        <th>Commit Date</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Age</th>
+        <th>Phone Number</th>
+        <th>Email</th>
         <th>Edit</th>
         <th>Delete</th>
-        <th>View</th>
     </tr>
     </thead>
     <tbody>
-    <tr th:each="row : ${blogList}">
+    <tr th:each="row : ${accountList}">
         <td th:text="${row.id}"></td>
-        <td th:text="${row.content}"></td>
-        <td th:text="${row.type.getName()}"></td>
-        <td th:text="${row.commit}"></td>
-        <td><a th:href="@{/blog/{id}/edit(id=${row.id})}">Edit</a></td>
+        <td th:text="${row.firstName}"></td>
+        <td th:text="${row.lastName}"></td>
+        <td th:text="${row.age}"></td>
+        <td th:text="${row.phoneNumber}"></td>
+        <td th:text="${row.email}"></td>
+        <td><a th:href="@{/account/{id}/edit(id=${row.id})}">Edit</a></td>
 
         <td>
             <button type="button" class="btn btn-danger" data-bs-toggle="modal"
@@ -61,31 +65,28 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            Do you want delete blog
-                            <span class="text-info" th:text="${row.type}"></span> with id =
-                            <span class="text-info" th:text="${row.id}"></span>
+                            Do you want delete account  :
+                            <span class="text-info" th:text="${row.firstName} + ${row.lastName}"></span> with email :
+                            <span class="text-info" th:text="${row.email}"></span>
                         </div>
                         <!--                        <div class="modal-footer">-->
-                        <a th:href="@{/blog/delete(id=${row.id})}" class="btn btn-outline-success">Delete</a>
+                        <a th:href="@{/account/delete(id=${row.id})}" class="btn btn-outline-success">Delete</a>
                         <button type="button" class="btn btn-secondary center-pill" data-bs-dismiss="modal">Close</button>
                         <!--                        </div>-->
                     </div>
                 </div>
             </div>
         </td>
-        <td ><a th:href="@{/blog/{id}/view(id=${row.id})}">View</a></td>
+<!--        <td ><a th:href="@{/account/{id}/view(id=${row.id})}">View</a></td>-->
     </tr>
 
-    <div>
-        <a th:href="@{'/blog/search'(page=${blogList.number - 1},name=${search})}" th:if="${blogList.hasPrevious()}">Previous</a>
-        <span th:text="${blogList.number + 1}"></span>/<span th:text="${blogList.totalPages}"></span>
-        <a th:href="@{'/blog/search'(page=${blogList.number + 1},name=${search})}" th:if="${blogList.hasNext()}">Next</a>
-    </div>
+<!--    <div>-->
+<!--        <a th:href="@{'/account/search'(page=${accountList.number - 1},name=${search})}" th:if="${accountList.hasPrevious()}">Previous</a>-->
+<!--        <span th:text="${accountList.number + 1}"></span>/<span th:text="${accountList.totalPages}"></span>-->
+<!--        <a th:href="@{'/account/search'(page=${accountList.number + 1},name=${search})}" th:if="${accountList.hasNext()}">Next</a>-->
+<!--    </div>-->
     </tbody>
 </table>
-
-
-<footer></footer>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"

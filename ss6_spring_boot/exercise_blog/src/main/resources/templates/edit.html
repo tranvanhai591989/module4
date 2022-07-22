@@ -16,20 +16,24 @@
     <form th:action="@{/blog/update}" th:object="${blog}"
           method="POST" novalidate="novalidate">
         <input type="hidden" th:field="*{id}"/>
-        <div>
+        <div  class="input-group mb-3">
             <label>Content</label>
-            <input type="text" th:field="*{content}"/>
+            <input  class="input-group mb-3" type="text" th:field="*{content}"/>
         </div>
-        <div>
+        <div  class="input-group mb-3">
             <label>Type</label>
-            <input type="text" th:field="*{type}"/>
+            <select th:field="*{type}"  class="input-group mb-3">
+                <option th:each=" item : ${typeList}" th:value="${item.idType}" th:text = "${item.getName()}"> </option>
+            </select>
         </div>
-        <div>
+        <div >
             <label>Commit Date</label>
-            <input type="date" th:field="*{commit}"/>
+            <input  class="input-group mb-3"type="date" th:field="*{commit}"/>
         </div>
 
-        <input type="submit" value="Edit"/>
+        <div class="d-grid gap-2">
+            <input type="submit" value="Edit" class="btn btn-outline-success"/>
+        </div>
     </form>
 </div>
 

@@ -8,14 +8,9 @@ public class Blog {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private  String content;
-
-
-
     @ManyToOne
     @JoinColumn(name = "idType")
-
-    private  Type type;
-
+    private Type type;
 
     @Column(columnDefinition = "DATE")
     private String commit;

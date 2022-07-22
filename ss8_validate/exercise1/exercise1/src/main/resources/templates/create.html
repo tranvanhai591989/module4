@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:form="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+          crossorigin="anonymous">
+</head>
+<body>
+<center>
+    <h1>Register</h1>
+    <p>
+        <a th:href="@{/account}">
+            Back to main page
+        </a>
+    </p>
+</center>
+
+<div class="container" id="account">
+    <form  th:action="@{/account/save}" method="post" th:object="${account} "/>
+        <div class="mb-3">
+        </div>
+    <div class="mb-3">
+        <label class="form-label">First Name</label>
+        <input type="text" required pattern="/^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒ
+        ÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/u" class="form-control"th:field="*{firstName}"/>
+    </div>
+        <div class="mb-3">
+            <label class="form-label">Last name</label>
+            <input type="text" required pattern="/^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍ
+            ÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/u" class="form-control" th:field="*{lastName}"/>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Age </label>
+                <input type="text" required pattern="^([1-9]|(0|1|2)[0-9]|30)(/|-)([1-9]|1[0-2]|0[1-9])(/|-)(14[0-9]
+                {2})$" class="form-control" th:field="*{age}"/>
+
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Phone number</label>
+            <input type="number" required pattern="(84|0[3|5|7|8|9])+([0-9]{8})\b" class="form-control" th:field="*{phoneNumber}"/>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input type="email" required pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$" class="form-control" th:field="*{email}"/>
+        </div>
+    <center>
+        <input type="submit" class="btn btn-outline-primary" value="Create">
+    </center>
+    </form>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+</html>

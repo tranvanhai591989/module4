@@ -30,33 +30,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e1271e34-d474-4756-8a09-dea83d0ba51e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../ss3_thmelesaf/exercise/.idea/jpa-buddy.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/customer-management/src/main/webapp/WEB-INF/applicationContext.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/customer-management/src/main/webapp/WEB-INF/dispatcher-servlet.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/customer-management/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ss7_data_repository/exercise2/exercise2/src/main/java/com/example/exercise2/controller/CustomerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ss7_data_repository/exercise2/exercise2/src/main/java/com/example/exercise2/model/Customer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ss7_data_repository/exercise2/exercise2/src/main/java/com/example/exercise2/repository/CustomerRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ss7_data_repository/exercise2/exercise2/src/main/java/com/example/exercise2/service/CustomerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ss7_data_repository/exercise2/exercise2/src/main/java/com/example/exercise2/service/impl/SimpleCustomerServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ss7_data_repository/exercise2/exercise2/src/main/resources/templates/create.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ss7_data_repository/exercise2/exercise2/src/main/resources/templates/edit.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ss7_data_repository/exercise2/exercise2/src/main/resources/templates/info.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ss7_data_repository/exercise2/exercise2/src/main/resources/templates/list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../ss1_springMVC/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss1_springMVC/customer-management" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../ss2_spring_controller/practice3/spring-time-zone-gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss2_spring_controller/practice3/spring-time-zone-gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../ss2_spring_controller/practice4(customer_management)/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss2_spring_controller/practice4(customer_management)/customer-management" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ss3_thmelesaf/exercise/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss3_thmelesaf/exercise/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../ss4_form_data_binding/practicce3/spring-upload-file" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss4_form_data_binding/practicce3/spring-upload-file" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../ss4_form_data_binding/practice2/spring-user-model" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss4_form_data_binding/practice2/spring-user-model" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exercise1/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../exercise1/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/customer-management" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/customer-management/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/customer-management/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/customer-management/src/main/webapp/WEB-INF/templates/customers/info.html" beforeDir="false" afterPath="$PROJECT_DIR$/customer-management/src/main/webapp/WEB-INF/templates/customers/info.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ss6_spring_boot/exercise_blog/src/main/java/codegym/hai/exercise_blog/controller/BlogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss6_spring_boot/exercise_blog/src/main/java/codegym/hai/exercise_blog/controller/BlogController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss7_data_repository/exercise2/exercise2/src/main/java/com/example/exercise2/repository/CustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss7_data_repository/exercise2/exercise2/src/main/java/com/example/exercise2/repository/CustomerRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

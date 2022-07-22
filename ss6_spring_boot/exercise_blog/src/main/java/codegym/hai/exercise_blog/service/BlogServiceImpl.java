@@ -44,8 +44,8 @@ public class BlogServiceImpl implements BlogService {
     }
 
     @Override
-    public List<Blog> searchByName(String name) {
-        return blogRepository.searchByName("%" + name + "%");
+    public Page<Blog> searchByName(String name,Pageable pageable) {
+        return blogRepository.searchByName("%" + name + "%",pageable);
     }
 
     @Override
