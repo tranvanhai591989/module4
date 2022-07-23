@@ -1,10 +1,13 @@
 package com.example.product_managment.controller;
 
+import com.example.product_managment.dto.ProductDto;
 import com.example.product_managment.model.Product;
 import com.example.product_managment.service.ProductService;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -30,10 +33,18 @@ public class ProductController {
     }
 
     @PostMapping("/save")
-    public String save(@ModelAttribute Product product, RedirectAttributes redirect) {
-        productService.save(product);
-        redirect.addFlashAttribute("success", "Create product successfully!");
-        return "redirect:/product";
+    public String save(@ModelAttribute("productDto") ProductDto productDto,
+                       BindingResult bindingResult,
+                       RedirectAttributes redirect) {
+        if (bindingResult.hasFieldErrors()){
+            return "create";
+        }else {
+            Product product = new Product();
+            BeanUtils.copyProperties(productDto,product);
+            productService.save(product);
+            redirect.addFlashAttribute("success", "Create product successfully!");
+            return "redirect:/product";
+        }
     }
 
     @GetMapping("/{id}/edit")

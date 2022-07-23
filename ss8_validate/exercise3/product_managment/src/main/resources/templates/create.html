@@ -19,22 +19,27 @@
         <div>
             <label>Name</label>
             <input type="text" th:field="*{name}"/>
+            <p style="color:red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></p>
         </div>
         <div>
             <label>Price</label>
             <input type="text" th:field="*{price}" />
+            <p style="color:red" th:if="${#fields.hasErrors('price')}" th:errors="*{price}"></p>
         </div>
         <div>
             <label>Moment</label>
             <input type="text" th:field="*{moment}" />
+            <p style="color:red" th:if="${#fields.hasErrors('moment')}" th:errors="*{moment}"></p>
         </div>
         <div>
             <label>Detail</label>
             <input type="text" th:field="*{detail}"/>
+            <p style="color:red" th:if="${#fields.hasErrors('detail')}" th:errors="*{detail}"></p>
         </div>
         <div>
             <label>Producer</label>
             <input type="text" th:field="*{producer}" />
+            <p style="color:red" th:if="${#fields.hasErrors('producer')}" th:errors="*{producer}"></p>
         </div>
         <input type="submit" value="Save"/>
     </form>

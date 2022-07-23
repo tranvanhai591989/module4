@@ -11,8 +11,6 @@ public class Type {
     private  int idType;
     private String name;
 
-
-
     @OneToMany(mappedBy = "type")
     private Set<Blog> blogs;
 
