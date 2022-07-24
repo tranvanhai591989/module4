@@ -1,2 +1,4 @@
-package com.example.demo.service;public interface PositionService {
+package com.example.demo.service;
+
+public interface PositionService {
 }

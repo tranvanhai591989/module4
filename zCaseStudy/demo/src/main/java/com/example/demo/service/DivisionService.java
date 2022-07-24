@@ -1,2 +1,4 @@
-package com.example.demo.service;public interface DivisionService {
+package com.example.demo.service;
+
+public interface DivisionService {
 }
