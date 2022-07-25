@@ -1,10 +1,13 @@
 package com.example.demo.controller;
 
 import com.example.demo.dto.CustomerDto;
+import com.example.demo.model.Contract;
 import com.example.demo.model.Customer;
-import com.example.demo.service.CustomerService;
+import com.example.demo.service.*;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -20,17 +23,33 @@ import java.util.Optional;
 public class CustomerController {
     @Autowired
     private CustomerService customerService;
+    @Autowired
+    private ContractService contractService;
+    @Autowired
+    private PositionService positionService;
+    @Autowired
+    private DivisionService divisionService;
+    @Autowired
+    private EducationDegreeService educationDegreeService;
 
     @GetMapping("")
-    public String index(Model model) {
+    public String index(@PageableDefault(value =3)  Pageable pageable,Model model) {
         List<Customer> customerList = customerService.findAll();
         model.addAttribute("customerList", customerList);
+        List<Contract> contractList =  contractService.findAll();
+        model.addAttribute("contractList",contractList);
         return "customer/customerIndex";
     }
+
+
+
 
     @GetMapping("/create")
     public String create(Model model) {
         model.addAttribute("customerDto", new CustomerDto());
+        model.addAttribute("positionList",positionService.findAll());
+        model.addAttribute("educationDegreeList",educationDegreeService.findAll());
+        model.addAttribute("divisionList",divisionService.findAll());
         return "customer/customerCreate";
     }
 

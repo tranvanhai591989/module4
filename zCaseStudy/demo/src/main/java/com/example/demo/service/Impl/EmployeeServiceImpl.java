@@ -4,10 +4,9 @@ import com.example.demo.model.Employee;
 import com.example.demo.repository.EmployeeRepository;
 import com.example.demo.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
-import java.util.Optional;
 
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
@@ -15,8 +14,8 @@ public class EmployeeServiceImpl implements EmployeeService {
     private EmployeeRepository employeeRepository;
 
     @Override
-    public List<Employee> findAll() {
-        return employeeRepository.findAll();
+    public Page<Employee> findAll(Pageable pageable) {
+        return employeeRepository.findAll(pageable);
     }
 
     @Override
@@ -25,12 +24,24 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
+    public void updateEmployee(Employee employee) {
+        employeeRepository.updateEmployee(employee.getEmployeeName(),employee.getEmployeeBirth(),employee.getEmployeeIdCard(),employee.getEmployeeSalary()
+        ,employee.getEmployeePhoneNumber(),employee.getEmployeeEmail(),employee.getEmployeeAddress(),employee.getPosition(),employee.getEducationDegree()
+        ,employee.getDivision(),employee.getUsers(),employee.getEmployeeId());
+    }
+
+    @Override
     public void deleteEmployeeByEmployeeId(int id) {
         employeeRepository.deleteEmployeeByEmployeeId(id);
     }
 
     @Override
-    public Optional<Employee> findById(int id) {
-        return employeeRepository.findById(id);
+    public Employee findById(int id) {
+        return employeeRepository.findById(id).get();
+    }
+
+    @Override
+    public Page<Employee> searchByName(String name, Pageable pageable) {
+        return employeeRepository.searchByName("%" + name + "%",pageable);
     }
 }

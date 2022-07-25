@@ -11,6 +11,8 @@ import com.example.demo.service.EmployeeService;
 import com.example.demo.service.PositionService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -18,9 +20,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @Controller
 @RequestMapping("/employee")
@@ -35,19 +35,18 @@ public class EmployeeController {
     private DivisionService divisionService;
 
     @GetMapping("")
-    public String index(Model model) {
-        List<Employee> employeeList = employeeService.findAll();
-        model.addAttribute("employeeList", employeeList);
+    public String index(@PageableDefault(value = 4) Pageable pageable, Model model) {
+        model.addAttribute("employeeList", employeeService.findAll(pageable));
         return "employee/employeeIndex";
     }
 
     @GetMapping("/create")
     public String create(Model model) {
-        List<Position> positionList =positionService.findAll();
+        model.addAttribute("employeeDto", new EmployeeDto());
+        List<Position> positionList = positionService.findAll();
         List<EducationDegree> educationDegreeList = educationDegreeService.findAll();
         List<Division> divisionList = divisionService.findAll();
 
-        model.addAttribute("employeeDto", new EmployeeDto());
         model.addAttribute("positionList", positionList);
         model.addAttribute("educationDegreeList", educationDegreeList);
         model.addAttribute("divisionList", divisionList);
@@ -57,8 +56,16 @@ public class EmployeeController {
     @PostMapping("/save")
     public String save(@ModelAttribute("employeeDto") @Validated EmployeeDto employeeDto,
                        BindingResult bindingResult,
-                       RedirectAttributes redirect) {
+                       RedirectAttributes redirect,
+                       Model model) {
         if (bindingResult.hasFieldErrors()) {
+            List<Position> positionList = positionService.findAll();
+            List<EducationDegree> educationDegreeList = educationDegreeService.findAll();
+            List<Division> divisionList = divisionService.findAll();
+
+            model.addAttribute("positionList", positionList);
+            model.addAttribute("educationDegreeList", educationDegreeList);
+            model.addAttribute("divisionList", divisionList);
             return "employee/employeeCreate";
         } else {
             Employee employee = new Employee();
@@ -68,30 +75,42 @@ public class EmployeeController {
             return "redirect:/employee";
         }
     }
-
     @GetMapping("/{id}/edit")
     public String edit(@PathVariable("id") int id, Model model) {
-        Optional<Employee> employee = employeeService.findById(id);
-        List<Employee> employeeList = employeeService.findAll();
+        EmployeeDto employeeDto = new EmployeeDto();
+        BeanUtils.copyProperties(employeeService.findById(id), employeeDto);
         List<Position> positionList = positionService.findAll();
         List<EducationDegree> educationDegreeList = educationDegreeService.findAll();
         List<Division> divisionList = divisionService.findAll();
-        model.addAttribute("employeeDto", new EmployeeDto());
+        model.addAttribute("employeeDto", employeeDto);
         model.addAttribute("positionList", positionList);
         model.addAttribute("educationDegreeList", educationDegreeList);
         model.addAttribute("divisionList", divisionList);
-        model.addAttribute("employee", employee);
-        model.addAttribute("employeeList", employeeList);
         return "employee/employeeEdit";
     }
-
     @PostMapping("/update")
-    public String update(@ModelAttribute("employee") Employee employee, RedirectAttributes redirect) {
-        employeeService.save(employee);
-        redirect.addFlashAttribute("success", "Update employee " +
-                employee.getEmployeeName() + " successfully!");
-        return "redirect:/employee";
+    public String update(@ModelAttribute("employeeDto") @Validated EmployeeDto employeeDto,
+                         BindingResult bindingResult, RedirectAttributes redirect, Model model) {
+        if (bindingResult.hasFieldErrors()) {
+            List<Position> positionList = positionService.findAll();
+            List<EducationDegree> educationDegreeList = educationDegreeService.findAll();
+            List<Division> divisionList = divisionService.findAll();
+
+            model.addAttribute("positionList", positionList);
+            model.addAttribute("educationDegreeList", educationDegreeList);
+            model.addAttribute("divisionList", divisionList);
+            return "employee/employeeEdit";
+        } else {
+            Employee employee = new Employee();
+            BeanUtils.copyProperties(employeeDto, employee);
+            employeeService.updateEmployee(employee);
+            redirect.addFlashAttribute("success", "Update employee " +
+                    employee.getEmployeeName() + " successfully!");
+            return "redirect:/employee";
+        }
     }
+
+
 
     @GetMapping("/delete")
     public String delete(@RequestParam int id, RedirectAttributes redirect) {
@@ -99,4 +118,12 @@ public class EmployeeController {
         redirect.addFlashAttribute("success", "Delete successfully!");
         return "redirect:/employee";
     }
+
+    @GetMapping("/search")
+    public String search(@RequestParam("name") String name, @PageableDefault(value = 4) Pageable pageable, Model model) {
+        model.addAttribute("employeeList", employeeService.searchByName(name, pageable));
+        model.addAttribute("search", name);
+        return "employee/employeeIndex";
+    }
+
 }

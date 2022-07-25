@@ -5,13 +5,13 @@ import java.util.Date;
 import java.util.List;
 import java.util.Set;
 
-@Entity
+@Entity(name = "employee")
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int employeeId;
     private String employeeName;
-    private Date employeeBirth;
+    private String employeeBirth;
     private String employeeIdCard;
     private double employeeSalary;
     private String employeePhoneNumber;
@@ -35,7 +35,7 @@ public class Employee {
     public Employee() {
     }
 
-    public Employee(int employeeId, String employeeName, Date employeeBirth, String employeeIdCard, double employeeSalary, String employeePhoneNumber, String employeeEmail, String employeeAddress, Position position, EducationDegree educationDegree, Division division, User users, Set<Contract> contracts) {
+    public Employee(int employeeId, String employeeName, String employeeBirth, String employeeIdCard, double employeeSalary, String employeePhoneNumber, String employeeEmail, String employeeAddress, Position position, EducationDegree educationDegree, Division division, User users, Set<Contract> contracts) {
         this.employeeId = employeeId;
         this.employeeName = employeeName;
         this.employeeBirth = employeeBirth;
@@ -67,11 +67,11 @@ public class Employee {
         this.employeeName = employeeName;
     }
 
-    public Date getEmployeeBirth() {
+    public String getEmployeeBirth() {
         return employeeBirth;
     }
 
-    public void setEmployeeBirth(Date employeeBirth) {
+    public void setEmployeeBirth(String employeeBirth) {
         this.employeeBirth = employeeBirth;
     }
 

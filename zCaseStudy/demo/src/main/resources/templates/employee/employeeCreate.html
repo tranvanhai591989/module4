@@ -146,7 +146,7 @@
                 <p style="color:red" th:if="${#fields.hasErrors('employeeBirth')}" th:errors="*{employeeBirth}"></p>
             </div>
             <div class="mb-3">
-                <label class="form-label">Name </label>
+                <label class="form-label">Id Card </label>
                 <input type="number" class="form-control" th:field="*{employeeIdCard}"/>
                 <p style="color:red" th:if="${#fields.hasErrors('employeeIdCard')}" th:errors="*{employeeIdCard}"></p>
             </div>
@@ -169,20 +169,37 @@
 
             </div>
             <div class="mb-3">
+                <label class="form-label">Address</label>
+                <input type="text" class="form-control" th:field="*{employeeAddress}"/>
+                <p style="color:red" th:if="${#fields.hasErrors('employeeAddress')}" th:errors="*{employeeAddress}"></p>
+
+            </div>
+            <div class="mb-3">
                 <label class="form-label">Position</label>
-                <input type="text" class="form-control" th:field="*{position}"/>
+                <select th:field="*{position}" class="form-control">
+                    <option th:each=" item : ${positionList}" th:value="${item.getPositionId()}"
+                            th:text="${item.getPositionName()}">
+
+                    </option>
+                </select>
                 <p style="color:red" th:if="${#fields.hasErrors('position')}"th:errors="*{position}"></p>
 
             </div>
             <div class="mb-3">
                 <label class="form-label">EducationDegree</label>
-                <input type="text" class="form-control" th:field="*{educationDegree}"/>
+                <select th:field="*{educationDegree}" class="form-control">
+                    <option th:each=" item : ${educationDegreeList}" th:value="${item.educationDegreeId}"
+                            th:text="${item.getEducationDegreeName()}"></option>
+                </select>
                 <p style="color:red" th:if="${#fields.hasErrors('educationDegree')}"th:errors="*{educationDegree}"></p>
 
             </div>
             <div class="mb-3">
                 <label class="form-label">Division</label>
-                <input type="text" class="form-control" th:field="*{employeeAddress}"/>
+                <select th:field="*{division}" class="form-control">
+                    <option th:each=" item : ${divisionList}" th:value="${item.divisionId}"
+                            th:text="${item.getDivisionName()}"></option>
+                </select>
                 <p style="color:red" th:if="${#fields.hasErrors('division')}"th:errors="*{division}"></p>
 
             </div>
@@ -190,12 +207,6 @@
                 <label class="form-label">User</label>
                 <input type="text" class="form-control" th:field="*{users}"/>
                 <p style="color:red" th:if="${#fields.hasErrors('users')}"th:errors="*{users}"></p>
-
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Contract</label>
-                <input type="text" class="form-control" th:field="*{contracts}"/>
-                <p style="color:red" th:if="${#fields.hasErrors('contracts')}"th:errors="*{contracts}"></p>
 
             </div>
             <center>

@@ -1,26 +1,57 @@
 package com.example.demo.dto;
 
-import java.util.Date;
+import com.example.demo.model.Division;
+import com.example.demo.model.EducationDegree;
+import com.example.demo.model.Position;
+import com.example.demo.model.User;
+import org.springframework.validation.Errors;
+import org.springframework.validation.Validator;
 
-public class EmployeeDto {
+import javax.validation.Valid;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+
+public class EmployeeDto implements Validator {
     private int employeeId;
+    @NotEmpty
+    @Pattern(regexp = "^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒ\n" +
+            "        ÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$", message = "Wrong format")
     private String employeeName;
-    private Date employeeBirth;
+
+
+    private String employeeBirth;
+    @Pattern(regexp = "^[0-9]{9}$")
     private String employeeIdCard;
     private double employeeSalary;
+    @NotNull
+    @Valid
+    @Pattern(regexp = "^[0-9]{9}$", message = "Input 9 numbers")
     private String employeePhoneNumber;
+    @Pattern(regexp = "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$", message = "abc@gmail.com")
     private String employeeEmail;
     private String employeeAddress;
-    private String position;
-    private String educationDegree;
-    private String division;
-    private String users;
+    private Position position;
+    private EducationDegree educationDegree;
+    private Division division;
+    private User users;
     private String contracts;
 
     public EmployeeDto() {
     }
 
-    public EmployeeDto(int employeeId, String employeeName, Date employeeBirth, String employeeIdCard, double employeeSalary, String employeePhoneNumber, String employeeEmail, String employeeAddress, String position, String educationDegree, String division, String users, String contracts) {
+    public EmployeeDto(int employeeId,
+                       String employeeName,
+                       String employeeBirth,
+                       String employeeIdCard,
+                       double employeeSalary,
+                       String employeePhoneNumber,
+                       String employeeEmail,
+                       String employeeAddress,
+                       Position position,
+                       EducationDegree educationDegree,
+                       Division division,
+                       User users, String contracts) {
         this.employeeId = employeeId;
         this.employeeName = employeeName;
         this.employeeBirth = employeeBirth;
@@ -52,11 +83,11 @@ public class EmployeeDto {
         this.employeeName = employeeName;
     }
 
-    public Date getEmployeeBirth() {
+    public String getEmployeeBirth() {
         return employeeBirth;
     }
 
-    public void setEmployeeBirth(Date employeeBirth) {
+    public void setEmployeeBirth(String employeeBirth) {
         this.employeeBirth = employeeBirth;
     }
 
@@ -100,35 +131,35 @@ public class EmployeeDto {
         this.employeeAddress = employeeAddress;
     }
 
-    public String getPosition() {
+    public Position getPosition() {
         return position;
     }
 
-    public void setPosition(String position) {
+    public void setPosition(Position position) {
         this.position = position;
     }
 
-    public String getEducationDegree() {
+    public EducationDegree getEducationDegree() {
         return educationDegree;
     }
 
-    public void setEducationDegree(String educationDegree) {
+    public void setEducationDegree(EducationDegree educationDegree) {
         this.educationDegree = educationDegree;
     }
 
-    public String getDivision() {
+    public Division getDivision() {
         return division;
     }
 
-    public void setDivision(String division) {
+    public void setDivision(Division division) {
         this.division = division;
     }
 
-    public String getUsers() {
+    public User getUsers() {
         return users;
     }
 
-    public void setUsers(String users) {
+    public void setUsers(User users) {
         this.users = users;
     }
 
@@ -138,5 +169,15 @@ public class EmployeeDto {
 
     public void setContracts(String contracts) {
         this.contracts = contracts;
+    }
+
+    @Override
+    public boolean supports(Class<?> clazz) {
+        return false;
+    }
+
+    @Override
+    public void validate(Object target, Errors errors) {
+
     }
 }
