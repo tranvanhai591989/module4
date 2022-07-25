@@ -19,19 +19,19 @@ import java.util.Optional;
 @RequestMapping("/customer")
 public class CustomerController {
     @Autowired
-    CustomerService customerService;
+    private CustomerService customerService;
 
     @GetMapping("")
     public String index(Model model) {
         List<Customer> customerList = customerService.findAll();
         model.addAttribute("customerList", customerList);
-        return "/customer_index";
+        return "customer/customerIndex";
     }
 
     @GetMapping("/create")
     public String create(Model model) {
         model.addAttribute("customerDto", new CustomerDto());
-        return "customer_create";
+        return "customer/customerCreate";
     }
 
     @PostMapping("/save")
@@ -39,7 +39,7 @@ public class CustomerController {
                        BindingResult bindingResult,
                        RedirectAttributes redirect) {
         if (bindingResult.hasFieldErrors()) {
-            return "customer_create";
+            return "customer/customerCreate";
         } else {
             Customer customer = new Customer();
             BeanUtils.copyProperties(customerDto, customer);
@@ -56,7 +56,7 @@ public class CustomerController {
         List<Customer> customerList = customerService.findAll();
         model.addAttribute("customer", customer);
         model.addAttribute("customerList", customerList);
-        return "customer_edit";
+        return "customer/customerEdit";
     }
 
     @PostMapping("/update")

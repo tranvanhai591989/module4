@@ -114,20 +114,30 @@
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#"></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="/customer"></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="#"></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="#"></a>
-          </li>
+      <div class="container-fluid">
+        <a class="navbar-brand " th:href="@{/}">
+          Back to Main Page
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent1">
+        </div>
+      </div>
+      <div class="container-fluid">
+        <a class="navbar-brand " th:href="@{/employee/create}">
+          Create Employee
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent2">
+        </div>
+      </div>
 
         </ul>
         <form class="d-flex">
@@ -220,13 +230,13 @@
       </tbody>
     </table>
 
-    <div class="body_center_2">
-      <a th:href="@{'/customer/search'(page=${customerList.number - 1},name=${search})}"
-         th:if="${customerList.hasPrevious()}">Previous</a>
-      <span th:text="${customerList.number + 1}"></span>/<span th:text="${customerList.totalPages}"></span>
-      <a th:href="@{'/customer/search'(page=${customerList.number + 1},name=${search})}"
-         th:if="${customerList.hasNext()}">Next</a>
-    </div>
+<!--    <div class="body_center_2">-->
+<!--      <a th:href="@{'/employee/search'(page=${employeeList.number - 1},name=${search})}"-->
+<!--         th:if="${customerList.hasPrevious()}">Previous</a>-->
+<!--      <span th:text="${employeeList.number + 1}"></span>/<span th:text="${employeeList.totalPages}"></span>-->
+<!--      <a th:href="@{'/employee/search'(page=${employeeList.number + 1},name=${search})}"-->
+<!--         th:if="${employeeList.hasNext()}">Next</a>-->
+<!--    </div>-->
   </div>
   <div class="footer container-fluid">
     <!-- Footer -->

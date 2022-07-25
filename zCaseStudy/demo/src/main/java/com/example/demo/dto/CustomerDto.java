@@ -1,5 +1,7 @@
 package com.example.demo.dto;
 
+import com.example.demo.model.Contract;
+
 import javax.validation.Valid;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
@@ -9,7 +11,7 @@ import java.util.Date;
 public class CustomerDto {
     private int customerId;
     private String customerType;
-    private String contracts;
+    private Contract contracts;
     @NotEmpty
     @Pattern(regexp = "^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒ\n" +
             "        ÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$", message = "Wrong format")
@@ -37,7 +39,7 @@ public class CustomerDto {
     public CustomerDto() {
     }
 
-    public CustomerDto(int customerId, String customerType, String contracts, String customerName, Date customerBirth, int customerGender, String customerIdCard, String customerPhoneNumber, String customerEmail, String customerAddress) {
+    public CustomerDto(int customerId, String customerType, Contract contracts, String customerName, Date customerBirth, int customerGender, String customerIdCard, String customerPhoneNumber, String customerEmail, String customerAddress) {
         this.customerId = customerId;
         this.customerType = customerType;
         this.contracts = contracts;
@@ -66,11 +68,11 @@ public class CustomerDto {
         this.customerType = customerType;
     }
 
-    public String getContracts() {
+    public Contract getContracts() {
         return contracts;
     }
 
-    public void setContracts(String contracts) {
+    public void setContracts(Contract contracts) {
         this.contracts = contracts;
     }
 

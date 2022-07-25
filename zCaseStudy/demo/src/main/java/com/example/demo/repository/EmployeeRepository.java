@@ -7,4 +7,5 @@ import javax.transaction.Transactional;
 
 @Transactional
 public interface EmployeeRepository extends JpaRepository<Employee,Integer> {
+    void deleteEmployeeByEmployeeId(int id);
 }
