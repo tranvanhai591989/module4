@@ -6,5 +6,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import javax.transaction.Transactional;
 
 @Transactional
-public interface RenterRepository extends JpaRepository<Renter,Integer> {
+public interface RenterRepository extends JpaRepository<Renter, Integer> {
+    Renter findByCodeContains(String Code);
 }

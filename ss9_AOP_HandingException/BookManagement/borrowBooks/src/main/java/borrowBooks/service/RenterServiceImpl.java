@@ -12,8 +12,19 @@ public class RenterServiceImpl implements RenterService {
     @Autowired
     private  RenterRepository renterRepository;
 
+
     @Override
-    public List<Renter> findAll() {
-        return renterRepository.findAll();
+    public void save(Renter renter) {
+        renterRepository.save(renter);
+    }
+
+    @Override
+    public Renter findByCode(String code) {
+        return renterRepository.findByCodeContains(code);
+    }
+
+    @Override
+    public void delete(Renter renter) {
+
     }
 }

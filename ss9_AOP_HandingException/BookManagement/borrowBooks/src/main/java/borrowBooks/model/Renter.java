@@ -1,35 +1,27 @@
 package borrowBooks.model;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
-
 public class Renter {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private  int renterId;
-    private  String renterName;
-    private  String renterCode;
+    private String renterCode;
+
+    private String renterName;
     @ManyToOne
-    @JoinColumn(name ="bookId",referencedColumnName = "bookID")
+    @JoinColumn(name = "bookId", referencedColumnName = "bookID")
     private Books book;
 
     public Renter() {
     }
 
-    public Renter(int renterId, String renterName, String renterCode, Books book) {
-        this.renterId = renterId;
+    public Renter(String renterName, String renterCode, Books book) {
         this.renterName = renterName;
         this.renterCode = renterCode;
         this.book = book;
-    }
-
-    public int getRenterId() {
-        return renterId;
-    }
-
-    public void setRenterId(int renterId) {
-        this.renterId = renterId;
     }
 
     public String getRenterName() {

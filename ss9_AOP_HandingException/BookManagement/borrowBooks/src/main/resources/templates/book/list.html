@@ -23,6 +23,12 @@
                th:text="${name}">
         <button class="btn btn-outline-success" type="submit" value="search">Search</button>
     </form>
+    <center>
+        <form th:action="book/negative">
+            <input name="id" type="text">
+            <button type="submit">Trả sách</button>
+        </form>
+    </center>
 </div>
 </nav>
 <div class="body_center_2 container">
@@ -40,7 +46,6 @@
             <th>Name</th>
             <th>Author</th>
             <th>Amount</th>
-            <th>Renter</th>
             <th>Borrow</th>
             <th>Give Back</th>
         </tr>
@@ -51,14 +56,23 @@
             <td th:text="${row.bookName}"></td>
             <td th:text="${row.author}"></td>
             <td th:text="${row.amount}"></td>
-            <td th:text="${row.renter}"></td>
-            <td><a th:href="@{/book/{id}/negative(id=${row.bookId})}">Borrow</a></td>
-            <td><a th:href="@{/book/{id}/plus(id=${row.bookId})}">Give back</a></td>
+            <td>
+                <a type="button" th:attr="onclick=|info(${book.bookId}, '${book.bookName}')|" class="btn btn-primary">
+                    Borrow
+                </a>
+            </td>
         </tr>
         </tbody>
     </table>
 </div>
 </body>
+<script>
+    function info(bookId, bookName) {
+        debugger
+        document.getElementById("id").value = bookId;
+        document.getElementById("bookName").innerHTML = bookName;
+    }
+</script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>

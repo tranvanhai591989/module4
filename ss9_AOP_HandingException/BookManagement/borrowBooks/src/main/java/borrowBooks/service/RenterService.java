@@ -2,9 +2,12 @@ package borrowBooks.service;
 
 import borrowBooks.model.Renter;
 
-import java.util.List;
-
 public interface RenterService {
-    List<Renter> findAll();
+    void save(Renter renter);
+
+    Renter findByCode(String code);
+
+    void delete(Renter renter);
+
 
 }

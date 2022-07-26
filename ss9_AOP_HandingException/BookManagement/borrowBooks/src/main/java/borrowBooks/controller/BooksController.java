@@ -1,6 +1,7 @@
 package borrowBooks.controller;
 
 import borrowBooks.model.Books;
+import borrowBooks.model.Renter;
 import borrowBooks.service.BooksService;
 import borrowBooks.service.RenterService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +20,6 @@ public class BooksController {
     @GetMapping
     public String index(Model model) {
         model.addAttribute("bookList", booksService.findAll());
-        model.addAttribute("renterList", renterService.findAll());
         return "book/list";
     }
 
@@ -48,15 +48,17 @@ public class BooksController {
     }
 
     @PostMapping("/negative")
-    public String userNegative(@ModelAttribute("book")int id,Model model){
+    public String userNegative(@RequestParam("id")String code,Model model){
+        Renter renter = renterService.findByCode(code);
+        if (renter==null){
+            return "error";
+        }else {
+            Books books = renter.getBook();
+            books.setAmount(books.getAmount()+1);
+            renterService.delete(renter);
+            return "redirect:/book";
+        }
+    }
 
-        model.addAttribute("book",booksService.negative(booksService.findById(id).get().getAmount(),id));
-        return "redirect:/book";
-    }
-    @PostMapping("/plus")
-    public String userPlus(@ModelAttribute("book")int id,Model model){
-        model.addAttribute("book",booksService.plus(booksService.findById(id).get().getAmount(),id));
-        return "redirect:/book";
-    }
 
 }

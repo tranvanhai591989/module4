@@ -1,7 +1,7 @@
 package borrowBooks.model;
 
 import javax.persistence.*;
-import java.util.List;
+import java.util.Set;
 
 @Entity
 public class Books {
@@ -11,26 +11,19 @@ public class Books {
     private String bookName;
     private String author;
     private int amount;
-    @OneToMany(mappedBy = "renterId")
-    private List<Renter> renter;
+    @OneToMany(mappedBy = "book")
+    private Set<Renter> renters;
 
     public Books() {
     }
 
-    public Books(int bookId, String bookName, String author, int amount, List<Renter> renter) {
+    public Books(int bookId, String bookName, String author, int amount, Set<Renter> renters) {
         this.bookId = bookId;
         this.bookName = bookName;
         this.author = author;
         this.amount = amount;
-        this.renter = renter;
+        this.renters = renters;
     }
-    public Books(int bookId, String bookName, String author, int amount) {
-        this.bookId = bookId;
-        this.bookName = bookName;
-        this.author = author;
-        this.amount = amount;
-    }
-
 
     public int getBookId() {
         return bookId;
@@ -64,11 +57,11 @@ public class Books {
         this.amount = amount;
     }
 
-    public List<Renter> getRenter() {
-        return renter;
+    public Set<Renter> getRenters() {
+        return renters;
     }
 
-    public void setRenter(List<Renter> renter) {
-        this.renter = renter;
+    public void setRenters(Set<Renter> renters) {
+        this.renters = renters;
     }
 }
