@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+<div class="container-fluid">
+    <a class="navbar-brand " th:href="@{/book/create}">
+        Add new Book
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent2">
+    </div>
+    <form class="d-flex" th:action="@{/book/search}">
+        <input class="form-control me-2" size="60px" placeholder="Search" name="name" aria-label="Search"
+               th:text="${name}">
+        <button class="btn btn-outline-success" type="submit" value="search">Search</button>
+    </form>
+</div>
+</nav>
+<div class="body_center_2 container">
+    <center>
+        <div class="notify">
+            <div th:if="${success}">
+                <span th:text="${success}"></span>
+            </div>
+        </div>
+    </center>
+    <table id="product" class="table table-success table-striped">
+        <thead>
+        <tr class="table-info">
+            <th>Id</th>
+            <th>Name</th>
+            <th>Author</th>
+            <th>Amount</th>
+            <th>Renter</th>
+            <th>Borrow</th>
+            <th>Give Back</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="row : ${bookList}">
+            <td th:text="${row.bookId}"></td>
+            <td th:text="${row.bookName}"></td>
+            <td th:text="${row.author}"></td>
+            <td th:text="${row.amount}"></td>
+            <td th:text="${row.renter}"></td>
+            <td><a th:href="@{/book/{id}/negative(id=${row.bookId})}">Borrow</a></td>
+            <td><a th:href="@{/book/{id}/plus(id=${row.bookId})}">Give back</a></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</html>

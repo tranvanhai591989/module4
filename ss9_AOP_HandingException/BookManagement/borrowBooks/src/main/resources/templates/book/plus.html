@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<form method="post" th:action="@{/book/plus}" th:object="${book}">
+  <tr>
+    <input type="hidden" th:field="*{bookId}">
+  </tr>
+  <tr>
+    <label>Book Name</label>
+    <input type="text" th:field="*{bookName}">
+  </tr>
+  <tr>
+    <label>Author</label>
+    <input type="text" th:field="*{author}">
+  </tr>
+  <tr>
+    <label>Moment</label>
+    <input type="text" th:field="*{amount}+1">
+  </tr>
+  <input type="submit" value="save" name="create">
+</form>
+</body>
+</html>

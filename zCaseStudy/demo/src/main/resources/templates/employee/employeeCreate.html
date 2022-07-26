@@ -205,7 +205,7 @@
             </div>
             <div class="mb-3">
                 <label class="form-label">User</label>
-                <input type="text" class="form-control" th:field="*{users}"/>
+                <input type="text" class="form-control" th:field="*{users.userName}"/>
                 <p style="color:red" th:if="${#fields.hasErrors('users')}"th:errors="*{users}"></p>
 
             </div>

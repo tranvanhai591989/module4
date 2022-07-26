@@ -1,10 +1,10 @@
 package com.example.demo.controller;
 
 import com.example.demo.dto.EmployeeDto;
-import com.example.demo.model.Division;
-import com.example.demo.model.EducationDegree;
-import com.example.demo.model.Employee;
-import com.example.demo.model.Position;
+import com.example.demo.model.employee.Division;
+import com.example.demo.model.employee.EducationDegree;
+import com.example.demo.model.employee.Employee;
+import com.example.demo.model.employee.Position;
 import com.example.demo.service.DivisionService;
 import com.example.demo.service.EducationDegreeService;
 import com.example.demo.service.EmployeeService;
@@ -109,8 +109,6 @@ public class EmployeeController {
             return "redirect:/employee";
         }
     }
-
-
 
     @GetMapping("/delete")
     public String delete(@RequestParam int id, RedirectAttributes redirect) {

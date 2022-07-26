@@ -1,5 +1,8 @@
 package com.example.demo.model;
 
+import com.example.demo.model.customer.Customer;
+import com.example.demo.model.employee.Employee;
+
 import javax.persistence.*;
 import java.util.Date;
 import java.util.Set;

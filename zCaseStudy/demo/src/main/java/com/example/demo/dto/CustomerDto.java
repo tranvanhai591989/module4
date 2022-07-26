@@ -1,28 +1,27 @@
 package com.example.demo.dto;
 
-import com.example.demo.model.Contract;
+import com.example.demo.model.customer.CustomerType;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
-import java.util.Date;
 
 public class CustomerDto {
     private int customerId;
-    private String customerType;
-    private Contract contracts;
+    private CustomerType customerType;
+//    private Set<Contract> contracts;
     @NotEmpty
     @Pattern(regexp = "^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒ\n" +
             "        ÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$", message = "Wrong format")
     private String customerName;
 
-    @Pattern(regexp = "(Date of birth:|Birthday:)\\s+(?:0[1-9]|[12][0-9]|3[01])[-/.](?:0[1-9]|1[012])[-/.](?:19\\d{2}|20[01][0-9]|2020)\\b", message = "Wrong format")
-    private Date customerBirth;
+    //    @Pattern(regexp = "(Date of birth:|Birthday:)\\s+(?:0[1-9]|[12][0-9]|3[01])[-/.](?:0[1-9]|1[012])[-/.](?:19\\d{2}|20[01][0-9]|2020)\\b", message = "Wrong format")
+    private String customerBirth;
 
-    private int customerGender;
+    private String customerGender;
 
-    @Pattern(regexp = "^d{9}")
+    @Pattern(regexp = "^[0-9]{9}")
     private String customerIdCard;
 
     @NotNull
@@ -32,17 +31,17 @@ public class CustomerDto {
 
     @Pattern(regexp = "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$", message = "abc@gmail.com")
     private String customerEmail;
-
-    @Pattern(regexp = "\\d+[ ](?:[A-Za-z0-9.-]+[ ]?)+(?:Avenue|Lane|Road|Boulevard|Drive|Street|Ave|Dr|Rd|Blvd|Ln|St)\\.?", message = "Wrong format")
+    @NotEmpty
+//    @Pattern(regexp = "[A-Za-z0-9'\\.\\-\\s\\,]", message = "Wrong format")
     private String customerAddress;
 
     public CustomerDto() {
     }
 
-    public CustomerDto(int customerId, String customerType, Contract contracts, String customerName, Date customerBirth, int customerGender, String customerIdCard, String customerPhoneNumber, String customerEmail, String customerAddress) {
+    public CustomerDto(int customerId, CustomerType customerType, String customerName, String customerBirth, String customerGender, String customerIdCard, String customerPhoneNumber, String customerEmail, String customerAddress) {
         this.customerId = customerId;
         this.customerType = customerType;
-        this.contracts = contracts;
+
         this.customerName = customerName;
         this.customerBirth = customerBirth;
         this.customerGender = customerGender;
@@ -60,21 +59,21 @@ public class CustomerDto {
         this.customerId = customerId;
     }
 
-    public String getCustomerType() {
+    public CustomerType getCustomerType() {
         return customerType;
     }
 
-    public void setCustomerType(String customerType) {
+    public void setCustomerType(CustomerType customerType) {
         this.customerType = customerType;
     }
 
-    public Contract getContracts() {
-        return contracts;
-    }
+//    public Set<Contract> getContracts() {
+//        return contracts;
+//    }
 
-    public void setContracts(Contract contracts) {
-        this.contracts = contracts;
-    }
+//    public void setContracts(Set<Contract> contracts) {
+//        this.contracts = contracts;
+//    }
 
     public String getCustomerName() {
         return customerName;
@@ -84,19 +83,19 @@ public class CustomerDto {
         this.customerName = customerName;
     }
 
-    public Date getCustomerBirth() {
+    public String getCustomerBirth() {
         return customerBirth;
     }
 
-    public void setCustomerBirth(Date customerBirth) {
+    public void setCustomerBirth(String customerBirth) {
         this.customerBirth = customerBirth;
     }
 
-    public int getCustomerGender() {
+    public String getCustomerGender() {
         return customerGender;
     }
 
-    public void setCustomerGender(int customerGender) {
+    public void setCustomerGender(String customerGender) {
         this.customerGender = customerGender;
     }
 

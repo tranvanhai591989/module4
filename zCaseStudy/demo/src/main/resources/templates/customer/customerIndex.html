@@ -143,6 +143,11 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent2">
             </div>
+            <form class="d-flex" th:action="@{/customer/search}">
+                <input class="form-control me-2" size="60px" placeholder="Search" name="name" aria-label="Search"
+                       th:text="${name}">
+                <button class="btn btn-outline-success" type="submit" value="search">Search</button>
+            </form>
         </div>
     </nav>
     <div class="body_center_2 container">
@@ -158,8 +163,7 @@
             <thead>
             <tr class="table-info">
                 <th>Id</th>
-                <th>Type</th>
-                <th>Contract</th>
+
                 <th>Name</th>
                 <th>Birthday</th>
                 <th>Gender</th>
@@ -167,6 +171,8 @@
                 <th>Phone Number</th>
                 <th>Email</th>
                 <th>Address</th>
+                <th>Type</th>
+<!--                <th>Contract</th>-->
                 <th>Edit</th>
                 <th>Delete</th>
             </tr>
@@ -174,15 +180,18 @@
             <tbody>
             <tr th:each="row : ${customerList}">
                 <td th:text="${row.customerId}"></td>
-                <td th:text="${row.customerType}"></td>
-                <td th:text="${row.contracts}"></td>
                 <td th:text="${row.customerName}"></td>
                 <td th:text="${row.customerBirth}"></td>
-                <td th:text="${row.customerGender}"></td>
+
+                <td th:if="${row.customerGender=='1'}" th:text="Male"></td>
+                <td th:if="${row.customerGender=='0'}" th:text="Female"></td>
+
                 <td th:text="${row.customerIdCard}"></td>
                 <td th:text="${row.customerPhoneNumber}"></td>
                 <td th:text="${row.customerEmail}"></td>
                 <td th:text="${row.customerAddress}"></td>
+                <td th:text="${row.customerType.getCustomerTypeName()}"></td>
+<!--                <td th:text="${row.contracts == null ? ' ':row.contracts.getcontractsName}"></td>-->
                 <td><a th:href="@{/customer/{id}/edit(id=${row.customerId})}">Edit</a></td>
                 <td>
                     <button type="button" class="btn btn-danger" data-bs-toggle="modal"
@@ -221,14 +230,13 @@
 
             </tbody>
         </table>
-
-<!--        <div class="body_center_2">-->
-<!--            <a th:href="@{'/customer/search'(page=${customerList.number - 1},name=${search})}"-->
-<!--               th:if="${customerList.hasPrevious()}">Previous</a>-->
-<!--            <span th:text="${customerList.number + 1}"></span>/<span th:text="${customerList.totalPages}"></span>-->
-<!--            <a th:href="@{'/customer/search'(page=${customerList.number + 1},name=${search})}"-->
-<!--               th:if="${customerList.hasNext()}">Next</a>-->
-<!--        </div>-->
+        <div class="body_center_2">
+            <a th:href="@{'/customer/search'(page=${customerList.number - 1},name=${search})}"
+               th:if="${customerList.hasPrevious()}">Previous</a>
+            <span th:text="${customerList.number + 1}"></span>/<span th:text="${customerList.totalPages}"></span>
+            <a th:href="@{'/customer/search'(page=${customerList.number + 1},name=${search})}"
+               th:if="${customerList.hasNext()}">Next</a>
+        </div>
     </div>
 
     <div class="footer container-fluid">

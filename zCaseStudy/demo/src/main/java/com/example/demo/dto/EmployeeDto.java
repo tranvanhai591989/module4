@@ -1,8 +1,8 @@
 package com.example.demo.dto;
 
-import com.example.demo.model.Division;
-import com.example.demo.model.EducationDegree;
-import com.example.demo.model.Position;
+import com.example.demo.model.employee.Division;
+import com.example.demo.model.employee.EducationDegree;
+import com.example.demo.model.employee.Position;
 import com.example.demo.model.User;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
@@ -18,7 +18,6 @@ public class EmployeeDto implements Validator {
     @Pattern(regexp = "^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒ\n" +
             "        ÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$", message = "Wrong format")
     private String employeeName;
-
 
     private String employeeBirth;
     @Pattern(regexp = "^[0-9]{9}$")

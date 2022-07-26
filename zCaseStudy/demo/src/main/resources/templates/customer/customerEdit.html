@@ -114,24 +114,21 @@
             <a class="navbar-brand">Customer Edit</a>
         </div>
         <div class="container-fluid">
-            <a class="nav-link active navbar-brand" aria-current="page" th:action="@{home.html}">Main Page</a>
+            <a class="nav-link active navbar-brand" aria-current="page" th:href="@{/}">Main Page</a>
         </div>
     </nav>
     <div class="body_center_2 container">
 
         <form th:action="@{/customer/update}" th:object="${customerDto} "  method="post" novalidate="novalidate">
             <div class="mb-3">
+                <input type="hidden" class="form-control" th:field="*{customerId}"/>
             </div>
-            <div class="mb-3">
-                <label class="form-label">Type</label>
-                <input type="number" class="form-control" th:field="*{customerType}"/>
-                <p style="color:red" th:if="${#fields.hasErrors('customerType')}" th:errors="*{customerType}"></p>
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Contract</label>
-                <input type="text" class="form-control" th:field="*{contracts}"/>
-                <p style="color:red" th:if="${#fields.hasErrors('contracts')}" th:errors="*{contracts}"></p>
-            </div>
+
+<!--            <div class="mb-3">-->
+<!--                <label class="form-label">Contract</label>-->
+<!--                <input type="text" class="form-control" th:field="*{contracts}"/>-->
+<!--                <p style="color:red" th:if="${#fields.hasErrors('contracts')}" th:errors="*{contracts}"></p>-->
+<!--            </div>-->
             <div class="mb-3">
                 <label class="form-label">Name </label>
                 <input type="text" class="form-control" th:field="*{customerName}"/>
@@ -145,7 +142,13 @@
             </div>
             <div class="mb-3">
                 <label class="form-label">Gender</label>
-                <input type="text" class="form-control" th:field="*{customerGender}"/>
+                <select th:field="*{customerGender}" class="form-control">
+                    <option  th:value="1"
+                             th:text="Male"></option>
+                    <option  th:value="1"
+                             th:text="Female"></option>
+                </select>
+
                 <p style="color:red" th:if="${#fields.hasErrors('customerGender')}" th:errors="*{customerGender}"></p>
 
             </div>
@@ -173,6 +176,14 @@
                 <input type="text" class="form-control" th:field="*{customerAddress}"/>
                 <p style="color:red" th:if="${#fields.hasErrors('customerAddress')}" th:errors="*{customerAddress}"></p>
 
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Type</label>
+                <select th:field="*{customerType}" class="form-control">
+                    <option th:each=" item : ${customerTypeList}" th:value="${item.customerTypeId}"
+                            th:text="${item.getCustomerTypeName()}"></option>
+                </select>
+                <p style="color:red" th:if="${#fields.hasErrors('customerType')}" th:errors="*{customerType}"></p>
             </div>
             <center>
                 <input type="submit" class="btn btn-outline-primary" value="Edit">

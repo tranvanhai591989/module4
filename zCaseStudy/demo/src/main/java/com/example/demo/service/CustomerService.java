@@ -1,16 +1,20 @@
 package com.example.demo.service;
 
-import com.example.demo.model.Customer;
+import com.example.demo.model.customer.Customer;
+import com.example.demo.model.employee.Employee;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface CustomerService {
-    List<Customer> findAll();
+    Page<Customer> findAll(Pageable pageable);
 
     void save(Customer customer);
 
     void deleteCustomerByCustomerId(int id);
 
-    Optional<Customer> findById(int id);
+    Customer findById(int id);
+
+    Page<Customer> searchByName(String name, Pageable pageable);
 }
