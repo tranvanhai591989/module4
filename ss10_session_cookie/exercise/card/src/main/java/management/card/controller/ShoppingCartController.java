@@ -1,6 +1,5 @@
 package management.card.controller;
 
-import management.card.dto.CardDto;
 import management.card.model.Cart;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,7 +16,9 @@ public class ShoppingCartController {
     }
 
     @GetMapping("/shopping-cart")
-    public ModelAndView showCart(@SessionAttribute(name = "cart", required = false) CardDto cart) {
-        return new ModelAndView("cart", "cart", cart);
+    public ModelAndView showCart (@SessionAttribute(value = "cart", required = false) Cart cart){
+        ModelAndView modelAndView = new ModelAndView("/cart");
+        modelAndView.addObject("cart",cart);
+        return modelAndView;
     }
 }

@@ -1,10 +1,8 @@
 package management.card.controller;
 
-import management.card.dto.CardDto;
-import management.card.dto.ProductDto;
+import management.card.model.Cart;
 import management.card.model.Product;
 import management.card.service.ProductService;
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,8 +21,8 @@ public class ProductController {
     private ProductService productService;
 
     @ModelAttribute("cart")
-    public CardDto setupCart() {
-        return new CardDto();
+    public Cart setupCart() {
+        return new Cart();
     }
 
     @GetMapping()
@@ -46,15 +44,32 @@ public class ProductController {
     }
 
     @GetMapping("/add/{id}")
-    public String addToCart(@PathVariable("id") Long id, @ModelAttribute("cart") CardDto cart) {
+    public String addToCart(@PathVariable("id") Long id, @ModelAttribute("cart") Cart cart, @RequestParam("action") String action) {
         Optional<Product> productOptional = productService.findById(id);
         if (!productOptional.isPresent()) {
             return "/error.404";
         }
-        ProductDto productDto = new ProductDto();
-        BeanUtils.copyProperties(productOptional.get(), productDto);
-        cart.addProduct(productDto);
-        return "redirect:/shopping-cart";
+        if (action.equals("show")) {
+            cart.addProduct(productOptional.get());
+            return "redirect:http://localhost:8080/shopping-cart";
+        }
+        cart.addProduct(productOptional.get());
+        return "redirect:/shop";
 
     }
+
+    @GetMapping("remove/{id}")
+    public String removeToCart(@PathVariable Long id, @ModelAttribute Cart cart, @RequestParam("action") String action) throws Exception {
+        Optional<Product> productOptional = productService.findById(id);
+        if (!productOptional.isPresent()) {
+            return "error.404";
+        }
+        if (action.equals("show")) {
+            cart.removeProduct(productOptional.get());
+            return "redirect:/shopping-cart";
+        }
+        cart.removeProduct(productOptional.get());
+        return "redirect:/";
+    }
+
 }

@@ -60,8 +60,25 @@ public class Cart {
     public Float countTotalPayment() {
         float payment = 0;
         for (Map.Entry<Product, Integer> entry : products.entrySet()) {
-            payment += entry.getKey().getPrice() * (float) entry.getValue();
+            payment += entry.getKey().getPrice() * (float) entry.getValue()*((100-entry.getKey().getDiscount())/100);
         }
         return payment;
+    }
+
+    public void removeProduct(Product product) {
+        if (!checkItemInCart(product)) {
+            products.put(product, 1);
+        } else {
+            try {
+                Map.Entry<Product, Integer> itemEntry = selectItemInCart(product);
+                Integer integer = itemEntry.getValue() - 1;
+                products.replace(itemEntry.getKey(), integer);
+                if (integer == -1) {
+                    products.replace(itemEntry.getKey(), 0);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
 }
