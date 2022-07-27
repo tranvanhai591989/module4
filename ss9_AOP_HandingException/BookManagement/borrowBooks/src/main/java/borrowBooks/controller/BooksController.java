@@ -44,14 +44,14 @@ public class BooksController {
     @GetMapping("/{id}/negative")
     public String plus(@PathVariable("id") int id,Model model) {
         model.addAttribute("book",booksService.findById(id));
-        return "/book/negative";
+        return "/book/plus";
     }
 
     @PostMapping("/negative")
     public String userNegative(@RequestParam("id")String code,Model model){
         Renter renter = renterService.findByCode(code);
         if (renter==null){
-            return "error";
+            return "book/error";
         }else {
             Books books = renter.getBook();
             books.setAmount(books.getAmount()+1);
@@ -59,6 +59,4 @@ public class BooksController {
             return "redirect:/book";
         }
     }
-
-
 }

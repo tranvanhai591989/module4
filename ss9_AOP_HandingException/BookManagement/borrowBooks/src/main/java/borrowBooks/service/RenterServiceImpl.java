@@ -5,12 +5,10 @@ import borrowBooks.repository.RenterRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 @Service
 public class RenterServiceImpl implements RenterService {
     @Autowired
-    private  RenterRepository renterRepository;
+    private RenterRepository renterRepository;
 
 
     @Override
