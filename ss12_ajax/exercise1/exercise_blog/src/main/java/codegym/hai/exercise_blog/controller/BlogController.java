@@ -1,5 +1,6 @@
 package codegym.hai.exercise_blog.controller;
 
+import antlr.collections.List;
 import codegym.hai.exercise_blog.model.Blog;
 import codegym.hai.exercise_blog.model.Type;
 import codegym.hai.exercise_blog.service.BlogService;
@@ -10,8 +11,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/blog")
@@ -71,8 +70,8 @@ public class BlogController {
     }
 
     @GetMapping("/search")
-    public ResponseEntity<Page<Blog>> getBlogList(@RequestParam String name,Pageable pageable) {
-        Page<Blog> blogList = blogService.searchByName(name,pageable);
+    public ResponseEntity<Page<Blog>> getBlogList(@RequestParam String name, Pageable pageable) {
+        Page<Blog> blogList = blogService.searchByName(name, pageable);
         if (blogList.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
