@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="inputSearch" name="name" autocomplete="off">
+<table id="table1">
+    <thead>
+    <tr>
+        <td>ID</td>
+        <td>Content</td>
+        <td>Type</td>
+        <td>Commit Day</td>
+    </tr>
+    </thead>
+</table>
+<table id="table2">
+</table>
+<button>Click</button>
+<script src="jquery-3.6.0.js"></script>
+<script>
+
+
+    $(document).ready(function () {
+        $.ajax({
+            url: "http://localhost:8080/blog",
+            type: "GET",
+            dataType: "json",
+            success: function (data) {
+                console.log(data);
+                let tr = [];
+                let a = data.content.length<=2?data.content.length:2;
+                for (let i = 0; i < a; i++) {
+                    tr.push("<tr>");
+                    tr.push("<td>" + data.content[i].id + "</td>");
+                    tr.push("<td>" + data.content[i].content + "</td>");
+                    tr.push("<td>" + data.content[i].type.name + "</td>");
+                    tr.push("<td>" + data.content[i].commitDay + "</td>");
+                    tr.push("</tr>");
+                }
+                $("#table2").append((tr.join("")))
+            }
+        })
+
+    })
+    $("button").click(function () {
+        $("#table2").empty();
+        $.ajax({
+            url: "http://localhost:8080/blog",
+            type: "GET",
+            dataType: "json",
+            success: function (data) {
+                console.log(data);
+                let tr = [];
+                for (let i = 0; i < data.content.length; i++) {
+                    tr.push("<tr>");
+                    tr.push("<td>" + data.content[i].id + "</td>");
+                    tr.push("<td>" + data.content[i].content + "</td>");
+                    tr.push("<td>" + data.content[i].type.name + "</td>");
+                    tr.push("<td>" + data.content[i].commitDay + "</td>");
+                    tr.push("</tr>");
+                }
+                $("#table2").append((tr.join("")))
+            }
+        })
+
+
+
+        $("#inputSearch").keyup(function (){
+            let value = $(this).val();
+            console.log(value);
+            $("#table2").empty();
+            $.ajax({
+                url: "http://localhost:8080/blog/search?name="+value,
+                type: "GET",
+                dataType: "json",
+                success:function (data){
+                    console.log(value);
+                    let tr = [];
+                    for (let i=0;i<data.content.length;i++){
+                        tr.push("<tr>");
+                        tr.push("<td>" + data.content[i].id + "</td>");
+                        tr.push("<td>" + data.content[i].content + "</td>");
+                        tr.push("<td>" + data.content[i].type.name + "</td>");
+                        tr.push("<td>" + data.content[i].commitDay + "</td>");
+                        tr.push("</tr>")
+                    }
+                    $("#table2").append((tr.join("")))
+                }
+            })
+        })
+    })
+</script>
+</body>
+</html>

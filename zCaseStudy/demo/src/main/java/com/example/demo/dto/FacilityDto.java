@@ -1,10 +1,7 @@
 package com.example.demo.dto;
 
-import com.example.demo.model.Contract;
-import com.example.demo.model.FacilityType;
-import com.example.demo.model.RentType;
-
-import java.util.Set;
+import com.example.demo.model.facility.FacilityType;
+import com.example.demo.model.facility.RentType;
 
 public class FacilityDto {
     private int facilityId;

@@ -1,7 +1,6 @@
 package com.example.demo.model.employee;
 
-import com.example.demo.model.Contract;
-import com.example.demo.model.User;
+import com.example.demo.model.contract.Contract;
 
 import javax.persistence.*;
 import java.util.Set;

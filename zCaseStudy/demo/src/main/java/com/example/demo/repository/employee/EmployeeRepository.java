@@ -1,10 +1,6 @@
 package com.example.demo.repository.employee;
 
-import com.example.demo.model.*;
-import com.example.demo.model.employee.Division;
-import com.example.demo.model.employee.EducationDegree;
-import com.example.demo.model.employee.Employee;
-import com.example.demo.model.employee.Position;
+import com.example.demo.model.employee.*;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

@@ -1,13 +1,14 @@
 package com.example.demo.controller;
 
 import com.example.demo.dto.CustomerDto;
-import com.example.demo.model.Contract;
+import com.example.demo.model.contract.Contract;
 import com.example.demo.model.customer.Customer;
 import com.example.demo.model.customer.CustomerType;
-import com.example.demo.service.*;
+import com.example.demo.service.contract.ContractService;
+import com.example.demo.service.customer.CustomerService;
+import com.example.demo.service.customer.CustomerTypeService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
@@ -18,7 +19,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
-import java.util.Optional;
 
 @Controller
 @RequestMapping("/customer")
@@ -28,7 +28,7 @@ public class CustomerController {
     @Autowired
     private ContractService contractService;
     @Autowired
-    private  CustomerTypeService customerTypeService;
+    private CustomerTypeService customerTypeService;
 
     @GetMapping("")
     public String index(@PageableDefault(value =3)  Pageable pageable,Model model) {
