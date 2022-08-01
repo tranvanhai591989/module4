@@ -36,13 +36,13 @@ public class BooksController {
     }
 
     @GetMapping("/{id}/plus")
-    public String negative(@PathVariable("id") int id,Model model) {
+    public String bookNegative(@PathVariable("id") int id,Model model) {
         model.addAttribute("book",booksService.findById(id));
         return "/book/plus";
     }
 
     @GetMapping("/{id}/negative")
-    public String plus(@PathVariable("id") int id,Model model) {
+    public String bookPlus(@PathVariable("id") int id,Model model) {
         model.addAttribute("book",booksService.findById(id));
         return "/book/plus";
     }

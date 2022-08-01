@@ -11,7 +11,7 @@ public class Books {
     private String bookName;
     private String author;
     private int amount;
-    @OneToMany(mappedBy = "book")
+    @OneToMany(mappedBy = "books")
     private Set<Renter> renters;
 
     public Books() {

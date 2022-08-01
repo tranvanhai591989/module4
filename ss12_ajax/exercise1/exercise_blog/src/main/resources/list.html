@@ -18,7 +18,7 @@
 </table>
 <table id="table2">
 </table>
-<button>Click</button>
+<button >More</button>
 <script src="jquery-3.6.0.js"></script>
 <script>
 
@@ -66,8 +66,6 @@
             }
         })
 
-
-
         $("#inputSearch").keyup(function (){
             let value = $(this).val();
             console.log(value);
@@ -85,12 +83,18 @@
                         tr.push("<td>" + data.content[i].content + "</td>");
                         tr.push("<td>" + data.content[i].type.name + "</td>");
                         tr.push("<td>" + data.content[i].commitDay + "</td>");
-                        tr.push("</tr>")
+                        tr.push("</tr>");
                     }
                     $("#table2").append((tr.join("")))
+                    reset();
                 }
+
             })
         })
+        function reset() {
+            $("#inputSearch").val("");
+
+        }
     })
 </script>
 </body>

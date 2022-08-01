@@ -5,17 +5,17 @@
 //import org.aspectj.lang.annotation.Pointcut;
 //import org.springframework.stereotype.Component;
 //
+//import java.time.LocalDateTime;
+//
 //@Component
 //@Aspect
 //public class BookAop {
-//    @Pointcut(value = "execution(borrowBooks.controller.BooksController.*)")
-//    public void bookPointCut() {
-//
+//    @Pointcut("execution(* borrowBooks.controller.BooksController.*(..))")
+//    public void allMethodPointCut() {
 //    }
 //
-//    @After("bookPointcut()")
-//    public void countRenter() {
-//        System.out.println("==========");
-//
+//    @After("allMethodPointCut()")
+//    public void afterCallMethod() {
+//        System.err.println("Sách đã bị thay đổi lúc " + LocalDateTime.now());
 //    }
 //}

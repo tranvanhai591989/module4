@@ -17,30 +17,20 @@ public class SmartphoneController {
     @Autowired
     private SmartphoneService smartphoneService;
 
-    @PostMapping
-    public ResponseEntity<Smartphone> createSmartphone(@RequestBody Smartphone smartphone) {
-        return new ResponseEntity<>(smartphoneService.save(smartphone), HttpStatus.CREATED);
-    }
-
     @GetMapping
     public ResponseEntity<Iterable<Smartphone>> allPhones() {
         return new ResponseEntity<>(smartphoneService.findAll(), HttpStatus.OK);
+    }
+
+    @PostMapping
+    public ResponseEntity<Smartphone> createSmartphone(@RequestBody Smartphone smartphone) {
+        return new ResponseEntity<>(smartphoneService.save(smartphone), HttpStatus.CREATED);
     }
 
 
     @GetMapping("{id}")
     public ResponseEntity findOne(@PathVariable Long id) {
         return new ResponseEntity<>(smartphoneService.findById(id), HttpStatus.OK);
-    }
-
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Smartphone> deleteSmartphone(@PathVariable Long id) {
-        Optional<Smartphone> smartphoneOptional = smartphoneService.findById(id);
-        if (!smartphoneOptional.isPresent()) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-        smartphoneService.remove(id);
-        return new ResponseEntity<>(smartphoneOptional.get(), HttpStatus.NO_CONTENT);
     }
 
     @PutMapping("/{id}")
@@ -54,6 +44,16 @@ public class SmartphoneController {
         smartphoneOptional.get().setProducer(smartphone.getProducer());
 
         smartphoneService.save(smartphoneOptional.get());
+        return new ResponseEntity<>(smartphoneOptional.get(), HttpStatus.NO_CONTENT);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Smartphone> deleteSmartphone(@PathVariable Long id) {
+        Optional<Smartphone> smartphoneOptional = smartphoneService.findById(id);
+        if (!smartphoneOptional.isPresent()) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        smartphoneService.remove(id);
         return new ResponseEntity<>(smartphoneOptional.get(), HttpStatus.NO_CONTENT);
     }
 }

@@ -31,7 +31,7 @@ public class CustomerController {
     private CustomerTypeService customerTypeService;
 
     @GetMapping("")
-    public String index(@PageableDefault(value =3)  Pageable pageable,Model model) {
+    public String index(@PageableDefault(value =4)  Pageable pageable,Model model) {
         model.addAttribute("customerList",  customerService.findAll(pageable));
         return "customer/customerIndex";
     }

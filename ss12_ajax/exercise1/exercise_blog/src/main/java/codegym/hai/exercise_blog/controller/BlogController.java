@@ -62,7 +62,7 @@ public class BlogController {
 
     @GetMapping("/type")
     public ResponseEntity<List<Type>> typeList() {
-        List<Type> typeList = typeService.findAll();
+        List typeList = typeService.findAll();
         if (typeList.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }

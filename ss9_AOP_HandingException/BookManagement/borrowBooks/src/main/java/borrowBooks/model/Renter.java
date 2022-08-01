@@ -12,8 +12,8 @@ public class Renter {
 
     private String renterName;
     @ManyToOne
-    @JoinColumn(name = "bookId", referencedColumnName = "bookID")
-    private Books book;
+    @JoinColumn(name = "book_id", referencedColumnName = "book_id")
+    private Books books;
 
     public Renter() {
     }
@@ -21,7 +21,7 @@ public class Renter {
     public Renter(String renterName, String renterCode, Books book) {
         this.renterName = renterName;
         this.renterCode = renterCode;
-        this.book = book;
+        this.books = books;
     }
 
     public String getRenterName() {
@@ -41,10 +41,10 @@ public class Renter {
     }
 
     public Books getBook() {
-        return book;
+        return books;
     }
 
     public void setBook(Books book) {
-        this.book = book;
+        this.books = book;
     }
 }
