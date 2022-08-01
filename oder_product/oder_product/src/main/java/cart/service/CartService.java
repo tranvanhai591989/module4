@@ -59,8 +59,7 @@ public class CartService {
         Cart cart = getCart(cartId);
         Item item = itemService.getItem(itemId);
         if (Objects.nonNull(item.getCart())) {
-            throw new ItemIsAlreadyAssignedException(itemId,
-                    item.getCart().getId());
+            throw new ItemIsAlreadyAssignedException(itemId,item.getCart().getId());
         }
         cart.addItem(item);
         item.setCart(cart);
@@ -68,7 +67,7 @@ public class CartService {
     }
 
     @Transactional
-    public Cart removeItemFromCart(Integer cartId, Long itemId) {
+    public Cart removeItemFromCart(Integer cartId, Integer itemId) {
         Cart cart = getCart(cartId);
         Item item = itemService.getItem(itemId);
         cart.removeItem(item);

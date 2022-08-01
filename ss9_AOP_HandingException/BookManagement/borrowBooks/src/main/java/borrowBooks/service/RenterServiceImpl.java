@@ -18,7 +18,7 @@ public class RenterServiceImpl implements RenterService {
 
     @Override
     public Renter findByCode(String code) {
-        return renterRepository.findByCodeContains(code);
+        return renterRepository.findByRenterCodeContaining(code);
     }
 
     @Override

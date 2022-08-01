@@ -24,7 +24,7 @@
         <button class="btn btn-outline-success" type="submit" value="search">Search</button>
     </form>
     <center>
-        <form th:action="book/negative">
+        <form th:action="@{book/negative}" method="post">
             <input name="id" type="text">
             <button type="submit">Trả sách</button>
         </form>
@@ -57,7 +57,7 @@
             <td th:text="${row.author}"></td>
             <td th:text="${row.amount}"></td>
             <td>
-                <a type="button" th:attr="onclick=|info(${book.bookId}, '${book.bookName}')|" class="btn btn-primary">
+                <a type="button" th:attr="onclick=|info(${row.bookId},${row.bookName})|" class="btn btn-primary">
                     Borrow
                 </a>
             </td>

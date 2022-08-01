@@ -1,6 +1,6 @@
 package borrowBooks.controller;
 
-import borrowBooks.model.Books;
+import borrowBooks.model.Book;
 import borrowBooks.model.Renter;
 import borrowBooks.service.BooksService;
 import borrowBooks.service.RenterService;
@@ -25,13 +25,13 @@ public class BooksController {
 
     @GetMapping("/create")
     public String showFormCreate(Model model) {
-        model.addAttribute("book", new Books());
+        model.addAttribute("book", new Book());
         return "book/create";
     }
 
     @PostMapping("/save")
-    public String addBook(Books books) {
-        booksService.save(books);
+    public String addBook(Book book) {
+        booksService.save(book);
         return "redirect:/book";
     }
 
@@ -53,8 +53,8 @@ public class BooksController {
         if (renter==null){
             return "book/error";
         }else {
-            Books books = renter.getBook();
-            books.setAmount(books.getAmount()+1);
+            Book book = renter.getBook();
+            book.setAmount(book.getAmount()+1);
             renterService.delete(renter);
             return "redirect:/book";
         }

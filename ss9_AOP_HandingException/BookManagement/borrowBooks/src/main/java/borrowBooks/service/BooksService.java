@@ -1,14 +1,14 @@
 package borrowBooks.service;
 
-import borrowBooks.model.Books;
+import borrowBooks.model.Book;
 
 import java.util.List;
 
 public interface BooksService {
-    List<Books> findAll();
+    List<Book> findAll();
 
-    void save(Books books);
+    void save(Book book);
 
-    Books findById(Integer id);
+    Book findById(Integer id);
 
 }

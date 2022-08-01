@@ -1,6 +1,6 @@
 package borrowBooks.service;
 
-import borrowBooks.model.Books;
+import borrowBooks.model.Book;
 import borrowBooks.repository.BooksRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,17 +13,17 @@ public class BooksServiceImpl implements BooksService {
     private BooksRepository booksRepository;
 
     @Override
-    public List<Books> findAll() {
+    public List<Book> findAll() {
         return booksRepository.findAll();
     }
 
     @Override
-    public void save(Books books) {
-        booksRepository.save(books);
+    public void save(Book book) {
+        booksRepository.save(book);
     }
 
     @Override
-    public Books findById(Integer id) {
+    public Book findById(Integer id) {
         return booksRepository.findById(id).get();
     }
 }

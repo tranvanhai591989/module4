@@ -7,5 +7,5 @@ import javax.transaction.Transactional;
 
 @Transactional
 public interface RenterRepository extends JpaRepository<Renter, String> {
-    Renter findByCodeContains(String Code);
+    Renter findByRenterCodeContaining(String Code);
 }
