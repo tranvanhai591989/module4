@@ -4,20 +4,20 @@ import javax.persistence.*;
 import java.util.Set;
 
 @Entity
-public class Books {
+public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int bookId;
     private String bookName;
     private String author;
     private int amount;
-    @OneToMany(mappedBy = "books")
+    @OneToMany(mappedBy = "book")
     private Set<Renter> renters;
 
-    public Books() {
+    public Book() {
     }
 
-    public Books(int bookId, String bookName, String author, int amount, Set<Renter> renters) {
+    public Book(int bookId, String bookName, String author, int amount, Set<Renter> renters) {
         this.bookId = bookId;
         this.bookName = bookName;
         this.author = author;
