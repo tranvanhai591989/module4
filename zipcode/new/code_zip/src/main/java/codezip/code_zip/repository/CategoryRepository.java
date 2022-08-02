@@ -1,9 +1,11 @@
 package codezip.code_zip.repository;
 
 import codezip.code_zip.model.Category;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-@Repository
-public interface CategoryRepository extends CrudRepository<Category, Long> {
+import javax.transaction.Transactional;
+
+@Transactional
+public interface CategoryRepository extends JpaRepository<Category, Long> {
 }

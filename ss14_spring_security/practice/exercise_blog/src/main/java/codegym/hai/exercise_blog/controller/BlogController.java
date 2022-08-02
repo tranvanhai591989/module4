@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Controller
-@RequestMapping("/blog")
+@RequestMapping({"/blog","/"})
 public class BlogController {
     @Autowired
     private BlogService blogService;

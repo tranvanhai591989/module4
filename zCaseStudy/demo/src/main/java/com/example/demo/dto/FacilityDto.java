@@ -3,17 +3,28 @@ package com.example.demo.dto;
 import com.example.demo.model.facility.FacilityType;
 import com.example.demo.model.facility.RentType;
 
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
+
 public class FacilityDto {
-    private int facilityId;
+    private Integer facilityId;
+    @NotEmpty
+    @Pattern(regexp = "^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒ\n" +
+            "        ÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$", message = "Wrong format")
     private String facilityName;
-    private int facilityArea;
-    private double facilityCost;
-    private int facilityMaxPeople;
+    @Pattern(regexp = "^[0-9]+$", message = "Has plus")
+    private Integer facilityArea;
+    @Pattern(regexp = "^[0-9]+$", message = "Has plus")
+    private Double facilityCost;
+    @Pattern(regexp = "^[0-9]+$", message = "Has plus")
+    private Integer facilityMaxPeople;
     private RentType rentType;
     private FacilityType facilityType;
     private String facilityStandardRoom;
     private String facilityDescriptionOtherConvenience;
+    @Pattern(regexp = "^[0-9]+$", message = "Has plus")
     private String facilityPoolArea;
+    @Pattern(regexp = "^[0-9]+$", message = "Has plus")
     private String facilityNumberOfFloors;
     private String facilityFreeService;
 //    private Set<Contract> contracts;
@@ -21,8 +32,7 @@ public class FacilityDto {
     public FacilityDto() {
     }
 
-    public FacilityDto(int facilityId, String facilityName, int facilityArea, double facilityCost, int facilityMaxPeople, RentType rentType, FacilityType facilityType, String facilityStandardRoom, String facilityDescriptionOtherConvenience, String facilityPoolArea, String facilityNumberOfFloors, String facilityFreeService) {
-
+    public FacilityDto(Integer facilityId, String facilityName, Integer facilityArea, Double facilityCost, Integer facilityMaxPeople, RentType rentType, FacilityType facilityType, String facilityStandardRoom, String facilityDescriptionOtherConvenience, String facilityPoolArea, String facilityNumberOfFloors, String facilityFreeService) {
         this.facilityId = facilityId;
         this.facilityName = facilityName;
         this.facilityArea = facilityArea;
@@ -37,11 +47,11 @@ public class FacilityDto {
         this.facilityFreeService = facilityFreeService;
     }
 
-    public int getFacilityId() {
+    public Integer getFacilityId() {
         return facilityId;
     }
 
-    public void setFacilityId(int facilityId) {
+    public void setFacilityId(Integer facilityId) {
         this.facilityId = facilityId;
     }
 
@@ -53,27 +63,27 @@ public class FacilityDto {
         this.facilityName = facilityName;
     }
 
-    public int getFacilityArea() {
+    public Integer getFacilityArea() {
         return facilityArea;
     }
 
-    public void setFacilityArea(int facilityArea) {
+    public void setFacilityArea(Integer facilityArea) {
         this.facilityArea = facilityArea;
     }
 
-    public double getFacilityCost() {
+    public Double getFacilityCost() {
         return facilityCost;
     }
 
-    public void setFacilityCost(double facilityCost) {
+    public void setFacilityCost(Double facilityCost) {
         this.facilityCost = facilityCost;
     }
 
-    public int getFacilityMaxPeople() {
+    public Integer getFacilityMaxPeople() {
         return facilityMaxPeople;
     }
 
-    public void setFacilityMaxPeople(int facilityMaxPeople) {
+    public void setFacilityMaxPeople(Integer facilityMaxPeople) {
         this.facilityMaxPeople = facilityMaxPeople;
     }
 

@@ -9,11 +9,11 @@ import java.util.Set;
 public class Facility {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int facilityId;
+    private Integer facilityId;
     private String facilityName;
-    private int facilityArea;
-    private double facilityCost;
-    private int facilityMaxPeople;
+    private Integer facilityArea;
+    private Double facilityCost;
+    private Integer facilityMaxPeople;
     @ManyToOne
     @JoinColumn(name = "rentTypeId", referencedColumnName = "rentTypeId")
     private RentType rentType;
@@ -31,7 +31,7 @@ public class Facility {
     public Facility() {
     }
 
-    public Facility(int facilityId, String facilityName, int facilityArea, double facilityCost, int facilityMaxPeople, RentType rentType, FacilityType facilityType, String facilityStandardRoom, String facilityDescriptionOtherConvenience, String facilityPoolArea, String facilityNumberOfFloors, String facilityFreeService) {
+    public Facility(Integer facilityId, String facilityName, Integer facilityArea, Double facilityCost, Integer facilityMaxPeople, RentType rentType, FacilityType facilityType, String facilityStandardRoom, String facilityDescriptionOtherConvenience, String facilityPoolArea, String facilityNumberOfFloors, String facilityFreeService, Set<Contract> contracts) {
         this.facilityId = facilityId;
         this.facilityName = facilityName;
         this.facilityArea = facilityArea;
@@ -44,14 +44,14 @@ public class Facility {
         this.facilityPoolArea = facilityPoolArea;
         this.facilityNumberOfFloors = facilityNumberOfFloors;
         this.facilityFreeService = facilityFreeService;
-//        this.contracts = contracts;
+        this.contracts = contracts;
     }
 
-    public int getFacilityId() {
+    public Integer getFacilityId() {
         return facilityId;
     }
 
-    public void setFacilityId(int facilityId) {
+    public void setFacilityId(Integer facilityId) {
         this.facilityId = facilityId;
     }
 
@@ -63,27 +63,27 @@ public class Facility {
         this.facilityName = facilityName;
     }
 
-    public int getFacilityArea() {
+    public Integer getFacilityArea() {
         return facilityArea;
     }
 
-    public void setFacilityArea(int facilityArea) {
+    public void setFacilityArea(Integer facilityArea) {
         this.facilityArea = facilityArea;
     }
 
-    public double getFacilityCost() {
+    public Double getFacilityCost() {
         return facilityCost;
     }
 
-    public void setFacilityCost(double facilityCost) {
+    public void setFacilityCost(Double facilityCost) {
         this.facilityCost = facilityCost;
     }
 
-    public int getFacilityMaxPeople() {
+    public Integer getFacilityMaxPeople() {
         return facilityMaxPeople;
     }
 
-    public void setFacilityMaxPeople(int facilityMaxPeople) {
+    public void setFacilityMaxPeople(Integer facilityMaxPeople) {
         this.facilityMaxPeople = facilityMaxPeople;
     }
 

@@ -110,154 +110,133 @@
     </div>
     <nav class="navbar navbar-expand-lg navbar-dark "
          style="background-color: #046056;position: sticky;top: 0;z-index: 1;">
-        <div class="container-fluid"></div>
         <div class="container-fluid">
-            <a class="navbar-brand ">Create Facility</a>
+            <a class="navbar-brand">Facility</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            </div>
-        </div>
-        <div class="container-fluid">
-            <a class="navbar-brand " th:href="@{/}">
-                Back to Main Page
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent1">
-            </div>
-        </div>
-        <div class="container-fluid"></div>
-    </nav>
-    <div class="body_center_2 container">
-
-        <div>
-            <form action="/facility/edit" method="post" th:object="${facility}">
-                <div>
-                    <div class="row">
-                        <div class="col-6">Facility type</div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <select class="form-select" name="" id="" onload="onchangeFacility(this.value)"
-                                    onchange="onchangeFacility(this.value)" th:field="*{facilityType}">
-                                <option th:each="row:${facilityTypeList}" th:text="${row.name}"
-                                        th:value="${row.id}"></option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-6">Name</div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <input class="form-control" type="text" th:field="*{name}">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-6">Cost</div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12"><input type="text" class="form-control" th:field="*{cost}"></div>
-                    </div>
-                    <div class="row">
-                        <div class="col-6">Area</div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12"><input class="form-control" type="text" th:field="*{area}"></div>
-                    </div>
-                    <div class="row">
-                        <div class="col-6">Max people</div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12"><input class="form-control" type="text" th:field="*{maxPeople}"></div>
-                    </div>
-                    <div class="row">
-                        <div class="col-6">Rent type</div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <select class="form-select" name="" id="" th:field="*{rentType}">
-                                <option th:each="row:${rentTypeList}" th:text="${row.name}" th:value="${row.id}"></option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="row room">
-                        <div class="col-6">Standard room</div>
-                    </div>
-                    <div class="row room">
-                        <div class="col-12"><input type="text" th:field="*{standardRoom}" class="room form-control"></div>
-                    </div>
-                    <div class="row room">
-                        <div class="col-6">Description other convenience</div>
-                    </div>
-                    <div class="row room">
-                        <div class="col-12"><input class="room form-control" type="text"
-                                                   th:field="*{descriptionOtherConvenience}"></div>
-                    </div>
-                    <div class="row house room">
-                        <div class="col-6">Pool area</div>
-                    </div>
-                    <div class="row house room">
-                        <div class="col-12"><input type="text" th:field="*{poolArea}" class="room house form-control"></div>
-                    </div>
-                    <div class="row room">
-                        <div class="col-6">Number of Floors</div>
-                    </div>
-                    <div class="row room">
-                        <div class="col-12 room"><input type="text" th:field="*{numberOfFloors}" class="room form-control">
-                        </div>
-                    </div>
-                    <div class="row villa house" style="display: none">
-                        <div class="col-6">Facility free</div>
-                    </div>
-                    <div class="row villa house" style="display: none">
-                        <div class="col-12"><input type="text" th:field="*{facilityFree}" class="villa house form-control">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-6">
-                            <button class="btn-success">Create</button>
-                        </div>
-                    </div>
+            <div class="container-fluid">
+                <a class="navbar-brand " th:href="@{/}">
+                    Back to Main Page
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent1">
                 </div>
+            </div>
+            <div class="container-fluid">
+                <a class="navbar-brand " th:href="@{/facility/create}">
+                    Create Facility
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent2">
+                </div>
+            </div>
+
+            <form class="d-flex" th:action="@{/facility/search}">
+                <input class="form-control me-2" size="60px" placeholder="Search" name="name" aria-label="Search"
+                       th:text="${name}">
+                <button class="btn btn-outline-success" type="submit" value="search">Search</button>
             </form>
         </div>
-    </div>
-    <script>
-        function onchangeFacility(name) {
-            let collection = null;
-            let temp1 = document.getElementsByClassName("house");
-            let temp2 = document.getElementsByClassName("room");
-            let temp3 = document.getElementsByClassName("villa");
-            if (name == 1) {
-                collection = document.getElementsByClassName("villa");
-            } else if (name == 2) {
-                collection = document.getElementsByClassName("house");
-            } else {
-                collection = document.getElementsByClassName("room");
-            }
-            for (let i = 0; i < temp1.length; i++) {
-                temp1[i].style.display = "none";
-            }
-            for (let i = 0; i < temp2.length; i++) {
-                temp2[i].style.display = "block";
+    </nav>
+    <div class="body_center_2 container">
+        <form th:action="@{/facility/save}" method="post" th:object="${facilityDto}">
+            <div class="mb-3">
+                <label class="form-label">Facility Type</label>
+                <select class="form-select" name="" id="facilityType" onload="onchangeFacility(this.value)"
+                        onchange="onchangeFacility(this.value)" th:field="*{facilityType}">
+                    <option th:each="row:${facilityTypeList}" th:text="${row.facilityTypeName}"
+                            th:value="${row.facilityTypeId}"></option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label"> Facility Name</label>
+                <input class="form-control" type="text" th:field="*{facilityName}">
+                <p style="color:red" th:if="${#fields.hasErrors('facilityName')}" th:errors="*{facilityName}"></p>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Cost</label>
+                <input type="text" class="form-control" th:field="*{facilityCost}">
+                <p style="color:red" th:if="${#fields.hasErrors('facilityCost')}" th:errors="*{facilityCost}"></p>
 
-            }
-            for (let i = 0; i < temp3.length; i++) {
-                temp3[i].style.display = "block";
-            }
-            for (let i = 0; i < collection.length; i++) {
-                collection[i].style.display = "none";
-            }
-        }
-    </script>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Area</label>
+                <input class="form-control" type="text" th:field="*{facilityArea}">
+                <p style="color:red" th:if="${#fields.hasErrors('facilityArea')}" th:errors="*{facilityArea}"></p>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Max People</label>
+                <input class="form-control" type="text" th:field="*{facilityMaxPeople}">
+                <p style="color:red" th:if="${#fields.hasErrors('facilityMaxPeople')} "
+                   th:errors="*{facilityMaxPeople}"></p>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Rent type</label>
+                <select class="form-select" name="" id="" th:field="*{rentType}">
+                    <option th:each="row:${rentTypeList}" th:text="${row.rentTypeName}"
+                            th:value="${row.rentTypeId}"></option>
+                </select>
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Stand Room</label>
+
+                <input type="text" th:field="*{facilityStandardRoom}"
+                       class="room form-control">
+                <p style="color:red" th:if="${#fields.hasErrors('facilityStandardRoom')}"
+                   th:errors="*{facilityStandardRoom}"></p>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Description other convenience</label>
+                <input class="room form-control" type="text"
+                       th:field="*{facilityDescriptionOtherConvenience}">
+                <p style="color:red" th:if="${#fields.hasErrors('facilityDescriptionOtherConvenience')}"
+                   th:errors="*{facilityDescriptionOtherConvenience}"></p>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Pool Area</label>
+                <input type="text" th:field="*{facilityPoolArea}"
+                       class="room house form-control">
+                <p style="color:red" th:if="${#fields.hasErrors('facilityPoolArea')}"
+                   th:errors="*{facilityPoolArea}"></p>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Number of Floors</label>
+                <input type="text" th:field="*{facilityNumberOfFloors}"
+                       class="room form-control">
+                <p style="color:red" th:if="${#fields.hasErrors('facilityNumberOfFloors')}"
+                   th:errors="*{facilityNumberOfFloors}"></p>
+            </div>
+
+            <div class="mb-3" >
+                <label class="form-label">Free service</label>
+                <input type="text" th:field="*{facilityFreeService}"
+                       class="villa house form-control">
+                <p style="color:red" th:if="${#fields.hasErrors('facilityFreeService')}"
+                   th:errors="*{facilityFreeService}"></p>
+            </div>
+            <center>
+                <input type="submit" class="btn btn-outline-primary" value="Create">
+            </center>
+        </form>
+    </div>
 
     <div class="footer container-fluid">
         <!-- Footer -->

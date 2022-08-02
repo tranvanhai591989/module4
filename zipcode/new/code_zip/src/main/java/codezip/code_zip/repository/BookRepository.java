@@ -2,9 +2,11 @@ package codezip.code_zip.repository;
 
 
 import codezip.code_zip.model.Book;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-@Repository
-public interface BookRepository extends CrudRepository<Book, Long> {
+import javax.transaction.Transactional;
+
+@Transactional
+public interface BookRepository extends JpaRepository<Book, Long> {
 }

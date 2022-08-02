@@ -20,7 +20,7 @@ public class EmployeeDto implements Validator {
     private String employeeName;
 
     private String employeeBirth;
-    @Pattern(regexp = "^[0-9]{9}$")
+    @Pattern(regexp = "^[0-9]{9}$", message = "Has 9 Numbers")
     private String employeeIdCard;
     private double employeeSalary;
     @NotNull

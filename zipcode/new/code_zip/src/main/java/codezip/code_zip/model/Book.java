@@ -8,8 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Data
-@NoArgsConstructor
 @Table(name = "Book")
 public class Book {
     @Id
@@ -41,4 +39,45 @@ public class Book {
         authors.remove(author);
     }
 
+    public Book() {
+    }
+
+    public Book(Long id, String name, List<Author> authors, Category category) {
+        this.id = id;
+        this.name = name;
+        this.authors = authors;
+        this.category = category;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public List<Author> getAuthors() {
+        return authors;
+    }
+
+    public void setAuthors(List<Author> authors) {
+        this.authors = authors;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
 }
