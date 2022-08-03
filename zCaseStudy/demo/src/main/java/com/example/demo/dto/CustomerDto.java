@@ -12,8 +12,7 @@ public class CustomerDto {
     private CustomerType customerType;
 //    private Set<Contract> contracts;
     @NotEmpty
-    @Pattern(regexp = "^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒ\n" +
-            "        ÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$", message = "Wrong format")
+    @Pattern(regexp = "^([\\p{Lu}][\\p{Ll}]{1,8})(\\s([\\p{Lu}]|[\\p{Lu}][\\p{Ll}]{1,10})){0,5}$", message = "Wrong format")
     private String customerName;
 
     //    @Pattern(regexp = "(Date of birth:|Birthday:)\\s+(?:0[1-9]|[12][0-9]|3[01])[-/.](?:0[1-9]|1[012])[-/.](?:19\\d{2}|20[01][0-9]|2020)\\b", message = "Wrong format")
@@ -26,13 +25,13 @@ public class CustomerDto {
 
     @NotNull
     @Valid
-    @Pattern(regexp = "^[0-9]{9}$", message = "Input 9 numbers")
+    @Pattern(regexp = "^(((\\+|)84)|0)(3|5|7|8|9)+([0-9]{8})$", message = "sai định dạng 9 numbers")
     private String customerPhoneNumber;
 
     @Pattern(regexp = "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$", message = "abc@gmail.com")
     private String customerEmail;
     @NotEmpty
-//    @Pattern(regexp = "[A-Za-z0-9'\\.\\-\\s\\,]", message = "Wrong format")
+    @Pattern(regexp = "^([\\p{Lu}][\\p{Ll}]{1,8})(\\s([\\p{Lu}]|[\\p{Lu}][\\p{Ll}]{1,10})){0,5}$", message = "Wrong format")
     private String customerAddress;
 
     public CustomerDto() {

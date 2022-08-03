@@ -1,4 +1,4 @@
-package com.example.demo.service.Impl.customerImpl;
+package com.example.demo.service.customer.customerImpl;
 
 import com.example.demo.model.customer.Customer;
 import com.example.demo.repository.customer.CustomerRepository;

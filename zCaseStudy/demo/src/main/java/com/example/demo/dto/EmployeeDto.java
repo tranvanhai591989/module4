@@ -15,8 +15,7 @@ import javax.validation.constraints.Pattern;
 public class EmployeeDto implements Validator {
     private int employeeId;
     @NotEmpty
-    @Pattern(regexp = "^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒ\n" +
-            "        ÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$", message = "Wrong format")
+    @Pattern(regexp = "^([\\p{Lu}][\\p{Ll}]{1,8})(\\s([\\p{Lu}]|[\\p{Lu}][\\p{Ll}]{1,10})){0,5}$", message = "Wrong format")
     private String employeeName;
 
     private String employeeBirth;
@@ -25,7 +24,7 @@ public class EmployeeDto implements Validator {
     private double employeeSalary;
     @NotNull
     @Valid
-    @Pattern(regexp = "^[0-9]{9}$", message = "Input 9 numbers")
+    @Pattern(regexp = "^(((\\+|)84)|0)(3|5|7|8|9)+([0-9]{8})$", message = "Input 9 numbers")
     private String employeePhoneNumber;
     @Pattern(regexp = "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$", message = "abc@gmail.com")
     private String employeeEmail;

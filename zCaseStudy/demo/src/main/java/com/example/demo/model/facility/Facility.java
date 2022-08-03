@@ -25,13 +25,13 @@ public class Facility {
     private String facilityPoolArea;
     private String facilityNumberOfFloors;
     private String facilityFreeService;
-    @OneToMany(mappedBy = "facility")
-    private Set<Contract> contracts;
+//    @OneToMany(mappedBy = "facility")
+//    private Set<Contract> contracts;
 
     public Facility() {
     }
 
-    public Facility(Integer facilityId, String facilityName, Integer facilityArea, Double facilityCost, Integer facilityMaxPeople, RentType rentType, FacilityType facilityType, String facilityStandardRoom, String facilityDescriptionOtherConvenience, String facilityPoolArea, String facilityNumberOfFloors, String facilityFreeService, Set<Contract> contracts) {
+    public Facility(Integer facilityId, String facilityName, Integer facilityArea, Double facilityCost, Integer facilityMaxPeople, RentType rentType, FacilityType facilityType, String facilityStandardRoom, String facilityDescriptionOtherConvenience, String facilityPoolArea, String facilityNumberOfFloors, String facilityFreeService) {
         this.facilityId = facilityId;
         this.facilityName = facilityName;
         this.facilityArea = facilityArea;
@@ -44,7 +44,7 @@ public class Facility {
         this.facilityPoolArea = facilityPoolArea;
         this.facilityNumberOfFloors = facilityNumberOfFloors;
         this.facilityFreeService = facilityFreeService;
-        this.contracts = contracts;
+//        this.contracts = contracts;
     }
 
     public Integer getFacilityId() {
@@ -143,11 +143,11 @@ public class Facility {
         this.facilityFreeService = facilityFreeService;
     }
 
-    public Set<Contract> getContracts() {
-        return contracts;
-    }
-
-    public void setContracts(Set<Contract> contracts) {
-        this.contracts = contracts;
-    }
+//    public Set<Contract> getContracts() {
+//        return contracts;
+//    }
+//
+//    public void setContracts(Set<Contract> contracts) {
+//        this.contracts = contracts;
+//    }
 }

@@ -1,4 +1,4 @@
-package com.example.demo.service.Impl.facilityImpl;
+package com.example.demo.service.facility.facilityImpl;
 
 import com.example.demo.model.facility.FacilityType;
 import com.example.demo.repository.facility.FacilityTypeRepository;

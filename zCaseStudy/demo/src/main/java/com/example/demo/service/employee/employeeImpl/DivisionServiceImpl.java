@@ -1,4 +1,4 @@
-package com.example.demo.service.Impl.employeeImpl;
+package com.example.demo.service.employee.employeeImpl;
 
 import com.example.demo.model.employee.Division;
 import com.example.demo.repository.employee.DivisionRepository;

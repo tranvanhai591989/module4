@@ -11,7 +11,7 @@ public interface FacilityService {
 
     void save(Facility facility);
 
-    void updateEmployee(Facility facility);
+    void updateFacility(Facility facility);
 
     void deleteFacilityByFacilityId(int id);
 

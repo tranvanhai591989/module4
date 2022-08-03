@@ -1,4 +1,4 @@
-package com.example.demo.service.Impl.contractImpl;
+package com.example.demo.service.contract.contractImpl;
 
 import com.example.demo.model.contract.Contract;
 import com.example.demo.repository.contract.ContractRepository;

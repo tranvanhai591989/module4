@@ -3,28 +3,28 @@ package com.example.demo.dto;
 import com.example.demo.model.facility.FacilityType;
 import com.example.demo.model.facility.RentType;
 
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
 
 public class FacilityDto {
     private Integer facilityId;
     @NotEmpty
-    @Pattern(regexp = "^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒ\n" +
-            "        ÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$", message = "Wrong format")
+    @Pattern(regexp = "^([\\p{Lu}][\\p{Ll}]{1,8})(\\s([\\p{Lu}]|[\\p{Lu}][\\p{Ll}]{1,10})){0,5}$", message = "Wrong format")
     private String facilityName;
-    @Pattern(regexp = "^[0-9]+$", message = "Has plus")
+    @Min(0)
     private Integer facilityArea;
-    @Pattern(regexp = "^[0-9]+$", message = "Has plus")
+    @Min(0)
     private Double facilityCost;
-    @Pattern(regexp = "^[0-9]+$", message = "Has plus")
+    @Min(0)
     private Integer facilityMaxPeople;
     private RentType rentType;
     private FacilityType facilityType;
     private String facilityStandardRoom;
     private String facilityDescriptionOtherConvenience;
-    @Pattern(regexp = "^[0-9]+$", message = "Has plus")
+//    @Min(1)
     private String facilityPoolArea;
-    @Pattern(regexp = "^[0-9]+$", message = "Has plus")
+//    @Min(1)
     private String facilityNumberOfFloors;
     private String facilityFreeService;
 //    private Set<Contract> contracts;

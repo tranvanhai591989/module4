@@ -43,14 +43,13 @@ public class FacilityController {
     }
 
     @PostMapping("save")
-    public String save(@ModelAttribute("facilityDto") @Validated FacilityDto facilityDto,
-                       BindingResult bindingResult,
+    public String save(@ModelAttribute("facilityDto") @Validated FacilityDto facilityDto, BindingResult bindingResult,
                        RedirectAttributes redirect,
                        Model model) {
         if (bindingResult.hasFieldErrors()) {
-            model.addAttribute("facilityDto", new FacilityDto());
             model.addAttribute("facilityTypeList", facilityTypeService.findAll());
             model.addAttribute("rentTypeList", rentTypeService.findAll());
+            model.addAttribute("facilityTypeId", facilityDto.getFacilityType().getFacilityTypeId());
             return "facility/facilityCreate";
         } else {
             Facility facility = new Facility();
@@ -64,9 +63,9 @@ public class FacilityController {
     @GetMapping("/{id}/edit")
     public String showEdit(@PathVariable int id, Model model) {
         FacilityDto facilityDto = new FacilityDto();
-        Optional<Facility> facility = facilityService.findById(id);
+        Facility facility = facilityService.findById(id).orElse(null);
         BeanUtils.copyProperties(facility, facilityDto);
-        model.addAttribute("facility", facilityDto);
+        model.addAttribute("facilityDto", facilityDto);
         model.addAttribute("facilityTypeList", facilityTypeService.findAll());
         model.addAttribute("rentTypeList", rentTypeService.findAll());
         return "facility/facilityEdit";
@@ -77,6 +76,7 @@ public class FacilityController {
                        BindingResult bindingResult,
                        RedirectAttributes redirect,
                        Model model) {
+
         if (bindingResult.hasFieldErrors()) {
             model.addAttribute("facilityDto", facilityDto);
             model.addAttribute("facilityTypeList", facilityTypeService.findAll());
@@ -85,7 +85,7 @@ public class FacilityController {
         } else {
             Facility facility = new Facility();
             BeanUtils.copyProperties(facilityDto, facility);
-            facilityService.save(facility);
+            facilityService.updateFacility(facility);
             redirect.addFlashAttribute("success", "Update facility " +
                     facility.getFacilityName() + " successfully!");
             return "redirect:/facility";

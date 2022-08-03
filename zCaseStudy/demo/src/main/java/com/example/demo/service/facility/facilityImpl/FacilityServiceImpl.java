@@ -1,4 +1,4 @@
-package com.example.demo.service.Impl.facilityImpl;
+package com.example.demo.service.facility.facilityImpl;
 
 import com.example.demo.model.facility.Facility;
 import com.example.demo.repository.facility.FacilityRepository;
@@ -26,7 +26,7 @@ public class FacilityServiceImpl implements FacilityService {
     }
 
     @Override
-    public void updateEmployee(Facility facility) {
+    public void updateFacility(Facility facility) {
         facilityRepository.save(facility);
     }
 

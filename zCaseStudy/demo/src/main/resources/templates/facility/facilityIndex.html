@@ -112,34 +112,14 @@
          style="background-color: #046056;position: sticky;top: 0;z-index: 1;">
         <div class="container-fluid">
             <a class="navbar-brand">Facility</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+
             <div class="container-fluid">
                 <a class="navbar-brand " th:href="@{/}">
                     Back to Main Page
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent1">
-                </div>
             </div>
             <div class="container-fluid">
-                <a class="navbar-brand " th:href="@{/facility/create}">
-                    Create Facility
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent2">
-                </div>
+                <a class="navbar-brand" th:href="@{/facility/create}">Create Facility</a>
             </div>
 
             <form class="d-flex" th:action="@{/facility/search}">
@@ -183,7 +163,8 @@
                 <td th:text="${row.facilityNumberOfFloors}"></td>
                 <td th:text="${row.facilityFreeService}"></td>
                 <td><a th:href="@{/facility/{id}/edit(id=${row.facilityId})}">
-                    <button class="btn btn-success">Edit</button></a>
+                    <button class="btn btn-success">Edit</button>
+                </a>
                 <td>
                     <button type="button" class="btn btn-danger" data-bs-toggle="modal"
                             th:data-bs-target="'#a' + ${row.facilityId}">
@@ -217,8 +198,14 @@
                     </div>
                 </td>
             </tr>
-
         </table>
+        <div class="body_center_2">
+            <a th:href="@{'/facility/search'(page=${facilityList.number - 1},name=${search})}"
+               th:if="${facilityList.hasPrevious()}">Previous</a>
+            <span th:text="${facilityList.number + 1}"></span>/<span th:text="${facilityList.totalPages}"></span>
+            <a th:href="@{'/facility/search'(page=${facilityList.number + 1},name=${search})}"
+               th:if="${facilityList.hasNext()}">Next</a>
+        </div>
     </div>
 
     <!-- Modal -->
