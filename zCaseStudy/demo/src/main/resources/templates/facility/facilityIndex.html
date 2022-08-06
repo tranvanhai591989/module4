@@ -1,8 +1,10 @@
-<html>
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"    xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
 <head>
     <title>Title</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../../bootstrap-5.0.2-dist/css/bootstrap.css">
+    <script th:src="@{/jquery_321/jquery-3.2.1.js}"></script>
 
 </head>
 <body>
@@ -145,8 +147,8 @@
                 <th>Pool area</th>
                 <th>Number of Floors</th>
                 <th>Facility free</th>
-                <th>Edit</th>
-                <th>Delete</th>
+                <th sec:authorize="hasRole('hai')">Edit</th>
+                <th sec:authorize="hasRole('hai')">Delete</th>
             </tr>
             <tr th:each="row:${facilityList}">
 
@@ -162,10 +164,10 @@
                 <td th:text="${row.facilityPoolArea}"></td>
                 <td th:text="${row.facilityNumberOfFloors}"></td>
                 <td th:text="${row.facilityFreeService}"></td>
-                <td><a th:href="@{/facility/{id}/edit(id=${row.facilityId})}">
+                <td sec:authorize="hasRole('hai')"><a th:href="@{/facility/{id}/edit(id=${row.facilityId})}">
                     <button class="btn btn-success">Edit</button>
                 </a>
-                <td>
+                <td sec:authorize="hasRole('hai')">
                     <button type="button" class="btn btn-danger" data-bs-toggle="modal"
                             th:data-bs-target="'#a' + ${row.facilityId}">
                         Delete
@@ -192,20 +194,19 @@
                                 <button type="button" class="btn btn-secondary center-pill" data-bs-dismiss="modal">
                                     Close
                                 </button>
-                                <!--                        </div>-->
                             </div>
                         </div>
                     </div>
                 </td>
             </tr>
         </table>
-        <div class="body_center_2">
+        <center class="body_center_2">
             <a th:href="@{'/facility/search'(page=${facilityList.number - 1},name=${search})}"
                th:if="${facilityList.hasPrevious()}">Previous</a>
             <span th:text="${facilityList.number + 1}"></span>/<span th:text="${facilityList.totalPages}"></span>
             <a th:href="@{'/facility/search'(page=${facilityList.number + 1},name=${search})}"
                th:if="${facilityList.hasNext()}">Next</a>
-        </div>
+        </center>
     </div>
 
     <!-- Modal -->
@@ -248,8 +249,6 @@
     </div>
 
 </div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
+<script type="text/javascript" src="../../bootstrap-5.0.2-dist/js/bootstrap.js"></script>
 </body>
 </html>

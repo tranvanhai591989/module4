@@ -8,6 +8,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -21,12 +22,25 @@ public class FacilityServiceImpl implements FacilityService {
     }
 
     @Override
+    public List<Facility> findAllFacility() {
+        return facilityRepository.findAll();
+    }
+
+    @Override
     public void save(Facility facility) {
         facilityRepository.save(facility);
     }
 
     @Override
     public void updateFacility(Facility facility) {
+        int i = facility.getFacilityType().getFacilityTypeId();
+        if (i == 2) {
+            facility.setFacilityPoolArea(null);
+        }
+        if (i == 3) {
+            facility.setFacilityPoolArea(null);
+            facility.setFacilityNumberOfFloors(null);
+        }
         facilityRepository.save(facility);
     }
 

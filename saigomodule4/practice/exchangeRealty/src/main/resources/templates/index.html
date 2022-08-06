@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="../../bootstrap-5.0.2/css/bootstrap.css">
+    <script th:src="@{/jquery_321/jquery-3.2.1.js}"></script>
+</head>
+<body>
+<nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+        <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+    </div>
+</nav>
+<div class="body_center_2 container">
+    <form class="d-flex" th:action="@{/exchange}">
+        <input class="form-control me-2" size="60px" placeholder="Search" name="name" aria-label="Search"
+               th:text="${name}">
+
+        <select name="exchangeType" class="form-control">
+            <option value="">---Choose----</option>
+            <option th:value="Nha Dat"
+                    th:text="Nha Dat"></option>
+            <option th:value="Dat"
+                    th:text="Dat"></option>
+        </select>
+        <button class="btn btn-outline-success" type="submit" value="search">Search</button>
+    </form>
+    <center>
+        <div class="notify">
+            <!--/*@thymesVar id="success" type=""*/-->
+            <div th:if="${success}">
+                <span th:text="${success}"></span>
+            </div>
+        </div>
+    </center>
+    <table id="product" class="table table-success table-striped">
+        <thead>
+        <tr class="table-info">
+            <th>#</th>
+            <th>Exchange Code</th>
+            <th>Customer Name</th>
+            <th>Exchange realty</th>
+            <th>Exchange type</th>
+            <th>Price (VND/m2)</th>
+            <th>Area</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="row,count : ${exchangeList}">
+            <td th:text="${count.count+4*exchangeList.number}"></td>
+            <td th:text="${row.exchangeCode}"></td>
+            <td th:text="${row.customer.getCustomerName()}"></td>
+            <td th:text="${row.exchangeDate}"></td>
+            <td th:text="${row.exchangeType}"></td>
+            <td th:text="${row.price}"></td>
+            <td th:text="${row.area}"></td>
+            <td>
+                <a th:href="@{/exchange/{id}/detail(id=${exchange.getExchangeId()})}">View</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <center class="body_center_2">
+        <a th:href="@{'/exchange'
+            (page=${exchangeList.number - 1},name=${search},exchangeType=${exchangeType})}"
+           th:if="${exchangeList.hasPrevious()}">Previous</a>
+        <span th:text="${exchangeList.number + 1}"></span>/<span th:text="${exchangeList.totalPages}"></span>
+        <a th:href="@{'/exchange'
+            (page=${exchangeList.number + 1},name=${search},exchangeType=${exchangeType})}"
+           th:if="${exchangeList.hasNext()}">Next</a>
+    </center>
+</div>
+</body>
+<script type="text/javascript" src="bootstrap-5.0.2-dist/js/bootstrap.js"></script>
+</html>

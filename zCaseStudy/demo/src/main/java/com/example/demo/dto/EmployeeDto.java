@@ -3,7 +3,7 @@ package com.example.demo.dto;
 import com.example.demo.model.employee.Division;
 import com.example.demo.model.employee.EducationDegree;
 import com.example.demo.model.employee.Position;
-import com.example.demo.model.employee.User;
+import com.example.demo.model.user.User;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 

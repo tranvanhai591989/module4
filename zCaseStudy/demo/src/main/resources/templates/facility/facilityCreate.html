@@ -2,9 +2,9 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Title</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../bootstrap-5.0.2-dist/css/bootstrap.css">
+    <script th:src="@{/jquery_321/jquery-3.2.1.js}"></script>
+
 </head>
 <body>
 <div>
@@ -156,7 +156,7 @@
             <div class="mb-3">
                 <label class="form-label">Facility Type</label>
                 <select class="form-select" name="" id="facilityType" onload="onchangeFacility(this.value)"
-                        onchange="onchangeFacility(this.value)" th:field="*{facilityType}" th:default="99">
+                        onchange="onchangeFacility(this.value)" th:field="*{facilityType}">
                     <option th:each="row:${facilityTypeList}" th:text="${row.facilityTypeName}"
                             th:value="${row.facilityTypeId}"></option>
                 </select>
@@ -238,12 +238,9 @@
                 <input type="submit" class="btn btn-outline-primary" value="Create">
             </center>
         </form>
-        <form action="">
-            <input id="facilityTypeId" type="text" hidden th:value="${facilityTypeId}">
-        </form>
     </div>
     <script>
-        let value = document.getElementById("facilityTypeId").value;
+        let value = document.getElementById("facilityType").value;
         if (value == 1) {
             $("#standardRoom").show();
             $("#other").show();
@@ -314,8 +311,6 @@
     </div>
 
 </div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
+<script type="text/javascript" src="../../bootstrap-5.0.2-dist/js/bootstrap.js"></script>
 </body>
 </html>

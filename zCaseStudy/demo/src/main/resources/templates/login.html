@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+    <meta name="apple-mobile-web-app-title" content="CodePen">
+
+    <link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+
+    <link rel="mask-icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
+
+
+    <title>CodePen - Login/Register form transition idea.</title>
+
+
+
+
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Raleway:400,700);
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            font-family: "Raleway", sans-serif;
+            background: #E9F8DF;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        :focus {
+            outline: 0;
+        }
+
+        #wrapper {
+            perspective: 500px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            text-align: center;
+            transform: translate3d(-50%, -50%, 0);
+        }
+
+        h1 {
+            color: #416171;
+            font-size: 43px;
+            margin: 0;
+        }
+
+        h2 {
+            color: #349E97;
+            margin: 0;
+        }
+
+        form {
+            margin: 35px 0;
+        }
+
+        #inputs {
+            height: 127px;
+            transition: height 0.5s ease-in-out;
+        }
+        #inputs div {
+            height: 41px;
+            transform-origin: 0 0;
+            transition: transform 0.5s ease-in-out;
+        }
+        #inputs > div > div > div {
+            transform: rotateX(0deg);
+            transform-style: preserve-3d;
+        }
+        #inputs > div > div > div input:nth-child(2),
+        #inputs > div > div > div > div input:nth-child(2) {
+            transform: translateZ(-1px) rotateX(180deg);
+        }
+        #inputs > div > div > div > div {
+            transform: translateY(-41px) rotateX(0deg);
+            transform-style: preserve-3d;
+        }
+
+        input {
+            background: #FFFEFC;
+            border: 0;
+            box-sizing: border-box;
+            display: block;
+            font-family: Raleway, sans-serif;
+            font-weight: 600;
+            font-size: 12px;
+            margin: 0 auto;
+            padding: 13px;
+            transition: all 0.2s ease-in-out;
+            width: 300px;
+            transform-origin: 0 0;
+            -webkit-font-smoothing: antialiased;
+        }
+        input:hover {
+            background: #f3f3f3;
+        }
+        input:focus {
+            background: #EAEAEA;
+        }
+        input[type=submit] {
+            background: #43434C;
+            color: #FFFEFC;
+            cursor: pointer;
+        }
+        input[type=radio] {
+            display: none;
+        }
+
+        input:checked[value=reset] ~ #inputs {
+            height: 84px;
+        }
+        input:checked[value=reset] ~ #labels {
+            margin-top: -10px;
+        }
+        input:checked[value=reset] ~ #inputs div > div > div {
+            transform: rotateX(180deg);
+        }
+        input:checked[value=reset] ~ #inputs div > div > div > div {
+            transform: translateY(-41px) rotateX(180deg);
+        }
+        input:checked[value=reset] ~ #labels label[for=reset],
+        input:checked[value=reset] ~ #labels label[for=register],
+        input:checked[value=reset] ~ #labels label[for=login]:first-child {
+            transition: opacity 0.5s;
+            opacity: 0;
+        }
+        input:checked[value=register] ~ #inputs {
+            height: 170px;
+        }
+        input:checked[value=register] ~ #labels {
+            margin-top: 30px;
+        }
+        input:checked[value=register] ~ #labels label[for=reset],
+        input:checked[value=register] ~ #labels label[for=register],
+        input:checked[value=register] ~ #labels label[for=login]:nth-child(3) {
+            transition: opacity 0.5s;
+            opacity: 0;
+        }
+        input:checked[value=login] ~ #labels {
+            margin-top: 11px;
+        }
+        input:checked[value=login] ~ #inputs div > div > div > div {
+            transform: translateY(-41px) rotateX(180deg);
+        }
+        input:checked[value=login] ~ #labels label[for=login] {
+            transition: opacity 0.5s;
+            opacity: 0;
+        }
+
+        #labels {
+            transition: margin 0.5s ease-in-out;
+        }
+
+        label {
+            display: block;
+            font-size: 14px;
+            color: #43434C;
+            margin-bottom: 5px;
+            font-weight: 600;
+            height: 16px;
+            transition: opacity 1s 0.3s;
+            overflow: hidden;
+        }
+        label span {
+            cursor: pointer;
+            color: #349E97;
+        }
+
+        #hint {
+            position: absolute;
+            bottom: 20px;
+            opacity: 0.2;
+            left: 50%;
+            margin: 0 -62px;
+            font-weight: 600;
+        }
+    </style>
+
+    <script>
+        window.console = window.console || function(t) {};
+    </script>
+    <script>
+        if (document.location.search.match(/type=embed/gi)) {
+            window.parent.postMessage("resize", "*");
+        }
+    </script>
+
+
+</head>
+<body>
+<div id="wrapper" >
+    <h1>THE FURAMA</h1>
+    <h2>A cool headline.</h2>
+    <form method="post" action="http://localhost:8080/login">
+        <input type="radio" id="login" name="action" value="login" checked>
+        <input type="radio" id="register" name="action" value="register">
+        <input type="radio" id="reset" name="action" value="reset">
+        <div id="inputs">
+            <div>
+                <input type="text" name="username" placeholder="User" >
+                <div>
+                    <input type="password" name="password" placeholder="password">
+                    <div>
+                        <input type="password" placeholder="repeat password">
+                        <input type="submit" value="reset password">
+                        <div>
+                            <input type="submit" value="register">
+                            <input type="submit" value="login">+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="labels">
+            <label for="login">Already registered? <span>Login</span></label>
+            <label for="reset">Password lost? <span>Reset</span></label>
+            <label for="login"><span>Back</span></label>
+            <label for="register">Not registered? <span>Create an account</span></label>
+        </div>
+    </form>
+</div>
+<div id="hint">click on the links</div>
+</body>
+</html>

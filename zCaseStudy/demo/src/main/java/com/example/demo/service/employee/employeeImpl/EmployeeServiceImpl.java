@@ -8,6 +8,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
     @Autowired
@@ -25,9 +27,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public void updateEmployee(Employee employee) {
-        employeeRepository.updateEmployee(employee.getEmployeeName(),employee.getEmployeeBirth(),employee.getEmployeeIdCard(),employee.getEmployeeSalary()
-        ,employee.getEmployeePhoneNumber(),employee.getEmployeeEmail(),employee.getEmployeeAddress(),employee.getPosition(),employee.getEducationDegree()
-        ,employee.getDivision(),employee.getUsers(),employee.getEmployeeId());
+        employeeRepository.save(employee);
     }
 
     @Override
@@ -41,7 +41,8 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public Page<Employee> searchByName(String name, Pageable pageable) {
-        return employeeRepository.searchByName("%" + name + "%",pageable);
+    public Page<Employee> searchByName(String name, String position , Pageable pageable) {
+
+        return employeeRepository.searchByName("%"+name+"%", "%"+ position+"%" ,pageable);
     }
 }

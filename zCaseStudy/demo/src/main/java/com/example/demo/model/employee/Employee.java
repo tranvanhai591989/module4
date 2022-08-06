@@ -1,6 +1,7 @@
 package com.example.demo.model.employee;
 
 import com.example.demo.model.contract.Contract;
+import com.example.demo.model.user.User;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -12,19 +13,22 @@ public class Employee {
     private int employeeId;
     private String employeeName;
     private String employeeBirth;
+    @Column(unique = true)
     private String employeeIdCard;
     private double employeeSalary;
+    @Column(unique = true)
     private String employeePhoneNumber;
+    @Column(unique = true)
     private String employeeEmail;
     private String employeeAddress;
     @ManyToOne
     @JoinColumn(name = "positionId", referencedColumnName = "positionId")
     private Position position;
     @ManyToOne
-    @JoinColumn(name = "educationDegreeId",referencedColumnName = "educationDegreeId")
+    @JoinColumn(name = "educationDegreeId", referencedColumnName = "educationDegreeId")
     private EducationDegree educationDegree;
     @ManyToOne
-    @JoinColumn(name = "divisionId",referencedColumnName = "divisionId")
+    @JoinColumn(name = "divisionId", referencedColumnName = "divisionId")
     private Division division;
     @ManyToOne
     @JoinColumn(name = "userName", referencedColumnName = "userName")
@@ -35,7 +39,9 @@ public class Employee {
     public Employee() {
     }
 
-    public Employee(int employeeId, String employeeName, String employeeBirth, String employeeIdCard, double employeeSalary, String employeePhoneNumber, String employeeEmail, String employeeAddress, Position position, EducationDegree educationDegree, Division division, User users, Set<Contract> contracts) {
+    public Employee(int employeeId, String employeeName, String employeeBirth, String employeeIdCard, double employeeSalary, String employeePhoneNumber, String employeeEmail, String employeeAddress, Position position, EducationDegree educationDegree, Division division,
+                    User users,
+                    Set<Contract> contracts) {
         this.employeeId = employeeId;
         this.employeeName = employeeName;
         this.employeeBirth = employeeBirth;

@@ -45,6 +45,10 @@ public class Contract {
         this.contractDetails = contractDetails;
     }
 
+    public Contract(int contractId) {
+        this.contractId = contractId;
+    }
+
     public int getContractId() {
         return contractId;
     }

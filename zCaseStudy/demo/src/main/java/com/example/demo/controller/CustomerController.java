@@ -35,7 +35,12 @@ public class CustomerController {
         model.addAttribute("customerList",  customerService.findAll(pageable));
         return "customer/customerIndex";
     }
-
+    @GetMapping("/search")
+    public String search(@RequestParam("name") String name, @PageableDefault(value = 4) Pageable pageable, Model model) {
+        model.addAttribute("customerList", customerService.searchByName(name, pageable));
+        model.addAttribute("search", name);
+        return "customer/customerIndex";
+    }
     @GetMapping("/create")
     public String create(Model model) {
         model.addAttribute("customerDto", new CustomerDto());
@@ -101,10 +106,5 @@ public class CustomerController {
         return "redirect:/customer";
     }
 
-    @GetMapping("/search")
-    public String search(@RequestParam("name") String name, @PageableDefault(value = 4) Pageable pageable, Model model) {
-        model.addAttribute("customerList", customerService.searchByName(name, pageable));
-        model.addAttribute("search", name);
-        return "customer/customerIndex";
-    }
+
 }

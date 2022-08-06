@@ -9,8 +9,10 @@ import com.example.demo.service.employee.DivisionService;
 import com.example.demo.service.employee.EducationDegreeService;
 import com.example.demo.service.employee.EmployeeService;
 import com.example.demo.service.employee.PositionService;
+import javafx.geometry.Pos;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
@@ -21,6 +23,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 @RequestMapping("/employee")
@@ -34,38 +37,43 @@ public class EmployeeController {
     @Autowired
     private DivisionService divisionService;
 
+    @ModelAttribute(value = "positionList")
+    public void findAllPosition(Model model) {
+      List<Position> positionList =  this.positionService.findAll();
+      model.addAttribute("positionList",positionList);
+    }
+    @ModelAttribute(value = "divisionList")
+    public void findAllDivision(Model model) {
+        List<Division> divisionList = divisionService.findAll();
+        model.addAttribute("divisionList", divisionList);
+    }
+    @ModelAttribute(value = "educationDegreeList")
+    public void findAllEducationDegree(Model model) {
+        List<EducationDegree> educationDegreeList = educationDegreeService.findAll();
+        model.addAttribute("educationDegreeList", educationDegreeList);
+    }
+
+
     @GetMapping("")
-    public String index(@PageableDefault(value = 4) Pageable pageable, Model model) {
-        model.addAttribute("employeeList", employeeService.findAll(pageable));
+    public String index(@RequestParam("name") Optional<String> name, @RequestParam(value = "position", defaultValue = "") String position,
+                         @PageableDefault(value = 4) Pageable pageable, Model model) {
+        model.addAttribute("employeeList", employeeService.searchByName(name.orElse(""),position, pageable));
+        model.addAttribute("search", name.orElse(""));
+        model.addAttribute("position", position);
         return "employee/employeeIndex";
     }
 
     @GetMapping("/create")
     public String create(Model model) {
         model.addAttribute("employeeDto", new EmployeeDto());
-        List<Position> positionList = positionService.findAll();
-        List<EducationDegree> educationDegreeList = educationDegreeService.findAll();
-        List<Division> divisionList = divisionService.findAll();
-
-        model.addAttribute("positionList", positionList);
-        model.addAttribute("educationDegreeList", educationDegreeList);
-        model.addAttribute("divisionList", divisionList);
         return "employee/employeeCreate";
     }
 
     @PostMapping("/save")
     public String save(@ModelAttribute("employeeDto") @Validated EmployeeDto employeeDto,
                        BindingResult bindingResult,
-                       RedirectAttributes redirect,
-                       Model model) {
+                       RedirectAttributes redirect) {
         if (bindingResult.hasFieldErrors()) {
-            List<Position> positionList = positionService.findAll();
-            List<EducationDegree> educationDegreeList = educationDegreeService.findAll();
-            List<Division> divisionList = divisionService.findAll();
-
-            model.addAttribute("positionList", positionList);
-            model.addAttribute("educationDegreeList", educationDegreeList);
-            model.addAttribute("divisionList", divisionList);
             return "employee/employeeCreate";
         } else {
             Employee employee = new Employee();
@@ -79,26 +87,13 @@ public class EmployeeController {
     public String edit(@PathVariable("id") int id, Model model) {
         EmployeeDto employeeDto = new EmployeeDto();
         BeanUtils.copyProperties(employeeService.findById(id), employeeDto);
-        List<Position> positionList = positionService.findAll();
-        List<EducationDegree> educationDegreeList = educationDegreeService.findAll();
-        List<Division> divisionList = divisionService.findAll();
         model.addAttribute("employeeDto", employeeDto);
-        model.addAttribute("positionList", positionList);
-        model.addAttribute("educationDegreeList", educationDegreeList);
-        model.addAttribute("divisionList", divisionList);
         return "employee/employeeEdit";
     }
     @PostMapping("/update")
     public String update(@ModelAttribute("employeeDto") @Validated EmployeeDto employeeDto,
                          BindingResult bindingResult, RedirectAttributes redirect, Model model) {
         if (bindingResult.hasFieldErrors()) {
-            List<Position> positionList = positionService.findAll();
-            List<EducationDegree> educationDegreeList = educationDegreeService.findAll();
-            List<Division> divisionList = divisionService.findAll();
-
-            model.addAttribute("positionList", positionList);
-            model.addAttribute("educationDegreeList", educationDegreeList);
-            model.addAttribute("divisionList", divisionList);
             return "employee/employeeEdit";
         } else {
             Employee employee = new Employee();
@@ -117,11 +112,7 @@ public class EmployeeController {
         return "redirect:/employee";
     }
 
-    @GetMapping("/search")
-    public String search(@RequestParam("name") String name, @PageableDefault(value = 4) Pageable pageable, Model model) {
-        model.addAttribute("employeeList", employeeService.searchByName(name, pageable));
-        model.addAttribute("search", name);
-        return "employee/employeeIndex";
-    }
+
+
 
 }

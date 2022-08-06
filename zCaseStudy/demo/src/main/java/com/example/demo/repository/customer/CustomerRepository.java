@@ -13,7 +13,6 @@ import javax.transaction.Transactional;
 @Transactional
 public interface CustomerRepository extends JpaRepository<Customer,Integer> {
     void deleteCustomerByCustomerId(int id);
-    Page<Customer> findAll(Pageable pageable);
     @Query(value = "select * from customer where customer_name like :name ", nativeQuery = true)
     Page<Customer> searchByName(@Param("name") String name, Pageable pageable);
 }

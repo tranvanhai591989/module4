@@ -1,6 +1,7 @@
 package com.example.demo.repository.employee;
 
 import com.example.demo.model.employee.*;
+import com.example.demo.model.user.User;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -9,15 +10,14 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import javax.transaction.Transactional;
+import java.util.Optional;
 
 @Transactional
 public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
     void deleteEmployeeByEmployeeId(int id);
 
-    @Query(value = "select * from employee where employee_name like :name ", nativeQuery = true)
-    Page<Employee> searchByName(@Param("name") String name, Pageable pageable);
-
-
+    @Query(value = "select * from employee where employee_name like :name and position_id like :position", nativeQuery = true)
+    Page<Employee> searchByName(@Param("name") String name, @Param("position")String position, Pageable pageable);
     Page<Employee> findAll(Pageable pageable);
 
     @Modifying
@@ -28,6 +28,7 @@ public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
             "where employee_id=:id", nativeQuery = true)
     void updateEmployee(@Param("employeeName") String employeeName, @Param("employeeBirth") String employeeBirth, @Param("employeeIdCard") String employeeIdCard, @Param("employeeSalary") double employeeSalary,
                         @Param("employeePhoneNumber") String employeePhoneNumber, @Param("employeeEmail") String employeeEmail, @Param("employeeAddress") String employeeAddress, @Param("position") Position position
-            , @Param("educationDegree") EducationDegree educationDegree, @Param("division") Division division, @Param("users") User users, @Param("id") int id);
+            , @Param("educationDegree") EducationDegree educationDegree, @Param("division") Division division,
+                        @Param("users") User users, @Param("id") int id);
 
 }

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Title</title>
+    <script th:src="@{/jquery_321/jquery-3.2.1.js}"></script>
+    <link rel="stylesheet" type="text/css" href="../../bootstrap-5.0.2-dist/css/bootstrap.css">
+</head>
+<body>
+
+<div class="body_center_2 container">
+
+    <form th:action="@{/exchange/save}" method="post" th:object="${exchangeDto} ">
+        <div class="mb-3">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Name</label>
+            <input type="text" class="form-control" th:field="*{exchangeCode}"/>
+            <p style="color:red" th:if="${#fields.hasErrors('exchangeCode')}" th:errors="*{exchangeCode}"></p>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Customer Name</label>
+            <select th:field="*{customer}" class="form-control">
+                <option th:each=" item : ${customerList}" th:value="${item.getCustomerId()}"
+                        th:text="${item.getCustomerName()}">
+
+                </option>
+            </select>
+            <p style="color:red" th:if="${#fields.hasErrors('customer')}" th:errors="*{customer}"></p>
+
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Exchange Date</label>
+            <input type="date" class="form-control" th:field="*{exchangeDate}"/>
+            <p style="color:red" th:if="${#fields.hasErrors('exchangeDate')}" th:errors="*{exchangeDate}"></p>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Exchange Type</label>
+            <select th:field="*{exchangeType}" class="form-control">
+                <option  th:value="0"
+                         th:text="Nha Dat"></option>
+                <option  th:value="1"
+                         th:text="Dat"></option>
+            </select>
+
+            <p style="color:red" th:if="${#fields.hasErrors('exchangeType')}" th:errors="*{exchangeType}"></p>
+
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Price</label>
+            <input type="number" class="form-control" th:field="*{price}"/>
+            <p style="color:red" th:if="${#fields.hasErrors('price')}" th:errors="*{price}"></p>
+
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Area</label>
+            <input type="number" class="form-control" th:field="*{area}"/>
+            <p style="color:red" th:if="${#fields.hasErrors('area')}"
+               th:errors="*{area}"></p>
+
+        </div>
+        <center>
+            <input type="submit" class="btn btn-outline-primary" value="Create">
+        </center>
+    </form>
+</div>
+
+
+</body>
+<script type="text/javascript" src="../../bootstrap-5.0.2-dist/js/bootstrap.js"></script>
+</html>

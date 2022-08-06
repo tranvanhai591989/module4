@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="../../bootstrap-5.0.2/css/bootstrap.css">
+    <script th:src="@{/jquery_321/jquery-3.2.1.js}"></script>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{/layout::head}">
+    <title>Title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+<body>
+<h3>DETAIL TRANSACTION</h3>
+<button>
+    <a th:href="@{/exchange}">
+        Back to exchange list
+    </a>
+</button>
+<div>
+    <table>
+        <tr>
+            <th>exchange code:</th>
+            <td th:text="${exchange.exchangeCode}"></td>
+        </tr>
+        <tr>
+            <th>Date:</th>
+            <td th:text="${exchange.exchangeDate}"></td>
+        </tr>
+        <tr>
+            <th>Exchange Type:</th>
+            <td th:text="${exchange.exchangeType}"></td>
+        </tr>
+        <tr>
+            <th>Price:</th>
+            <td th:text="${exchange.price}"></td>
+        </tr>
+        <tr>
+            <th>Area:</th>
+            <td th:text="${exchange.area}"></td>
+        </tr>
+        <tr>
+            <th>Customer Name:</th>
+            <td th:text="${exchange.customer.getCustomerName()}"></td>
+        </tr>
+        <tr>
+            <th>Phone Number:</th>
+            <td th:text="${exchange.customer.getCustomerPhone()}"></td>
+        </tr>
+        <tr>
+            <th>Email:</th>
+            <td th:text="${exchange.customer.getCustomerEmail()}"></td>
+        </tr>
+    </table>
+</div>
+<footer th:replace="/layout :: footer"></footer>
+</body>
+<script type="text/javascript" src="bootstrap-5.0.2-dist/js/bootstrap.js"></script>
+
+</html>
